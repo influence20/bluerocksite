@@ -1,0 +1,35 @@
+{
+  "name": "bluerock-cloudflare",
+  "version": "1.0.0",
+  "description": "BlueRock Asset Management - Cloudflare Pages Deployment",
+  "main": "index.js",
+  "scripts": {
+    "dev": "wrangler pages dev --compatibility-date=2023-06-21 .",
+    "build": "echo 'No build step required'"
+  },
+  "keywords": [
+    "asset",
+    "management",
+    "finance",
+    "investment"
+  ],
+  "author": "BlueRock Asset Management",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.5.0",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.9.4",
+    "uuid": "^9.0.0",
+    "handlebars": "^4.7.8",
+    "html-to-text": "^9.0.5",
+    "itty-router": "^4.0.23"
+  },
+  "devDependencies": {
+    "wrangler": "^3.19.0"
+  }
+}

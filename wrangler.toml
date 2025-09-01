@@ -1,0 +1,13 @@
+name = "bluerock-asset-management"
+compatibility_date = "2023-06-21"
+
+[site]
+bucket = "./public"
+
+[build]
+command = ""
+upload.format = "directory"
+output_directory = "public"
+
+[env.production]
+vars = { NODE_ENV = "production" }

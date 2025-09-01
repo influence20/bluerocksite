@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to BlueRock Asset Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #1a3c61;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            color: white;
+            margin: 0;
+            font-size: 24px;
+        }
+        .content {
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .welcome-message {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .steps {
+            margin: 30px 0;
+        }
+        .step {
+            margin-bottom: 15px;
+        }
+        .step-number {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background-color: #1a3c61;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #1a3c61;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>BlueRock Asset Management</h1>
+        </div>
+        <div class="content">
+            <p class="welcome-message">Welcome to BlueRock Asset Management, {{name}}!</p>
+            
+            <p>Thank you for choosing BlueRock Asset Management for your investment needs. Your account has been successfully created, and you're now ready to start your investment journey with us.</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <span>Log in to your account using your email and password</span>
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <span>Complete your profile information</span>
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <span>Explore our investment plans</span>
+                </div>
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <span>Make your first deposit</span>
+                </div>
+            </div>
+            
+            <p>To get started, click the button below to log in to your account:</p>
+            
+            <a href="{{loginUrl}}" class="button">Log In to Your Account</a>
+            
+            <p>If you have any questions or need assistance, please don't hesitate to contact our support team at <a href="mailto:support@bluerock-asset.com">support@bluerock-asset.com</a>.</p>
+            
+            <p>We look forward to helping you achieve your financial goals!</p>
+            
+            <p>Best regards,<br>
+            The BlueRock Team</p>
+        </div>
+        <div class="footer">
+            <p>&copy; {{year}} BlueRock Asset Management. All rights reserved.</p>
+            <p>This email was sent to you because you have created an account with BlueRock Asset Management.</p>
+        </div>
+    </div>
+</body>
+</html>

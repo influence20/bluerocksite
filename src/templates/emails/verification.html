@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Your Email - BlueRock Asset Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #1a3c61;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            color: white;
+            margin: 0;
+            font-size: 24px;
+        }
+        .content {
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #1a3c61;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .button-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .note {
+            font-size: 14px;
+            color: #666;
+            margin-top: 20px;
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>BlueRock Asset Management</h1>
+        </div>
+        <div class="content">
+            <p>Dear {{name}},</p>
+            
+            <p>Thank you for registering with BlueRock Asset Management. To complete your registration and activate your account, please verify your email address by clicking the button below:</p>
+            
+            <div class="button-container">
+                <a href="{{verificationUrl}}" class="button">Verify Email Address</a>
+            </div>
+            
+            <p>If the button above doesn't work, you can also copy and paste the following link into your browser:</p>
+            
+            <p><a href="{{verificationUrl}}">{{verificationUrl}}</a></p>
+            
+            <p class="note">This verification link will expire in 24 hours. If you did not create an account with BlueRock Asset Management, please disregard this email.</p>
+            
+            <p>Thank you for choosing BlueRock Asset Management.</p>
+            
+            <p>Best regards,<br>
+            The BlueRock Team<br>
+            <a href="mailto:support@bluerock-asset.com">support@bluerock-asset.com</a></p>
+        </div>
+        <div class="footer">
+            <p>&copy; {{year}} BlueRock Asset Management. All rights reserved.</p>
+            <p>This email was sent to you because you have registered with BlueRock Asset Management.</p>
+        </div>
+    </div>
+</body>
+</html>
