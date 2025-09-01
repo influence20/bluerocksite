@@ -1,0 +1,10 @@
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="32" height="32" fill="#003366" rx="5" ry="5"/>
+  
+  <!-- Rock Symbol -->
+  <polygon points="5,16 8,8 16,5 24,8 27,16 24,24 16,27 8,24" fill="#0066cc" stroke="#ffffff" stroke-width="1"/>
+  
+  <!-- Dollar Symbol -->
+  <text x="16" y="21" font-family="Arial" font-size="14" font-weight="bold" fill="#ffcc00" text-anchor="middle">$</text>
+</svg>

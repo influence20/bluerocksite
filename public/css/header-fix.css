@@ -1,0 +1,141 @@
+/* Fix for header overlapping */
+.header-container {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    max-width: 400px; /* Increased for larger logo */
+}
+
+.logo img {
+    height: 70px; /* Increased from 60px for larger logo */
+    margin-right: 0; /* Removed margin since we're removing the text */
+}
+
+.logo h1 {
+    display: none; /* Hide the text completely */
+}
+
+/* Add padding to main content to prevent header overlap */
+body {
+    padding-top: 90px; /* Increased from 80px to accommodate larger logo */
+}
+
+/* Mobile menu styles */
+.mobile-menu-btn {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--primary-color);
+    z-index: 1001;
+    transition: all 0.3s ease;
+    padding: 10px;
+    display: none;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    .mobile-menu-btn {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1002;
+    }
+    
+    .mobile-menu-btn.active {
+        transform: translateY(-50%) rotate(90deg);
+    }
+    
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: white;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transition: right 0.3s ease;
+        overflow-y: auto;
+        padding-top: 80px;
+        display: block !important;
+    }
+    
+    nav.mobile-nav-active {
+        right: 0;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 20px;
+    }
+    
+    nav ul li {
+        margin: 10px 0;
+        width: 100%;
+    }
+    
+    nav ul li a {
+        padding: 12px 0;
+        font-size: 1.1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        display: block;
+    }
+    
+    /* Overlay when menu is active */
+    body::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    
+    body.menu-active::after {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Ensure login/signup buttons are visible on mobile */
+    .auth-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 20px;
+    }
+    
+    .auth-links a {
+        margin: 5px 0;
+        text-align: center;
+    }
+    
+    .nav-signup {
+        background-color: var(--primary-color);
+        color: white !important;
+        padding: 10px !important;
+        border-radius: 4px;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo img {
+        height: 50px; /* Slightly reduced for smaller screens */
+    }
+}

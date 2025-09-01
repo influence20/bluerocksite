@@ -1,0 +1,271 @@
+/* BlueRock Asset Management - Fixed Navigation CSS */
+
+/* Header and Navigation Container */
+header {
+  background-color: var(--white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+}
+
+/* Logo Styling */
+.logo {
+  display: flex;
+  align-items: center;
+  z-index: 1001;
+  max-width: 200px;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo img {
+  height: 60px;
+  transition: all 0.3s ease;
+}
+
+.logo h1 {
+  display: none; /* Hide the text completely */
+}
+
+/* Add padding to main content to prevent header overlap */
+body {
+  padding-top: 80px;
+}
+
+/* Navigation Menu */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+nav ul li {
+  margin: 0 10px; /* Reduced spacing between nav items */
+  position: relative;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  color: var(--dark-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 10px 0;
+  position: relative;
+  transition: color 0.3s ease;
+  display: block;
+  white-space: nowrap; /* Prevent text from breaking into multiple lines */
+}
+
+nav ul li a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-color);
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--primary-color);
+}
+
+nav ul li a:hover:after,
+nav ul li a.active:after {
+  width: 100%;
+}
+
+nav ul li a.active {
+  color: var(--primary-color);
+}
+
+/* Auth Links Styling */
+.auth-links {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.nav-login {
+  margin-right: 10px;
+}
+
+.nav-signup {
+  padding: 8px 16px !important;
+  border-radius: 20px;
+  color: var(--dark-color) !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  white-space: nowrap; /* Prevent text from breaking into multiple lines */
+}
+
+.nav-signup:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--primary-color);
+  z-index: 1001;
+  transition: all 0.3s ease;
+  padding: 10px;
+}
+
+.mobile-menu-btn:focus {
+  outline: none;
+}
+
+.mobile-menu-btn.active {
+  color: var(--accent-color);
+  transform: rotate(90deg);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .mobile-menu-btn {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .mobile-menu-btn.active {
+    transform: translateY(-50%) rotate(90deg);
+  }
+  
+  .header-container {
+    padding: 15px 20px;
+  }
+  
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--white);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    padding-top: 80px;
+    display: block !important; /* Ensure nav is displayed when active */
+  }
+  
+  nav.mobile-nav-active {
+    right: 0;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 20px;
+  }
+  
+  nav ul li {
+    margin: 10px 0;
+    width: 100%;
+  }
+  
+  nav ul li a {
+    padding: 12px 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  nav ul li a:after {
+    display: none;
+  }
+  
+  .auth-links {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+    width: 100%;
+    margin-top: 15px;
+  }
+  
+  .nav-login {
+    margin-right: 0;
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .nav-signup {
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Overlay when menu is active */
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  body.menu-active::after {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo h1 {
+    font-size: 1.2rem;
+  }
+  
+  .logo img {
+    height: 40px;
+  }
+}

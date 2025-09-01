@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1132" viewBox="0 0 800 1132">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a" />
+      <stop offset="100%" stop-color="#2a4cad" />
+    </linearGradient>
+    <pattern id="pattern" width="60" height="60" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
+      <rect x="0" y="0" width="10" height="10" fill="rgba(255,255,255,0.05)"/>
+    </pattern>
+  </defs>
+  
+  <!-- Main background -->
+  <rect width="800" height="1132" fill="url(#bg-gradient)" />
+  
+  <!-- Pattern overlay -->
+  <rect width="800" height="1132" fill="url(#pattern)" opacity="0.7" />
+  
+  <!-- Decorative elements -->
+  <circle cx="700" cy="900" r="200" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2" />
+  <circle cx="700" cy="900" r="150" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2" />
+  <circle cx="700" cy="900" r="100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2" />
+  
+  <!-- Chart decoration -->
+  <path d="M500,500 C550,450 600,500 650,450 S750,350 800,400" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="3" />
+  <path d="M500,520 C550,470 600,520 650,470 S750,370 800,420" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="3" />
+  
+  <!-- Content area -->
+  <g transform="translate(60, 60)">
+    <!-- Logo placeholder -->
+    <rect width="200" height="60" fill="none" />
+    <text x="0" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">BLUEROCK</text>
+    
+    <!-- Year -->
+    <text x="0" y="350" font-family="Arial, sans-serif" font-size="24" font-weight="500" fill="rgba(255,255,255,0.8)" letter-spacing="2">2025 EDITION</text>
+    
+    <!-- Title -->
+    <text x="0" y="420" font-family="Arial, sans-serif" font-size="54" font-weight="bold" fill="white">Investment</text>
+    <text x="0" y="490" font-family="Arial, sans-serif" font-size="54" font-weight="bold" fill="white">Strategy Guide</text>
+    
+    <!-- Subtitle -->
+    <text x="0" y="550" font-family="Arial, sans-serif" font-size="24" fill="rgba(255,255,255,0.9)">Expert insights and strategies for</text>
+    <text x="0" y="590" font-family="Arial, sans-serif" font-size="24" fill="rgba(255,255,255,0.9)">maximizing returns in today's market</text>
+    
+    <!-- Footer -->
+    <text x="0" y="950" font-family="Arial, sans-serif" font-size="16" fill="rgba(255,255,255,0.7)">BlueRock Asset Management</text>
+    
+    <!-- Badge -->
+    <rect x="500" y="930" width="180" height="40" rx="20" fill="rgba(255,255,255,0.1)" />
+    <text x="590" y="957" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="white" text-anchor="middle">PREMIUM CONTENT</text>
+  </g>
+</svg>

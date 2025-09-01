@@ -1,0 +1,18 @@
+/* CSS to remove the temporary site warning banner */
+.ninja-daytona-warning-banner,
+.ninja-daytona-warning-banner-container,
+[class*="ninja-daytona-warning"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    position: absolute !important;
+    z-index: -9999 !important;
+    pointer-events: none !important;
+    overflow: hidden !important;
+}
+
+body::before {
+    content: none !important;
+}

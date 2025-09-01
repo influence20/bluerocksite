@@ -1,0 +1,242 @@
+/* Enhanced Mobile Optimizations for BlueRock Asset Management */
+
+/* Global Mobile Adjustments */
+@media (max-width: 767px) {
+  /* Improve text readability on mobile */
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  /* Fix container padding */
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  /* Improve button touch targets */
+  .btn, 
+  button,
+  input[type="submit"],
+  input[type="button"] {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* Fix form elements */
+  input, 
+  select, 
+  textarea {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+    padding: 12px;
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Improve table display */
+  table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Fix spacing issues */
+  .section {
+    padding: 40px 0;
+  }
+  
+  /* Fix header alignment */
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+  }
+  
+  /* Improve navigation */
+  .mobile-menu-btn {
+    display: block;
+    margin-left: auto;
+  }
+  
+  /* Fix grid layouts */
+  .grid,
+  .feature-grid,
+  .testimonial-grid,
+  .investment-grid,
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  /* Fix card layouts */
+  .card,
+  .feature-card,
+  .testimonial-card,
+  .investment-plan-card,
+  .dashboard-card {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Fix footer */
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  /* Fix dashboard layout */
+  .dashboard-content {
+    padding: 15px;
+  }
+  
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  /* Fix form layouts */
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .form-group {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 375px) {
+  /* Further optimize for very small screens */
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+  }
+  
+  .dashboard-card .value {
+    font-size: 1.6rem;
+  }
+  
+  /* Adjust padding */
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  /* Fix button sizes */
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Fix for iOS Safari 100vh issue */
+@supports (-webkit-touch-callout: none) {
+  .mobile-nav,
+  .full-height {
+    height: -webkit-fill-available;
+  }
+}
+
+/* Fix for sticky headers */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Fix for modal dialogs */
+.modal {
+  padding: 20px;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 100%;
+  padding: 20px;
+}
+
+/* Fix for charts and graphs */
+.chart-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Fix for withdrawal form */
+.withdrawal-form {
+  grid-template-columns: 1fr;
+}
+
+/* Fix for dashboard sidebar */
+.dashboard-sidebar {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Improve touch targets */
+.nav-link,
+.mobile-menu a,
+.footer-link {
+  padding: 12px;
+  display: inline-block;
+}
+
+/* Fix for tables on mobile */
+@media (max-width: 767px) {
+  /* Convert tables to cards on mobile */
+  table.responsive-table {
+    border: 0;
+    display: block;
+  }
+  
+  table.responsive-table thead {
+    display: none;
+  }
+  
+  table.responsive-table tr {
+    margin-bottom: 20px;
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  
+  table.responsive-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: right;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  table.responsive-table td:last-child {
+    border-bottom: none;
+  }
+  
+  table.responsive-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    text-align: left;
+    padding-right: 10px;
+  }
+}
