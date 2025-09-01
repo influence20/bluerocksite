@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
+    <meta name="theme-color" content="#1e3a8a">
+    <link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSL Certificate Implementation | BlueRock Asset Management</title>
+    <meta name="description" content="Comprehensive instructions for implementing SSL certificates on the BlueRock Asset Management website across different hosting providers.">
+    
+    <!-- Favicon -->
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#1e3a8a">
+    <meta name="msapplication-TileColor" content="#1e3a8a">
+    <meta name="theme-color" content="#1e3a8a">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/enhanced-mobile.css">
+    <link rel="stylesheet" href="css/mobile-fixes.css">
+    <link rel="stylesheet" href="css/improved-navigation.css">
+    <link rel="stylesheet" href="css/remove-warning.css">
+    <link rel="stylesheet" href="css/premium-style.css">
+    <script src="js/structured-data.js"></script>
+    
+    <style>
+        .ssl-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .ssl-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .ssl-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .ssl-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        
+        .ssl-section {
+            margin-bottom: 50px;
+        }
+        
+        .ssl-section-header {
+            margin-bottom: 30px;
+        }
+        
+        .ssl-section-header h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .ssl-section-header h2 i {
+            margin-right: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .ssl-section-content {
+            line-height: 1.7;
+        }
+        
+        .ssl-section-content p {
+            margin-bottom: 20px;
+        }
+        
+        .ssl-section-content ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+        .ssl-section-content li {
+            margin-bottom: 10px;
+        }
+        
+        .ssl-section-content code {
+            background-color: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #e83e8c;
+        }
+        
+        .ssl-benefits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .ssl-benefit {
+            flex: 1;
+            min-width: 250px;
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .ssl-benefit i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .ssl-benefit h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .ssl-benefit p {
+            color: #666;
+            margin-bottom: 0;
+        }
+        
+        .ssl-providers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .ssl-provider {
+            flex: 1;
+            min-width: 280px;
+            background-color: white;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .ssl-provider h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .ssl-provider p {
+            margin-bottom: 15px;
+        }
+        
+        .ssl-provider .provider-features {
+            margin-bottom: 20px;
+        }
+        
+        .ssl-provider .provider-features li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .ssl-provider .provider-features li i {
+            color: #28a745;
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+        
+        .ssl-provider .provider-link {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        
+        .ssl-provider .provider-link:hover {
+            background-color: var(--primary-color-dark);
+        }
+        
+        .code-block {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+        
+        .code-block pre {
+            margin: 0;
+            font-family: monospace;
+            color: #333;
+        }
+        
+        .code-block .comment {
+            color: #6c757d;
+        }
+        
+        .hosting-tabs {
+            margin-bottom: 30px;
+        }
+        
+        .hosting-tabs .tab-buttons {
+            display: flex;
+            border-bottom: 1px solid #dee2e6;
+            margin-bottom: 20px;
+        }
+        
+        .hosting-tabs .tab-button {
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-weight: 500;
+            color: #495057;
+            transition: all 0.2s;
+        }
+        
+        .hosting-tabs .tab-button.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+        
+        .hosting-tabs .tab-content {
+            display: none;
+        }
+        
+        .hosting-tabs .tab-content.active {
+            display: block;
+        }
+        
+        .step-list {
+            counter-reset: step-counter;
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .step-list li {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 25px;
+            counter-increment: step-counter;
+        }
+        
+        .step-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 35px;
+            height: 35px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .note-box {
+            background-color: #e8f4fd;
+            border-left: 4px solid #0d6efd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        
+        .tip-box {
+            background-color: #d1e7dd;
+            border-left: 4px solid #198754;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        
+        @media (max-width: 768px) {
+            .ssl-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .ssl-hero p {
+                font-size: 1rem;
+            }
+            
+            .ssl-section-content {
+                padding: 0;
+            }
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="BlueRock Asset Management">
+                </a>
+            </div>
+            <div class="site-name">BlueRock Asset Management</div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-dropdown">
+                        <a href="#">Services</a>
+                        <ul class="dropdown">
+                            <li><a href="investments.html">Investments</a></li>
+                            <li><a href="retirement.html">Retirement</a></li>
+                            <li><a href="estate.html">Estate Planning</a></li>
+                            <li><a href="tax.html">Tax Planning</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="#">Products</a>
+                        <ul class="dropdown">
+                            <li><a href="investment-plans.html">Investment Plans</a></li>
+                            <li><a href="savings.html">Savings Products</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="signup.html" class="signup-btn">Sign Up</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="ssl-hero">
+        <div class="container">
+            <h1>SSL Certificate Implementation Guide</h1>
+            <p>Comprehensive instructions for implementing SSL certificates to secure your BlueRock Asset Management website</p>
+        </div>
+    </section>
+
+    <div class="ssl-container">
+        <div class="ssl-section">
+            <div class="ssl-section-header">
+                <h2><i class="fas fa-shield-alt"></i> Understanding SSL Certificates</h2>
+            </div>
+            <div class="ssl-section-content">
+                <p>SSL (Secure Sockets Layer) certificates are digital certificates that authenticate the identity of a website and enable an encrypted connection. These certificates are essential for securing sensitive information transmitted between your website and its visitors.</p>
+                
+                <div class="ssl-benefits">
+                    <div class="ssl-benefit">
+                        <i class="fas fa-lock"></i>
+                        <h3>Enhanced Security</h3>
+                        <p>SSL certificates encrypt data transmission, protecting sensitive information like login credentials, personal details, and financial data from interception by malicious actors.</p>
+                    </div>
+                    <div class="ssl-benefit">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Trust & Credibility</h3>
+                        <p>Websites with SSL certificates display a padlock icon in the browser address bar, signaling to visitors that their connection is secure and building trust in your brand.</p>
+                    </div>
+                    <div class="ssl-benefit">
+                        <i class="fas fa-search"></i>
+                        <h3>SEO Advantage</h3>
+                        <p>Google and other search engines prioritize secure websites in search results, giving SSL-enabled sites a ranking advantage over non-secure alternatives.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ssl-section">
+            <div class="ssl-section-header">
+                <h2><i class="fas fa-certificate"></i> Types of SSL Certificates</h2>
+            </div>
+            <div class="ssl-section-content">
+                <p>There are several types of SSL certificates available, each offering different levels of validation and security features:</p>
+                
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Certificate Type</th>
+                            <th>Validation Level</th>
+                            <th>Features</th>
+                            <th>Best For</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Domain Validated (DV)</td>
+                            <td>Low</td>
+                            <td>Basic encryption, quick issuance (minutes to hours)</td>
+                            <td>Blogs, personal websites, small businesses</td>
+                        </tr>
+                        <tr>
+                            <td>Organization Validated (OV)</td>
+                            <td>Medium</td>
+                            <td>Enhanced encryption, organization verification (1-3 days)</td>
+                            <td>Business websites, e-commerce sites</td>
+                        </tr>
+                        <tr>
+                            <td>Extended Validation (EV)</td>
+                            <td>High</td>
+                            <td>Maximum encryption, rigorous verification (1-2 weeks)</td>
+                            <td>Financial institutions, large e-commerce sites</td>
+                        </tr>
+                        <tr>
+                            <td>Wildcard SSL</td>
+                            <td>Varies</td>
+                            <td>Secures main domain and unlimited subdomains</td>
+                            <td>Websites with multiple subdomains</td>
+                        </tr>
+                        <tr>
+                            <td>Multi-Domain SSL (SAN)</td>
+                            <td>Varies</td>
+                            <td>Secures multiple domains with one certificate</td>
+                            <td>Organizations with multiple websites</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="note-box">
+                    <p><strong>Recommendation:</strong> For BlueRock Asset Management, we recommend using an Organization Validated (OV) or Extended Validation (EV) certificate to provide the highest level of security and trust for your financial services website.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="ssl-section">
+            <div class="ssl-section-header">
+                <h2><i class="fas fa-server"></i> SSL Implementation by Hosting Provider</h2>
+            </div>
+            <div class="ssl-section-content">
+                <p>The process of implementing an SSL certificate varies depending on your hosting provider. Below are step-by-step instructions for popular hosting platforms:</p>
+                
+                <div class="hosting-tabs">
+                    <div class="tab-buttons">
+                        <button class="tab-button active" data-tab="cpanel">cPanel</button>
+                        <button class="tab-button" data-tab="plesk">Plesk</button>
+                        <button class="tab-button" data-tab="aws">AWS</button>
+                        <button class="tab-button" data-tab="azure">Azure</button>
+                        <button class="tab-button" data-tab="letsencrypt">Let's Encrypt</button>
+                    </div>
+                    
+                    <div id="cpanel" class="tab-content active">
+                        <h3>SSL Implementation in cPanel</h3>
+                        <ol class="step-list">
+                            <li>
+                                <strong>Log in to cPanel</strong>
+                                <p>Access your hosting account's cPanel dashboard using your credentials.</p>
+                            </li>
+                            <li>
+                                <strong>Navigate to SSL/TLS Manager</strong>
+                                <p>In the Security section, click on "SSL/TLS Manager" or "SSL/TLS".</p>
+                            </li>
+                            <li>
+                                <strong>Select Certificate Installation</strong>
+                                <p>Click on "Install and Manage SSL for your site (HTTPS)" or a similar option.</p>
+                            </li>
+                            <li>
+                                <strong>Choose Domain</strong>
+                                <p>Select the domain for which you want to install the SSL certificate.</p>
+                            </li>
+                            <li>
+                                <strong>Install Certificate</strong>
+                                <p>You have two options:</p>
+                                <ul>
+                                    <li><strong>Auto SSL:</strong> Many hosts offer free Let's Encrypt certificates. Click "Run AutoSSL" if available.</li>
+                                    <li><strong>Manual Installation:</strong> If you purchased a certificate from a provider, enter the certificate details (Certificate, Private Key, and CA Bundle) in the appropriate fields.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Install and Verify</strong>
+                                <p>Click "Install Certificate" and wait for the installation to complete. Then visit your website using HTTPS to verify the certificate is working properly.</p>
+                            </li>
+                            <li>
+                                <strong>Set Up Redirects (Optional but Recommended)</strong>
+                                <p>To force all traffic to use HTTPS, create a redirect rule in the .htaccess file:</p>
+                                <div class="code-block">
+                                    <pre>
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]</pre>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <div id="plesk" class="tab-content">
+                        <h3>SSL Implementation in Plesk</h3>
+                        <ol class="step-list">
+                            <li>
+                                <strong>Log in to Plesk</strong>
+                                <p>Access your Plesk control panel using your administrator credentials.</p>
+                            </li>
+                            <li>
+                                <strong>Select Your Domain</strong>
+                                <p>From the list of domains, click on the domain you want to secure with SSL.</p>
+                            </li>
+                            <li>
+                                <strong>Access SSL/TLS Certificates</strong>
+                                <p>In the domain management page, find and click on "SSL/TLS Certificates" under the Security section.</p>
+                            </li>
+                            <li>
+                                <strong>Add SSL Certificate</strong>
+                                <p>Click on "Add SSL Certificate" or "Secure Your Site" button.</p>
+                            </li>
+                            <li>
+                                <strong>Choose Certificate Source</strong>
+                                <p>You have several options:</p>
+                                <ul>
+                                    <li><strong>Let's Encrypt:</strong> Click "Get Free Let's Encrypt Certificate" for a free, auto-renewing certificate.</li>
+                                    <li><strong>Buy a Certificate:</strong> Purchase a certificate through Plesk's interface.</li>
+                                    <li><strong>Use Custom Certificate:</strong> Upload your own certificate files if you already have them.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Configure Certificate Details</strong>
+                                <p>Fill in the required information, including domain names to be covered by the certificate.</p>
+                            </li>
+                            <li>
+                                <strong>Install and Activate</strong>
+                                <p>Complete the installation process and ensure the certificate is activated for your domain.</p>
+                            </li>
+                            <li>
+                                <strong>Enable HTTPS Redirection</strong>
+                                <p>In the domain's settings, look for "HTTPS Settings" or "Permanent SEO-Safe 301 Redirect" and enable redirection from HTTP to HTTPS.</p>
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <div id="aws" class="tab-content">
+                        <h3>SSL Implementation in AWS</h3>
+                        <ol class="step-list">
+                            <li>
+                                <strong>Access AWS Certificate Manager (ACM)</strong>
+                                <p>Log in to your AWS Management Console and navigate to Certificate Manager.</p>
+                            </li>
+                            <li>
+                                <strong>Request a Certificate</strong>
+                                <p>Click "Request a certificate" and select "Request a public certificate".</p>
+                            </li>
+                            <li>
+                                <strong>Enter Domain Names</strong>
+                                <p>Add your domain name(s). You can include both the root domain (example.com) and subdomains (www.example.com).</p>
+                            </li>
+                            <li>
+                                <strong>Choose Validation Method</strong>
+                                <p>Select either DNS validation (recommended) or email validation.</p>
+                                <ul>
+                                    <li><strong>DNS Validation:</strong> You'll need to create CNAME records in your domain's DNS settings.</li>
+                                    <li><strong>Email Validation:</strong> AWS will send verification emails to domain-associated addresses.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Complete Validation</strong>
+                                <p>Follow the validation steps provided by AWS to prove domain ownership.</p>
+                            </li>
+                            <li>
+                                <strong>Configure AWS Service</strong>
+                                <p>Once the certificate is issued, you need to configure it with your AWS service:</p>
+                                <ul>
+                                    <li><strong>For CloudFront:</strong> In your distribution settings, select the certificate under "SSL Certificate".</li>
+                                    <li><strong>For Elastic Load Balancer:</strong> In the listener configuration, add an HTTPS listener and select your certificate.</li>
+                                    <li><strong>For API Gateway:</strong> In the custom domain settings, select your certificate.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Update DNS Records</strong>
+                                <p>Ensure your domain's DNS records point to your AWS resources (e.g., CloudFront distribution or load balancer).</p>
+                            </li>
+                            <li>
+                                <strong>Test HTTPS Connection</strong>
+                                <p>Visit your website using HTTPS to verify the certificate is working correctly.</p>
+                            </li>
+                        </ol>
+                        <div class="tip-box">
+                            <p><strong>Tip:</strong> AWS Certificate Manager provides free SSL/TLS certificates that automatically renew, but they can only be used with AWS services like CloudFront, API Gateway, and Elastic Load Balancer.</p>
+                        </div>
+                    </div>
+                    
+                    <div id="azure" class="tab-content">
+                        <h3>SSL Implementation in Microsoft Azure</h3>
+                        <ol class="step-list">
+                            <li>
+                                <strong>Log in to Azure Portal</strong>
+                                <p>Access your Azure Portal at portal.azure.com.</p>
+                            </li>
+                            <li>
+                                <strong>Navigate to App Service</strong>
+                                <p>Find and select your App Service or Web App from the resources list.</p>
+                            </li>
+                            <li>
+                                <strong>Access TLS/SSL Settings</strong>
+                                <p>In the left menu, under Settings, click on "TLS/SSL settings".</p>
+                            </li>
+                            <li>
+                                <strong>Add Certificate</strong>
+                                <p>You have several options:</p>
+                                <ul>
+                                    <li><strong>Create App Service Managed Certificate:</strong> Free certificate for custom domains (not available for root domains).</li>
+                                    <li><strong>Import App Service Certificate:</strong> Use a certificate purchased through Azure.</li>
+                                    <li><strong>Upload Certificate:</strong> Import your own PFX certificate file.</li>
+                                    <li><strong>Import from Key Vault:</strong> Use a certificate stored in Azure Key Vault.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Bind Certificate to Domain</strong>
+                                <p>After adding the certificate, go to "TLS/SSL bindings" and click "Add TLS/SSL binding".</p>
+                            </li>
+                            <li>
+                                <strong>Configure Binding</strong>
+                                <p>Select your custom domain, the certificate, and the TLS/SSL type (SNI SSL or IP-based SSL).</p>
+                            </li>
+                            <li>
+                                <strong>Add Binding</strong>
+                                <p>Click "Add Binding" to complete the process.</p>
+                            </li>
+                            <li>
+                                <strong>Configure HTTPS Only</strong>
+                                <p>For security, enable "HTTPS Only" in your app's TLS/SSL settings.</p>
+                            </li>
+                        </ol>
+                        <div class="note-box">
+                            <p><strong>Note:</strong> Azure App Service Managed Certificates are free but have limitations. For production environments with high security requirements, consider using a purchased certificate or importing a certificate from a trusted provider.</p>
+                        </div>
+                    </div>
+                    
+                    <div id="letsencrypt" class="tab-content">
+                        <h3>SSL Implementation with Let's Encrypt (Manual)</h3>
+                        <p>Let's Encrypt is a free, automated, and open certificate authority that provides SSL certificates. Here's how to implement it manually on your server:</p>
+                        
+                        <ol class="step-list">
+                            <li>
+                                <strong>Install Certbot</strong>
+                                <p>Certbot is the recommended client for Let's Encrypt. Install it on your server:</p>
+                                <div class="code-block">
+                                    <pre>
+# For Ubuntu/Debian
+sudo apt-get update
+sudo apt-get install certbot
+
+# For CentOS/RHEL
+sudo yum install certbot</pre>
+                                </div>
+                            </li>
+                            <li>
+                                <strong>Obtain Certificate</strong>
+                                <p>Run Certbot to obtain a certificate. The command varies based on your web server:</p>
+                                <div class="code-block">
+                                    <pre>
+# For Apache
+sudo certbot --apache -d example.com -d www.example.com
+
+# For Nginx
+sudo certbot --nginx -d example.com -d www.example.com
+
+# Standalone (if you don't have Apache or Nginx)
+sudo certbot certonly --standalone -d example.com -d www.example.com</pre>
+                                </div>
+                            </li>
+                            <li>
+                                <strong>Verify Certificate Installation</strong>
+                                <p>Visit your website using HTTPS to ensure the certificate is working correctly.</p>
+                            </li>
+                            <li>
+                                <strong>Set Up Auto-Renewal</strong>
+                                <p>Let's Encrypt certificates expire after 90 days. Set up automatic renewal:</p>
+                                <div class="code-block">
+                                    <pre>
+# Test automatic renewal
+sudo certbot renew --dry-run
+
+# Add cron job for automatic renewal
+echo "0 0,12 * * * root python -c 'import random; import time; time.sleep(random.random() * 3600)' && certbot renew -q" | sudo tee -a /etc/crontab > /dev/null</pre>
+                                </div>
+                            </li>
+                            <li>
+                                <strong>Configure HTTPS Redirection</strong>
+                                <p>For Apache, add to your .htaccess file:</p>
+                                <div class="code-block">
+                                    <pre>
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]</pre>
+                                </div>
+                                <p>For Nginx, add to your server block:</p>
+                                <div class="code-block">
+                                    <pre>
+server {
+    listen 80;
+    server_name example.com www.example.com;
+    return 301 https://$host$request_uri;
+}</pre>
+                                </div>
+                            </li>
+                        </ol>
+                        <div class="warning-box">
+                            <p><strong>Warning:</strong> Manual installation requires server access and technical knowledge. If you're not comfortable with server administration, consider using a hosting provider that offers Let's Encrypt integration through their control panel.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ssl-section">
+            <div class="ssl-section-header">
+                <h2><i class="fas fa-shopping-cart"></i> SSL Certificate Providers</h2>
+            </div>
+            <div class="ssl-section-content">
+                <p>If you prefer to purchase an SSL certificate from a trusted provider, here are some recommended options:</p>
+                
+                <div class="ssl-providers">
+                    <div class="ssl-provider">
+                        <h3>DigiCert</h3>
+                        <p>Premium SSL certificates with the highest levels of encryption and validation.</p>
+                        <ul class="provider-features">
+                            <li><i class="fas fa-check"></i> Trusted by 89% of Fortune 500 companies</li>
+                            <li><i class="fas fa-check"></i> 24/7 expert support</li>
+                            <li><i class="fas fa-check"></i> Up to $2 million warranty</li>
+                            <li><i class="fas fa-check"></i> Fast issuance times</li>
+                        </ul>
+                        <a href="https://www.digicert.com" target="_blank" class="provider-link">Visit DigiCert</a>
+                    </div>
+                    <div class="ssl-provider">
+                        <h3>Comodo SSL</h3>
+                        <p>Affordable SSL certificates with strong security features.</p>
+                        <ul class="provider-features">
+                            <li><i class="fas fa-check"></i> 99.9% browser compatibility</li>
+                            <li><i class="fas fa-check"></i> 30-day money-back guarantee</li>
+                            <li><i class="fas fa-check"></i> Up to $1.75 million warranty</li>
+                            <li><i class="fas fa-check"></i> Free site seal and malware scanning</li>
+                        </ul>
+                        <a href="https://ssl.comodo.com" target="_blank" class="provider-link">Visit Comodo SSL</a>
+                    </div>
+                    <div class="ssl-provider">
+                        <h3>GoDaddy SSL</h3>
+                        <p>User-friendly SSL certificates with simple implementation.</p>
+                        <ul class="provider-features">
+                            <li><i class="fas fa-check"></i> One-click installation on GoDaddy hosting</li>
+                            <li><i class="fas fa-check"></i> 24/7 security monitoring</li>
+                            <li><i class="fas fa-check"></i> Up to $1 million warranty</li>
+                            <li><i class="fas fa-check"></i> Daily malware scanning</li>
+                        </ul>
+                        <a href="https://www.godaddy.com/web-security/ssl-certificate" target="_blank" class="provider-link">Visit GoDaddy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ssl-section">
+            <div class="ssl-section-header">
+                <h2><i class="fas fa-cogs"></i> SSL Configuration Best Practices</h2>
+            </div>
+            <div class="ssl-section-content">
+                <p>Follow these best practices to ensure optimal security and performance with your SSL implementation:</p>
+                
+                <ol>
+                    <li>
+                        <strong>Use Strong SSL/TLS Protocols</strong>
+                        <p>Disable outdated protocols (SSL 2.0, SSL 3.0, TLS 1.0, TLS 1.1) and only enable TLS 1.2 and TLS 1.3.</p>
+                        <div class="code-block">
+                            <pre>
+# Apache configuration
+SSLProtocol -all +TLSv1.2 +TLSv1.3
+
+# Nginx configuration
+ssl_protocols TLSv1.2 TLSv1.3;</pre>
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Configure Strong Cipher Suites</strong>
+                        <p>Use strong, modern cipher suites and disable weak ones:</p>
+                        <div class="code-block">
+                            <pre>
+# Apache configuration
+SSLCipherSuite EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH
+
+# Nginx configuration
+ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';</pre>
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Enable HTTP Strict Transport Security (HSTS)</strong>
+                        <p>HSTS tells browsers to only use HTTPS for your domain:</p>
+                        <div class="code-block">
+                            <pre>
+# Apache configuration
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+# Nginx configuration
+add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;</pre>
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Implement Proper Redirects</strong>
+                        <p>Ensure all HTTP traffic is redirected to HTTPS using 301 redirects.</p>
+                    </li>
+                    <li>
+                        <strong>Update Mixed Content</strong>
+                        <p>Ensure all resources (images, scripts, stylesheets) are loaded over HTTPS to avoid mixed content warnings.</p>
+                    </li>
+                    <li>
+                        <strong>Set Secure Cookies</strong>
+                        <p>Add the Secure and HttpOnly flags to cookies:</p>
+                        <div class="code-block">
+                            <pre>
+# PHP example
+session_set_cookie_params([
+    'secure' => true,
+    'httponly' => true,
+    'samesite' => 'Lax'
+]);</pre>
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Implement Content Security Policy (CSP)</strong>
+                        <p>Add a CSP header to protect against XSS attacks:</p>
+                        <div class="code-block">
+                            <pre>
+# Apache configuration
+Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com; font-src 'self'; frame-src 'self'; object-src 'none'"
+
+# Nginx configuration
+add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com; font-src 'self'; frame-src 'self'; object-src 'none'";</pre>
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Regular Certificate Monitoring</strong>
+                        <p>Set up monitoring to alert you before certificates expire. Tools like Certbot can handle automatic renewal for Let's Encrypt certificates.</p>
+                    </li>
+                    <li>
+                        <strong>Test SSL Configuration</strong>
+                        <p>Use tools like <a href="https://www.ssllabs.com/ssltest/" target="_blank">SSL Labs</a> to test your SSL implementation and identify potential issues.</p>
+                    </li>
+                </ol>
+                
+                <div class="tip-box">
+                    <p><strong>Pro Tip:</strong> After implementing SSL, use the <a href="https://www.ssllabs.com/ssltest/" target="_blank">Qualys SSL Server Test</a> to verify your configuration. Aim for an A+ rating by following the best practices above.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="ssl-section">
+            <div class="ssl-section-header">
+                <h2><i class="fas fa-question-circle"></i> Troubleshooting Common SSL Issues</h2>
+            </div>
+            <div class="ssl-section-content">
+                <p>Here are solutions to common SSL implementation issues:</p>
+                
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <h3>Mixed Content Warnings</h3>
+                        <div class="accordion-content">
+                            <p><strong>Problem:</strong> Browser shows "Mixed Content" warnings when some resources are loaded over HTTP instead of HTTPS.</p>
+                            <p><strong>Solution:</strong></p>
+                            <ol>
+                                <li>Identify mixed content using browser developer tools (F12 > Console).</li>
+                                <li>Update all resource URLs to use HTTPS instead of HTTP.</li>
+                                <li>For dynamic content, use protocol-relative URLs (//example.com/resource) or absolute paths (/resource).</li>
+                                <li>If you can't modify third-party content, consider using a Content Security Policy or a proxy.</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h3>Certificate Not Trusted</h3>
+                        <div class="accordion-content">
+                            <p><strong>Problem:</strong> Browsers show "Your connection is not private" or "Certificate not trusted" errors.</p>
+                            <p><strong>Solution:</strong></p>
+                            <ol>
+                                <li>Ensure your certificate is issued by a trusted Certificate Authority.</li>
+                                <li>Check if the intermediate certificates are properly installed.</li>
+                                <li>Verify that your certificate matches the domain name being accessed.</li>
+                                <li>Check certificate expiration date.</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h3>Certificate Name Mismatch</h3>
+                        <div class="accordion-content">
+                            <p><strong>Problem:</strong> Browser shows "Certificate name mismatch" error.</p>
+                            <p><strong>Solution:</strong></p>
+                            <ol>
+                                <li>Ensure your certificate covers the exact domain being accessed (www.example.com vs example.com).</li>
+                                <li>For multiple domains or subdomains, use a multi-domain or wildcard certificate.</li>
+                                <li>Set up proper redirects to ensure users access the correct domain version.</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h3>Performance Issues</h3>
+                        <div class="accordion-content">
+                            <p><strong>Problem:</strong> Website loads slowly after implementing SSL.</p>
+                            <p><strong>Solution:</strong></p>
+                            <ol>
+                                <li>Enable HTTP/2 support, which performs better with SSL.</li>
+                                <li>Implement OCSP stapling to speed up certificate validation.</li>
+                                <li>Use session resumption to reduce handshake overhead.</li>
+                                <li>Enable TLS 1.3 for faster connection establishment.</li>
+                                <li>Optimize your SSL configuration for performance.</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h3>Redirect Loops</h3>
+                        <div class="accordion-content">
+                            <p><strong>Problem:</strong> Browser shows "Too many redirects" error after implementing HTTPS redirects.</p>
+                            <p><strong>Solution:</strong></p>
+                            <ol>
+                                <li>Check your redirect rules to ensure they only redirect HTTP to HTTPS, not HTTPS to HTTPS.</li>
+                                <li>Verify that your SSL is properly installed and working.</li>
+                                <li>Clear browser cache and cookies.</li>
+                                <li>Check for conflicts with CDN or proxy settings.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ssl-section">
+            <div class="ssl-section-header">
+                <h2><i class="fas fa-clipboard-check"></i> SSL Implementation Checklist</h2>
+            </div>
+            <div class="ssl-section-content">
+                <p>Use this checklist to ensure you've completed all necessary steps for a secure SSL implementation:</p>
+                
+                <div class="checklist">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check1">
+                        <label for="check1">Choose appropriate SSL certificate type (DV, OV, or EV)</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check2">
+                        <label for="check2">Purchase certificate or set up Let's Encrypt</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check3">
+                        <label for="check3">Install certificate on your web server</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check4">
+                        <label for="check4">Configure HTTP to HTTPS redirects</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check5">
+                        <label for="check5">Update internal links to use HTTPS</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check6">
+                        <label for="check6">Fix mixed content issues</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check7">
+                        <label for="check7">Implement HSTS header</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check8">
+                        <label for="check8">Configure secure cookies</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check9">
+                        <label for="check9">Update Content Security Policy</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check10">
+                        <label for="check10">Test SSL configuration with SSL Labs</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check11">
+                        <label for="check11">Set up certificate monitoring and renewal</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check12">
+                        <label for="check12">Update Google Analytics and other third-party services</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check13">
+                        <label for="check13">Update sitemap and robots.txt with HTTPS URLs</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check14">
+                        <label for="check14">Update Google Search Console and other webmaster tools</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="BlueRock Asset Management">
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="investments.html">Investments</a></li>
+                            <li><a href="retirement.html">Retirement</a></li>
+                            <li><a href="estate.html">Estate Planning</a></li>
+                            <li><a href="tax.html">Tax Planning</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Products</h3>
+                        <ul>
+                            <li><a href="investment-plans.html">Investment Plans</a></li>
+                            <li><a href="savings.html">Savings Products</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="team.html">Our Team</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="disclaimer.html">Disclaimer</a></li>
+                            <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="copyright">
+                        &copy; 2025 BlueRock Asset Management. All rights reserved.
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/scripts.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/fixed-mobile-nav.js"></script>
+    <script>
+        // Tabs functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons and content
+                    document.querySelectorAll('.tab-button').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    document.querySelectorAll('.tab-content').forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked button and corresponding content
+                    this.classList.add('active');
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Accordion functionality
+            const accordionItems = document.querySelectorAll('.accordion-item h3');
+            
+            accordionItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.parentElement.classList.toggle('active');
+                    
+                    const content = this.nextElementSibling;
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="js/lazy-loading.js"></script>
+    <script src="js/apply-lazy-loading.js"></script>
+    <script src="js/register-service-worker.js"></script>
+    <script src="js/cookie-consent.js"></script>
+    <script src="js/newsletter-signup.js"></script>
+    <script src="js/social-sharing.js"></script>
+    <script src="js/referral-program.js"></script>
+</body>
+</html>
