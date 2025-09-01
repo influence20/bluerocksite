@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
+    <meta name="theme-color" content="#1e3a8a">
+    <link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings Products | BlueRock Asset Management</title>
+    <meta name="description" content="Explore BlueRock Asset Management's range of savings products designed to help you build a secure financial foundation.">
+    
+    <!-- Favicon -->
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#1e3a8a">
+    <meta name="msapplication-TileColor" content="#1e3a8a">
+    <meta name="theme-color" content="#1e3a8a">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js for investment calculators -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/enhanced-mobile.css">
+    <link rel="stylesheet" href="css/mobile-fixes.css">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+    <link rel="stylesheet" href="css/header-fix.css">
+    <link rel="stylesheet" href="css/fixed-navigation.css">
+    <link rel="stylesheet" href="css/premium-style.css">
+    <script src="js/structured-data.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/bluerock-logo.png" alt="BlueRock Asset Management Logo" style="height: 60px;">
+                <h1></h1>
+            </div>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#calculator">Calculator</a></li>
+                    <li><a href="savings.html">Savings</a></li>
+                    <li><a href="investments.html">Investments</a></li>
+                    <li><a href="deposit.html">Deposit</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Page Banner -->
+    <section class="hero" style="padding: 150px 0 80px;">
+        <div class="container">
+            <h1>Savings Products</h1>
+            <p>Build a strong financial foundation with our range of flexible savings solutions designed to help you achieve your short and long-term goals.</p>
+        </div>
+    </section>
+    
+    <!-- Savings Products Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Savings Solutions</h2>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-card-header">
+                        <h3>FlexSaver Account</h3>
+                        <div class="product-card-price">2.5%<span> APY</span></div>
+                    </div>
+                    <div class="product-card-content">
+                        <ul class="product-features">
+                            <li>No minimum balance requirement</li>
+                            <li>No monthly maintenance fees</li>
+                            <li>Unlimited withdrawals</li>
+                            <li>FDIC insured up to $250,000</li>
+                            <li>24/7 online account access</li>
+                            <li>Mobile banking app</li>
+                        </ul>
+                        <a href="index.html#contact" class="btn">Open Account</a>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-card-header">
+                        <h3>Premium Savings</h3>
+                        <div class="product-card-price">3.2%<span> APY</span></div>
+                    </div>
+                    <div class="product-card-content">
+                        <ul class="product-features">
+                            <li>$5,000 minimum balance</li>
+                            <li>No monthly fees with $5,000 balance</li>
+                            <li>Up to 6 withdrawals per month</li>
+                            <li>FDIC insured up to $250,000</li>
+                            <li>Complimentary financial review</li>
+                            <li>Priority customer service</li>
+                        </ul>
+                        <a href="index.html#contact" class="btn">Open Account</a>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-card-header" style="background-color: var(--accent-color); color: var(--dark-color);">
+                        <h3>High-Yield CD</h3>
+                        <div class="product-card-price">4.0%<span> APY</span></div>
+                    </div>
+                    <div class="product-card-content">
+                        <ul class="product-features">
+                            <li>$1,000 minimum deposit</li>
+                            <li>12-month term</li>
+                            <li>Fixed interest rate</li>
+                            <li>FDIC insured up to $250,000</li>
+                            <li>Automatic renewal option</li>
+                            <li>Early withdrawal penalties apply</li>
+                        </ul>
+                        <a href="index.html#contact" class="btn">Open Account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Comparison Table Section -->
+    <section class="section" style="background-color: var(--light-color);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Savings Account Comparison</h2>
+            </div>
+            
+            <div class="table-responsive">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>FlexSaver Account</th>
+                            <th>Premium Savings</th>
+                            <th>High-Yield CD</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Annual Percentage Yield (APY)</td>
+                            <td>2.5%</td>
+                            <td>3.2%</td>
+                            <td>4.0%</td>
+                        </tr>
+                        <tr>
+                            <td>Minimum Opening Deposit</td>
+                            <td>$0</td>
+                            <td>$5,000</td>
+                            <td>$1,000</td>
+                        </tr>
+                        <tr>
+                            <td>Monthly Maintenance Fee</td>
+                            <td>$0</td>
+                            <td>$15 (waived with $5,000 balance)</td>
+                            <td>$0</td>
+                        </tr>
+                        <tr>
+                            <td>Withdrawal Limitations</td>
+                            <td>None</td>
+                            <td>6 per month</td>
+                            <td>Early withdrawal penalty</td>
+                        </tr>
+                        <tr>
+                            <td>Online & Mobile Banking</td>
+                            <td><span class="comparison-check">✓</span></td>
+                            <td><span class="comparison-check">✓</span></td>
+                            <td><span class="comparison-check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Automatic Savings Options</td>
+                            <td><span class="comparison-check">✓</span></td>
+                            <td><span class="comparison-check">✓</span></td>
+                            <td><span class="comparison-x">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>Complimentary Financial Review</td>
+                            <td><span class="comparison-x">✗</span></td>
+                            <td><span class="comparison-check">✓</span></td>
+                            <td><span class="comparison-check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Interest Compounding</td>
+                            <td>Daily</td>
+                            <td>Daily</td>
+                            <td>Daily</td>
+                        </tr>
+                        <tr>
+                            <td>Interest Payout</td>
+                            <td>Monthly</td>
+                            <td>Monthly</td>
+                            <td>At maturity</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <p>*Annual Percentage Yields (APYs) are accurate as of August 30, 2025. Rates may change after account opening. Fees could reduce earnings.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Savings Calculator Section -->
+    <section class="section calculator">
+        <div class="container">
+            <div class="section-title">
+                <h2>Savings Growth Calculator</h2>
+            </div>
+            
+            <div class="calculator-container">
+                <form id="savings-calculator-form">
+                    <div class="calculator-form">
+                        <div class="form-group">
+                            <label for="initial-amount">Initial Deposit ($)</label>
+                            <input type="number" id="initial-amount" min="0" step="100" value="1000">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="monthly-deposit">Monthly Deposit ($)</label>
+                            <input type="number" id="monthly-deposit" min="0" step="50" value="100">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="interest-rate">Annual Interest Rate (%)</label>
+                            <input type="number" id="interest-rate" min="0" step="0.1" value="3.5">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="years">Time Period (Years)</label>
+                            <input type="number" id="years" min="1" max="50" step="1" value="10">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn">Calculate</button>
+                </form>
+                
+                <div id="savings-calculator-results" class="calculator-results" style="display: none;">
+                    <h3>Results</h3>
+                    
+                    <div class="result-item">
+                        <span class="result-label">Future Value:</span>
+                        <span id="future-value" class="result-value">$0.00</span>
+                    </div>
+                    
+                    <div class="result-item">
+                        <span class="result-label">Total Deposits:</span>
+                        <span id="total-deposits" class="result-value">$0.00</span>
+                    </div>
+                    
+                    <div class="result-item">
+                        <span class="result-label">Interest Earned:</span>
+                        <span id="interest-earned" class="result-value">$0.00</span>
+                    </div>
+                    
+                    <div class="calculator-chart">
+                        <canvas id="savings-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Savings Tips Section -->
+    <section class="section" style="background-color: var(--white);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Savings Tips & Strategies</h2>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Tip 1 -->
+                <div class="service-card">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Emergency Fund">
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Build an Emergency Fund</h3>
+                        <p>Aim to save 3-6 months of living expenses in an easily accessible account like our FlexSaver. This provides financial security during unexpected events like medical emergencies or job loss.</p>
+                    </div>
+                </div>
+                
+                <!-- Tip 2 -->
+                <div class="service-card">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1434626881859-194d67b2b86f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Automate Savings">
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Automate Your Savings</h3>
+                        <p>Set up automatic transfers from your checking account to your savings account on payday. This "pay yourself first" approach ensures consistent saving before you have a chance to spend.</p>
+                    </div>
+                </div>
+                
+                <!-- Tip 3 -->
+                <div class="service-card">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1565514020179-026b92b4a5b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Ladder Strategy">
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Use a CD Ladder Strategy</h3>
+                        <p>Create a CD ladder by opening CDs with staggered maturity dates. This provides regular access to funds while still earning higher interest rates typically offered by longer-term CDs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Start Saving?</h2>
+            <p>Our financial advisors can help you choose the right savings product for your goals and create a personalized savings plan.</p>
+            <a href="index.html#contact" class="btn btn-accent">Schedule a Free Consultation</a>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="faq-container">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">How do I open a savings account?</div>
+                    <div class="faq-answer">
+                        <p>Opening a savings account with BlueRock is simple. You can start the process online by filling out our application form, call our customer service at +1 (800) 555-0123, or visit one of our branch locations. You'll need to provide identification documents (such as a driver's license or passport), your Social Security number, and an initial deposit (if applicable to the account type you're opening).</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">Are my savings FDIC insured?</div>
+                    <div class="faq-answer">
+                        <p>Yes, all BlueRock savings accounts and certificates of deposit (CDs) are FDIC insured up to $250,000 per depositor, per ownership category. This means your money is protected by the full faith and credit of the United States government up to the insurance limit.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">What happens if I need to withdraw money from my CD before maturity?</div>
+                    <div class="faq-answer">
+                        <p>Early withdrawals from CDs are subject to penalties, which typically equal a portion of the interest earned. For our standard 12-month CD, the early withdrawal penalty is 90 days of interest. For longer-term CDs, the penalty increases accordingly. We recommend CDs for funds you won't need immediate access to during the term. If you anticipate needing access to your money, our FlexSaver or Premium Savings accounts might be more suitable options.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">How often does interest compound on savings accounts?</div>
+                    <div class="faq-answer">
+                        <p>Interest on all BlueRock savings accounts compounds daily, which means you earn interest on both your principal and previously earned interest each day. Interest is typically credited to your account monthly. This daily compounding helps your savings grow faster compared to accounts that compound less frequently.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <div class="faq-question">Can I have multiple savings accounts?</div>
+                    <div class="faq-answer">
+                        <p>Yes, you can open multiple savings accounts with BlueRock. Many clients find it helpful to have separate accounts for different savings goals, such as an emergency fund, vacation savings, or a down payment for a home. Each account can be named according to its purpose, making it easier to track progress toward specific goals. There's no limit to the number of accounts you can open, and managing multiple accounts is simple through our online banking platform.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1 -->
+                <div class="footer-column">
+                    <h3>BlueRock Asset Management</h3>
+                    <p>Helping clients build and preserve wealth through expert financial guidance and personalized investment strategies since 2005.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Column 2 -->
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#calculator">Calculator</a></li>
+                        <li><a href="savings.html">Savings</a></li>
+                        <li><a href="investments.html">Investments</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="savings.html">Savings Plans</a></li>
+                        <li><a href="investments.html">Investment Portfolios</a></li>
+                        <li><a href="retirement.html">Retirement Planning</a></li>
+                        <li><a href="estate.html">Estate Planning</a></li>
+                        <li><a href="tax.html">Tax Optimization</a></li>
+                        <li><a href="education.html">Financial Education</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4 -->
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="regulatory.html">Regulatory Information</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 BlueRock Asset Management. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/scripts.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/fixed-mobile-nav.js"></script>
+    <script src="js/lazy-loading.js"></script>
+    <script src="js/apply-lazy-loading.js"></script>
+    <script src="js/register-service-worker.js"></script>
+    <script src="js/ab-testing.js"></script>
+    <script src="js/cookie-consent.js"></script>
+    <script src="js/newsletter-signup.js"></script>
+    <script src="js/social-sharing.js"></script>
+    <script src="js/referral-program.js"></script>
+</body>
+</html>

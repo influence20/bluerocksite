@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
+    <meta name="theme-color" content="#1e3a8a">
+    <link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDPR Compliance | BlueRock Asset Management</title>
+    <meta name="description" content="Learn about BlueRock Asset Management's GDPR compliance measures and how we protect your personal data.">
+    
+    <!-- Favicon -->
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#1e3a8a">
+    <meta name="msapplication-TileColor" content="#1e3a8a">
+    <meta name="theme-color" content="#1e3a8a">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/enhanced-mobile.css">
+    <link rel="stylesheet" href="css/mobile-fixes.css">
+    <link rel="stylesheet" href="css/improved-navigation.css">
+    <link rel="stylesheet" href="css/remove-warning.css">
+    
+    <style>
+        .gdpr-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .gdpr-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .gdpr-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .gdpr-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .gdpr-section {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+        
+        .gdpr-section-header {
+            background-color: #f8f9fa;
+            padding: 20px 30px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .gdpr-section-header h2 {
+            margin: 0;
+            color: var(--dark-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .gdpr-section-header h2 i {
+            margin-right: 15px;
+            color: var(--primary-color);
+        }
+        
+        .gdpr-section-content {
+            padding: 30px;
+        }
+        
+        .gdpr-section-content p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .gdpr-section-content ul {
+            margin-bottom: 20px;
+        }
+        
+        .gdpr-section-content li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .gdpr-principles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .gdpr-principle {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .gdpr-principle i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .gdpr-principle h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .gdpr-principle p {
+            margin: 0;
+            color: #6c757d;
+        }
+        
+        .gdpr-rights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .gdpr-right {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .gdpr-right i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+            margin-top: 3px;
+        }
+        
+        .gdpr-right-content h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .gdpr-right-content p {
+            margin: 0;
+            color: #6c757d;
+        }
+        
+        .note {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .note i {
+            color: #ffc107;
+            margin-right: 10px;
+        }
+        
+        .data-request-form {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        
+        .data-request-form h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.1);
+        }
+        
+        .form-submit {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .form-submit button {
+            padding: 12px 30px;
+            font-size: 1.1rem;
+        }
+        
+        .gdpr-timeline {
+            position: relative;
+            margin: 30px 0;
+            padding-left: 30px;
+        }
+        
+        .gdpr-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .gdpr-timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
+        
+        .gdpr-timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+        }
+        
+        .gdpr-timeline-item h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .gdpr-timeline-item p {
+            margin: 0;
+            color: #6c757d;
+        }
+        
+        @media (max-width: 768px) {
+            .gdpr-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .gdpr-hero p {
+                font-size: 1rem;
+            }
+            
+            .gdpr-section-content {
+                padding: 20px;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+    <link rel="stylesheet" href="css/header-fix.css">
+    <link rel="stylesheet" href="css/fixed-navigation.css">
+    <link rel="stylesheet" href="css/premium-style.css">
+    <script src="js/structured-data.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/bluerock-logo.png" alt="BlueRock Asset Management Logo">
+                    <h1></h1>
+                </a>
+            </div>
+            
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#calculator">Calculator</a></li>
+                    <li><a href="savings.html">Savings</a></li>
+                    <li><a href="investments.html">Investments</a></li>
+                    <li><a href="investment-plans.html">Plans</a></li>
+                    <li><a href="deposit.html">Deposit</a></li>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li class="auth-links">
+                        <a href="login.html" class="nav-login">Login</a>
+                        <a href="signup.html" class="nav-signup btn btn-accent btn-sm">Sign Up</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="gdpr-hero">
+        <div class="container">
+            <h1 class="fade-in">GDPR Compliance</h1>
+            <p class="slide-up">How BlueRock Asset Management protects your personal data and respects your privacy rights</p>
+        </div>
+    </section>
+    
+    <!-- GDPR Content -->
+    <div class="gdpr-container">
+        <!-- Introduction -->
+        <div class="gdpr-section">
+            <div class="gdpr-section-header">
+                <h2><i class="fas fa-shield-alt"></i> Our Commitment to Data Protection</h2>
+            </div>
+            <div class="gdpr-section-content">
+                <p>At BlueRock Asset Management, we are committed to protecting your personal data and respecting your privacy rights. We comply with the General Data Protection Regulation (GDPR), which is considered the gold standard for data protection worldwide.</p>
+                
+                <p>The GDPR gives individuals greater control over their personal data and places obligations on organizations that collect and process this data. As a financial services provider, we take these obligations seriously and have implemented comprehensive measures to ensure compliance.</p>
+                
+                <div class="gdpr-principles">
+                    <div class="gdpr-principle">
+                        <i class="fas fa-balance-scale"></i>
+                        <h3>Lawfulness</h3>
+                        <p>We only process data with a valid legal basis.</p>
+                    </div>
+                    
+                    <div class="gdpr-principle">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>Purpose Limitation</h3>
+                        <p>We collect data for specific, explicit purposes.</p>
+                    </div>
+                    
+                    <div class="gdpr-principle">
+                        <i class="fas fa-compress-arrows-alt"></i>
+                        <h3>Data Minimization</h3>
+                        <p>We collect only what's necessary for our purposes.</p>
+                    </div>
+                    
+                    <div class="gdpr-principle">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Accuracy</h3>
+                        <p>We maintain accurate and up-to-date data.</p>
+                    </div>
+                    
+                    <div class="gdpr-principle">
+                        <i class="fas fa-clock"></i>
+                        <h3>Storage Limitation</h3>
+                        <p>We don't keep data longer than needed.</p>
+                    </div>
+                    
+                    <div class="gdpr-principle">
+                        <i class="fas fa-lock"></i>
+                        <h3>Security</h3>
+                        <p>We protect data with appropriate measures.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Your Rights -->
+        <div class="gdpr-section">
+            <div class="gdpr-section-header">
+                <h2><i class="fas fa-user-shield"></i> Your Rights Under GDPR</h2>
+            </div>
+            <div class="gdpr-section-content">
+                <p>The GDPR provides you with several important rights regarding your personal data. At BlueRock Asset Management, we respect and facilitate these rights:</p>
+                
+                <div class="gdpr-rights">
+                    <div class="gdpr-right">
+                        <i class="fas fa-eye"></i>
+                        <div class="gdpr-right-content">
+                            <h3>Right to Access</h3>
+                            <p>You can request a copy of all personal data we hold about you.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gdpr-right">
+                        <i class="fas fa-edit"></i>
+                        <div class="gdpr-right-content">
+                            <h3>Right to Rectification</h3>
+                            <p>You can request that we correct any inaccurate data we hold about you.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gdpr-right">
+                        <i class="fas fa-trash-alt"></i>
+                        <div class="gdpr-right-content">
+                            <h3>Right to Erasure</h3>
+                            <p>You can request that we delete your personal data (subject to certain conditions).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gdpr-right">
+                        <i class="fas fa-pause-circle"></i>
+                        <div class="gdpr-right-content">
+                            <h3>Right to Restriction</h3>
+                            <p>You can request that we temporarily or permanently stop processing your data.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gdpr-right">
+                        <i class="fas fa-file-export"></i>
+                        <div class="gdpr-right-content">
+                            <h3>Right to Portability</h3>
+                            <p>You can request your data in a structured, commonly used, machine-readable format.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gdpr-right">
+                        <i class="fas fa-ban"></i>
+                        <div class="gdpr-right-content">
+                            <h3>Right to Object</h3>
+                            <p>You can object to our processing of your data for certain purposes.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gdpr-right">
+                        <i class="fas fa-robot"></i>
+                        <div class="gdpr-right-content">
+                            <h3>Rights Related to Automated Decision Making</h3>
+                            <p>You have rights regarding automated decisions with significant effects.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gdpr-right">
+                        <i class="fas fa-clipboard-check"></i>
+                        <div class="gdpr-right-content">
+                            <h3>Right to Withdraw Consent</h3>
+                            <p>You can withdraw your consent for data processing at any time.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="data-request-form">
+                    <h3>Exercise Your Data Rights</h3>
+                    <p>To exercise any of your rights regarding your personal data, please complete the form below:</p>
+                    
+                    <form id="gdpr-request-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="full-name">Full Name</label>
+                                <input type="text" id="full-name" name="full-name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="account-number">Account Number (if applicable)</label>
+                                <input type="text" id="account-number" name="account-number">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="request-type">Request Type</label>
+                                <select id="request-type" name="request-type" required>
+                                    <option value="">Select a request type</option>
+                                    <option value="access">Access my data</option>
+                                    <option value="rectify">Correct my data</option>
+                                    <option value="erase">Delete my data</option>
+                                    <option value="restrict">Restrict processing of my data</option>
+                                    <option value="portability">Data portability request</option>
+                                    <option value="object">Object to processing</option>
+                                    <option value="withdraw">Withdraw consent</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label for="request-details">Request Details</label>
+                                <textarea id="request-details" name="request-details" rows="5" required></textarea>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <div style="display: flex; align-items: flex-start; margin-top: 10px;">
+                                    <input type="checkbox" id="identity-verification" name="identity-verification" style="margin-top: 5px; margin-right: 10px;" required>
+                                    <label for="identity-verification" style="font-size: 0.9rem; color: #6c757d;">
+                                        I understand that BlueRock Asset Management may need to verify my identity before processing this request to protect the security of my personal data.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-primary">Submit Request</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!-- How We Use Your Data -->
+        <div class="gdpr-section">
+            <div class="gdpr-section-header">
+                <h2><i class="fas fa-database"></i> How We Use Your Data</h2>
+            </div>
+            <div class="gdpr-section-content">
+                <p>We collect and process personal data for specific purposes, always with a valid legal basis as required by the GDPR:</p>
+                
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
+                    <thead>
+                        <tr style="background-color: #f8f9fa;">
+                            <th style="padding: 15px; text-align: left; border-bottom: 2px solid #dee2e6;">Purpose</th>
+                            <th style="padding: 15px; text-align: left; border-bottom: 2px solid #dee2e6;">Data Categories</th>
+                            <th style="padding: 15px; text-align: left; border-bottom: 2px solid #dee2e6;">Legal Basis</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Account Creation and Management</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Name, email, phone number, address, date of birth, financial information</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Contract Performance, Legal Obligation</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Investment Services</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Financial information, investment preferences, risk profile</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Contract Performance, Legitimate Interest</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Regulatory Compliance</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Identification documents, tax information, source of funds</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Legal Obligation</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Marketing Communications</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Name, email, preferences</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Consent</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Website Functionality</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">IP address, cookies, browsing behavior</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Legitimate Interest, Consent (for non-essential cookies)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Customer Support</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Contact details, communication history</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Contract Performance, Legitimate Interest</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="note">
+                    <i class="fas fa-info-circle"></i>
+                    <strong>Note:</strong> For a complete and detailed explanation of how we process your data, please refer to our <a href="privacy-policy.html">Privacy Policy</a>.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Data Security -->
+        <div class="gdpr-section">
+            <div class="gdpr-section-header">
+                <h2><i class="fas fa-lock"></i> Data Security Measures</h2>
+            </div>
+            <div class="gdpr-section-content">
+                <p>Protecting your personal data is our priority. We have implemented comprehensive technical and organizational measures to ensure the security of your data:</p>
+                
+                <ul>
+                    <li><strong>Encryption:</strong> All sensitive data is encrypted both in transit and at rest using industry-standard encryption protocols.</li>
+                    <li><strong>Access Controls:</strong> Strict access controls ensure that only authorized personnel can access personal data on a need-to-know basis.</li>
+                    <li><strong>Regular Security Audits:</strong> We conduct regular security audits and vulnerability assessments to identify and address potential risks.</li>
+                    <li><strong>Staff Training:</strong> All staff members receive regular training on data protection and security best practices.</li>
+                    <li><strong>Incident Response Plan:</strong> We have a comprehensive incident response plan to quickly address any potential data breaches.</li>
+                    <li><strong>Secure Infrastructure:</strong> Our IT infrastructure is designed with security in mind, including firewalls, intrusion detection systems, and regular security updates.</li>
+                    <li><strong>Third-Party Assessments:</strong> We regularly assess the security measures of our third-party service providers who may process personal data on our behalf.</li>
+                    <li><strong>Data Minimization:</strong> We collect and retain only the personal data that is necessary for our specified purposes.</li>
+                </ul>
+                
+                <p>In the unlikely event of a data breach that may pose a risk to your rights and freedoms, we will notify both the relevant supervisory authority and affected individuals in accordance with GDPR requirements.</p>
+            </div>
+        </div>
+        
+        <!-- International Data Transfers -->
+        <div class="gdpr-section">
+            <div class="gdpr-section-header">
+                <h2><i class="fas fa-globe"></i> International Data Transfers</h2>
+            </div>
+            <div class="gdpr-section-content">
+                <p>As a global financial services provider, we may transfer your personal data to countries outside the European Economic Area (EEA). When we do so, we ensure that appropriate safeguards are in place to protect your data:</p>
+                
+                <ul>
+                    <li><strong>Standard Contractual Clauses (SCCs):</strong> We use EU-approved Standard Contractual Clauses in our agreements with third parties who process data outside the EEA.</li>
+                    <li><strong>Adequacy Decisions:</strong> Where possible, we transfer data to countries that have been deemed to provide an adequate level of protection by the European Commission.</li>
+                    <li><strong>Privacy Shield:</strong> For transfers to the United States, we work with organizations that are certified under the EU-US Privacy Shield Framework where applicable.</li>
+                    <li><strong>Binding Corporate Rules:</strong> Within our corporate group, we may rely on Binding Corporate Rules approved by EU data protection authorities.</li>
+                </ul>
+                
+                <p>We conduct regular assessments of countries where your data may be processed to ensure they provide adequate protection for your rights and freedoms.</p>
+            </div>
+        </div>
+        
+        <!-- Data Retention -->
+        <div class="gdpr-section">
+            <div class="gdpr-section-header">
+                <h2><i class="fas fa-calendar-alt"></i> Data Retention</h2>
+            </div>
+            <div class="gdpr-section-content">
+                <p>We retain your personal data only for as long as necessary to fulfill the purposes for which it was collected, including legal, accounting, or reporting requirements. Our retention periods are determined based on:</p>
+                
+                <ul>
+                    <li>The amount, nature, and sensitivity of the personal data</li>
+                    <li>The potential risk of harm from unauthorized use or disclosure</li>
+                    <li>The purposes for which we process the data</li>
+                    <li>Whether we can achieve those purposes through other means</li>
+                    <li>Legal, regulatory, and contractual requirements</li>
+                </ul>
+                
+                <p>Typical retention periods for different types of data include:</p>
+                
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
+                    <thead>
+                        <tr style="background-color: #f8f9fa;">
+                            <th style="padding: 15px; text-align: left; border-bottom: 2px solid #dee2e6;">Data Category</th>
+                            <th style="padding: 15px; text-align: left; border-bottom: 2px solid #dee2e6;">Retention Period</th>
+                            <th style="padding: 15px; text-align: left; border-bottom: 2px solid #dee2e6;">Reason</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Account Information</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">7 years after account closure</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Financial regulations, tax requirements</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Transaction Data</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">10 years</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Financial regulations, audit requirements</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">KYC Documentation</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">5 years after business relationship ends</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Anti-money laundering regulations</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Marketing Preferences</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Until consent is withdrawn</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Based on consent</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Website Logs</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">12 months</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dee2e6;">Security and troubleshooting</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p>Once the retention period expires, personal data is securely deleted or anonymized in accordance with our data deletion procedures.</p>
+            </div>
+        </div>
+        
+        <!-- Cookie Management -->
+        <div class="gdpr-section">
+            <div class="gdpr-section-header">
+                <h2><i class="fas fa-cookie-bite"></i> Cookie Management</h2>
+            </div>
+            <div class="gdpr-section-content">
+                <p>Our website uses cookies and similar technologies to enhance your browsing experience. In compliance with GDPR, we provide you with control over the cookies we use:</p>
+                
+                <ul>
+                    <li><strong>Essential Cookies:</strong> These are necessary for the website to function and cannot be switched off. They are usually set in response to actions you take, such as setting your privacy preferences, logging in, or filling in forms.</li>
+                    <li><strong>Performance Cookies:</strong> These help us understand how visitors interact with our website by collecting and reporting information anonymously. They help us improve the way our website works.</li>
+                    <li><strong>Functional Cookies:</strong> These enable the website to provide enhanced functionality and personalization. They may be set by us or by third-party providers whose services we have added to our pages.</li>
+                    <li><strong>Targeting Cookies:</strong> These may be set through our site by our advertising partners. They may be used to build a profile of your interests and show you relevant advertisements on other sites.</li>
+                </ul>
+                
+                <p>You can manage your cookie preferences at any time by clicking on the "Cookie Settings" button in the footer of our website. You can also clear cookies and change your settings through your browser settings.</p>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <button class="btn btn-primary" id="cookie-settings-btn">Cookie Settings</button>
+                </div>
+                
+                <p style="margin-top: 20px;">For more detailed information about the cookies we use, please visit our <a href="cookie-policy.html">Cookie Policy</a>.</p>
+            </div>
+        </div>
+        
+        <!-- Contact Our DPO -->
+        <div class="gdpr-section">
+            <div class="gdpr-section-header">
+                <h2><i class="fas fa-headset"></i> Contact Our Data Protection Officer</h2>
+            </div>
+            <div class="gdpr-section-content">
+                <p>If you have any questions about how we handle your personal data or if you wish to exercise any of your rights under GDPR, please contact our Data Protection Officer:</p>
+                
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin-top: 20px;">
+                    <p><strong>Data Protection Officer</strong><br>
+                    BlueRock Asset Management<br>
+                    Email: <a href="mailto:dpo@bluerockam.com">dpo@bluerockam.com</a><br>
+                    Phone: +1 (800) 555-1234<br>
+                    Address: 123 Financial Street, Suite 500, New York, NY 10001</p>
+                </div>
+                
+                <p style="margin-top: 20px;">We aim to respond to all legitimate requests within one month. Occasionally, it may take us longer if your request is particularly complex or you have made several requests. In this case, we will notify you and keep you updated.</p>
+                
+                <p>If you are not satisfied with our response, you have the right to lodge a complaint with a supervisory authority. However, we would appreciate the chance to address your concerns before you approach the authority, so please contact us in the first instance.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1 -->
+                <div class="footer-column">
+                    <h3>BlueRock Asset Management</h3>
+                    <p>Helping clients build and preserve wealth through expert financial guidance and personalized investment strategies since 2005.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Column 2 -->
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#calculator">Calculator</a></li>
+                        <li><a href="savings.html">Savings</a></li>
+                        <li><a href="investments.html">Investments</a></li>
+                        <li><a href="investment-plans.html">Plans</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="savings.html">Savings Plans</a></li>
+                        <li><a href="investments.html">Investment Portfolios</a></li>
+                        <li><a href="retirement.html">Retirement Planning</a></li>
+                        <li><a href="estate.html">Estate Planning</a></li>
+                        <li><a href="tax.html">Tax Optimization</a></li>
+                        <li><a href="education.html">Financial Education</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4 -->
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="regulatory.html">Regulatory Information</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 BlueRock Asset Management. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Cookie Consent Modal -->
+    <div id="cookie-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="background-color: white; padding: 30px; border-radius: 10px; max-width: 600px; width: 100%; position: relative;">
+            <button id="close-cookie-modal" style="position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
+            <h3 style="margin-top: 0;">Cookie Settings</h3>
+            <p>You can customize your cookie preferences below. These cookies are used to enhance your site experience and provide more personalized services to you.</p>
+            
+            <div style="margin: 20px 0;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+                    <div>
+                        <h4 style="margin: 0 0 5px 0;">Essential Cookies</h4>
+                        <p style="margin: 0; font-size: 0.9rem; color: #6c757d;">These cookies are necessary for the website to function and cannot be switched off.</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="essential-cookies" checked disabled>
+                        <label for="essential-cookies">Always Active</label>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+                    <div>
+                        <h4 style="margin: 0 0 5px 0;">Performance Cookies</h4>
+                        <p style="margin: 0; font-size: 0.9rem; color: #6c757d;">These cookies allow us to count visits and traffic sources so we can measure and improve site performance.</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="performance-cookies">
+                        <label for="performance-cookies">Active</label>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+                    <div>
+                        <h4 style="margin: 0 0 5px 0;">Functional Cookies</h4>
+                        <p style="margin: 0; font-size: 0.9rem; color: #6c757d;">These cookies enable personalized features and functionality.</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="functional-cookies">
+                        <label for="functional-cookies">Active</label>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <h4 style="margin: 0 0 5px 0;">Targeting Cookies</h4>
+                        <p style="margin: 0; font-size: 0.9rem; color: #6c757d;">These cookies may be set by our advertising partners to build a profile of your interests.</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="targeting-cookies">
+                        <label for="targeting-cookies">Active</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; margin-top: 30px;">
+                <button id="accept-all-cookies" class="btn btn-primary">Accept All</button>
+                <button id="save-cookie-preferences" class="btn btn-outline">Save Preferences</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/scripts.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/fixed-mobile-nav.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // GDPR Request Form
+            const gdprRequestForm = document.getElementById('gdpr-request-form');
+            if (gdprRequestForm) {
+                gdprRequestForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // In a real application, this would send the form data to the server
+                    // For demo purposes, we'll just show an alert
+                    alert('Thank you for your request. Our Data Protection Officer will contact you within 30 days.');
+                    gdprRequestForm.reset();
+                });
+            }
+            
+            // Cookie Settings Modal
+            const cookieSettingsBtn = document.getElementById('cookie-settings-btn');
+            const cookieModal = document.getElementById('cookie-modal');
+            const closeCookieModalBtn = document.getElementById('close-cookie-modal');
+            const acceptAllCookiesBtn = document.getElementById('accept-all-cookies');
+            const saveCookiePreferencesBtn = document.getElementById('save-cookie-preferences');
+            
+            if (cookieSettingsBtn) {
+                cookieSettingsBtn.addEventListener('click', function() {
+                    cookieModal.style.display = 'flex';
+                });
+            }
+            
+            if (closeCookieModalBtn) {
+                closeCookieModalBtn.addEventListener('click', function() {
+                    cookieModal.style.display = 'none';
+                });
+            }
+            
+            if (acceptAllCookiesBtn) {
+                acceptAllCookiesBtn.addEventListener('click', function() {
+                    // Set all cookie checkboxes to checked
+                    document.getElementById('performance-cookies').checked = true;
+                    document.getElementById('functional-cookies').checked = true;
+                    document.getElementById('targeting-cookies').checked = true;
+                    
+                    // Save preferences
+                    saveCookiePreferences();
+                    
+                    // Close modal
+                    cookieModal.style.display = 'none';
+                });
+            }
+            
+            if (saveCookiePreferencesBtn) {
+                saveCookiePreferencesBtn.addEventListener('click', function() {
+                    // Save preferences
+                    saveCookiePreferences();
+                    
+                    // Close modal
+                    cookieModal.style.display = 'none';
+                });
+            }
+            
+            // Close modal when clicking outside
+            if (cookieModal) {
+                cookieModal.addEventListener('click', function(e) {
+                    if (e.target === cookieModal) {
+                        cookieModal.style.display = 'none';
+                    }
+                });
+            }
+            
+            // Function to save cookie preferences
+            function saveCookiePreferences() {
+                const performanceCookies = document.getElementById('performance-cookies').checked;
+                const functionalCookies = document.getElementById('functional-cookies').checked;
+                const targetingCookies = document.getElementById('targeting-cookies').checked;
+                
+                // In a real application, this would save the preferences to cookies or localStorage
+                // and update the cookie consent settings
+                console.log('Cookie preferences saved:', {
+                    essential: true, // Always enabled
+                    performance: performanceCookies,
+                    functional: functionalCookies,
+                    targeting: targetingCookies
+                });
+                
+                // Show confirmation message
+                alert('Your cookie preferences have been saved.');
+            }
+        });
+    </script>
+    <script src="js/fixed-mobile-nav.js"></script>
+    <script src="js/lazy-loading.js"></script>
+    <script src="js/apply-lazy-loading.js"></script>
+    <script src="js/register-service-worker.js"></script>
+    <script src="js/ab-testing.js"></script>
+    <script src="js/cookie-consent.js"></script>
+    <script src="js/newsletter-signup.js"></script>
+    <script src="js/social-sharing.js"></script>
+    <script src="js/referral-program.js"></script>
+</body>
+</html>

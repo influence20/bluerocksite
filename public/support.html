@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
+    <meta name="theme-color" content="#1e3a8a">
+    <link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support | BlueRock Asset Management</title>
+    <meta name="description" content="Get help and support for your BlueRock Asset Management account. Our dedicated support team is here to assist you.">
+    
+    <!-- Favicon -->
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#1e3a8a">
+    <meta name="msapplication-TileColor" content="#1e3a8a">
+    <meta name="theme-color" content="#1e3a8a">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/enhanced-mobile.css">
+    <link rel="stylesheet" href="css/mobile-fixes.css">
+    <link rel="stylesheet" href="css/improved-navigation.css">
+    <link rel="stylesheet" href="css/remove-warning.css">
+    
+    <style>
+        .support-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .support-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .support-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .support-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .support-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .support-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .support-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .support-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .support-card p {
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
+        
+        .support-contact {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .support-contact i {
+            margin-right: 10px;
+        }
+        
+        .contact-form {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .contact-form h2 {
+            margin-top: 0;
+            margin-bottom: 30px;
+            color: var(--dark-color);
+            text-align: center;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        .form-submit {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .form-submit button {
+            padding: 12px 30px;
+            font-size: 1.1rem;
+        }
+        
+        .faq-section {
+            margin-bottom: 60px;
+        }
+        
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--dark-color);
+        }
+        
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            background-color: white;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: var(--dark-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question::after {
+            content: '\f107';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question::after {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        .support-hours {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .support-hours h2 {
+            margin-top: 0;
+            margin-bottom: 30px;
+            color: var(--dark-color);
+        }
+        
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .hours-item {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .hours-item h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .hours-item p {
+            margin: 0;
+            color: #6c757d;
+        }
+        
+        .hours-item .time {
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+            
+            .support-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .support-hero p {
+                font-size: 1rem;
+            }
+            
+            .contact-form {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+    
+    <!-- Live Chat Script -->
+    <script src="//code.jivosite.com/widget/foeFKzf8Lf" async></script>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+    <link rel="stylesheet" href="css/header-fix.css">
+    <link rel="stylesheet" href="css/fixed-navigation.css">
+    <link rel="stylesheet" href="css/premium-style.css">
+    <script src="js/structured-data.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/bluerock-logo.png" alt="BlueRock Asset Management Logo">
+                    <h1></h1>
+                </a>
+            </div>
+            
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#calculator">Calculator</a></li>
+                    <li><a href="savings.html">Savings</a></li>
+                    <li><a href="investments.html">Investments</a></li>
+                    <li><a href="investment-plans.html">Plans</a></li>
+                    <li><a href="deposit.html">Deposit</a></li>
+                    <li><a href="support.html" class="active">Support</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li class="auth-links">
+                        <a href="login.html" class="nav-login">Login</a>
+                        <a href="signup.html" class="nav-signup btn btn-accent btn-sm">Sign Up</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="support-hero">
+        <div class="container">
+            <h1 class="fade-in">Customer Support</h1>
+            <p class="slide-up">We're here to help you with any questions or concerns about your BlueRock Asset Management account.</p>
+        </div>
+    </section>
+    
+    <!-- Support Options -->
+    <div class="support-container">
+        <div class="support-grid">
+            <!-- Live Chat -->
+            <div class="support-card">
+                <div class="support-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h3>Live Chat</h3>
+                <p>Get instant help from our support team through our live chat service. Available during business hours.</p>
+                <button class="btn btn-primary" onclick="openLiveChat()">Start Chat</button>
+                <div class="support-contact">
+                    <i class="fas fa-clock"></i> Available 24/7
+                </div>
+            </div>
+            
+            <!-- Email Support -->
+            <div class="support-card">
+                <div class="support-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email Support</h3>
+                <p>Send us an email and we'll get back to you within 24 hours. Our support team is ready to assist you.</p>
+                <a href="mailto:support@bluerockam.com" class="btn btn-primary">Email Us</a>
+                <div class="support-contact">
+                    <i class="fas fa-envelope"></i> support@bluerockam.com
+                </div>
+            </div>
+            
+            <!-- Phone Support -->
+            <div class="support-card">
+                <div class="support-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <h3>Phone Support</h3>
+                <p>Call our dedicated support line for immediate assistance with your account or investment questions.</p>
+                <a href="tel:+18005551234" class="btn btn-primary">Call Us</a>
+                <div class="support-contact">
+                    <i class="fas fa-phone-alt"></i> +1 (800) 555-1234
+                </div>
+            </div>
+        </div>
+        
+        <!-- Secure Contact Form -->
+        <div class="contact-form">
+            <h2>Send Us a Message</h2>
+            <div class="security-badge" style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px; background-color: #f8f9fa; padding: 10px; border-radius: 5px;">
+                <i class="fas fa-shield-alt" style="color: var(--primary-color); font-size: 1.5rem; margin-right: 10px;"></i>
+                <span>This form is secured with end-to-end encryption</span>
+            </div>
+            <form id="support-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <div class="input-icon-wrapper" style="position: relative;">
+                            <i class="fas fa-user" style="position: absolute; top: 50%; transform: translateY(-50%); left: 15px; color: #6c757d;"></i>
+                            <input type="text" id="name" name="name" style="padding-left: 40px;" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-icon-wrapper" style="position: relative;">
+                            <i class="fas fa-envelope" style="position: absolute; top: 50%; transform: translateY(-50%); left: 15px; color: #6c757d;"></i>
+                            <input type="email" id="email" name="email" style="padding-left: 40px;" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <div class="input-icon-wrapper" style="position: relative;">
+                            <i class="fas fa-tag" style="position: absolute; top: 50%; transform: translateY(-50%); left: 15px; color: #6c757d;"></i>
+                            <select id="subject" name="subject" style="padding-left: 40px;" required>
+                                <option value="">Select a subject</option>
+                                <option value="account">Account Issues</option>
+                                <option value="deposit">Deposit Questions</option>
+                                <option value="withdrawal">Withdrawal Support</option>
+                                <option value="investment">Investment Advice</option>
+                                <option value="technical">Technical Support</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="priority">Priority</label>
+                        <div class="input-icon-wrapper" style="position: relative;">
+                            <i class="fas fa-flag" style="position: absolute; top: 50%; transform: translateY(-50%); left: 15px; color: #6c757d;"></i>
+                            <select id="priority" name="priority" style="padding-left: 40px;" required>
+                                <option value="normal">Normal</option>
+                                <option value="high">High</option>
+                                <option value="urgent">Urgent</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="message">Your Message</label>
+                        <div class="input-icon-wrapper" style="position: relative;">
+                            <i class="fas fa-comment" style="position: absolute; top: 15px; left: 15px; color: #6c757d;"></i>
+                            <textarea id="message" name="message" style="padding-left: 40px;" required></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <div class="gdpr-consent" style="display: flex; align-items: flex-start; margin-top: 10px;">
+                            <input type="checkbox" id="gdpr-consent" name="gdpr-consent" style="margin-top: 5px; margin-right: 10px;" required>
+                            <label for="gdpr-consent" style="font-size: 0.9rem; color: #6c757d;">
+                                I consent to BlueRock Asset Management collecting and processing my personal data for the purpose of responding to my inquiry. I understand that my data will be handled in accordance with the <a href="privacy-policy.html" target="_blank">Privacy Policy</a>.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-submit">
+                    <button type="submit" class="btn btn-accent pulse">
+                        <i class="fas fa-lock" style="margin-right: 8px;"></i>
+                        Submit Secure Message
+                    </button>
+                </div>
+                
+                <div class="encryption-info" style="margin-top: 20px; text-align: center; font-size: 0.85rem; color: #6c757d;">
+                    <p><i class="fas fa-shield-alt"></i> Your message is encrypted end-to-end and can only be read by our support team.</p>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Support Hours -->
+        <div class="support-hours">
+            <h2>Support Hours</h2>
+            <div class="hours-grid">
+                <div class="hours-item">
+                    <h3>Live Chat</h3>
+                    <p>24/7 Support</p>
+                    <p class="time">Always Available</p>
+                </div>
+                
+                <div class="hours-item">
+                    <h3>Email Support</h3>
+                    <p>Response within 24 hours</p>
+                    <p class="time">24/7 Monitoring</p>
+                </div>
+                
+                <div class="hours-item">
+                    <h3>Phone Support</h3>
+                    <p>Monday - Friday</p>
+                    <p class="time">9:00 AM - 6:00 PM EST</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">How do I reset my password?</div>
+                    <div class="faq-answer">
+                        <p>To reset your password, click on the "Forgot Password" link on the login page. Enter your registered email address, and we'll send you a password reset link. Follow the instructions in the email to create a new password.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">How long does it take to process withdrawals?</div>
+                    <div class="faq-answer">
+                        <p>Withdrawal requests are typically processed within 24-48 hours. Once approved, the funds will be transferred to your specified cryptocurrency wallet. The actual time for the funds to appear in your wallet depends on the blockchain network's confirmation time.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">What is the minimum investment amount?</div>
+                    <div class="faq-answer">
+                        <p>The minimum investment amount is $300 with our Starter Plan. This plan provides $180 in weekly returns for 3 months, totaling $2,160 in profits.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">How do I get a withdrawal PIN?</div>
+                    <div class="faq-answer">
+                        <p>Withdrawal PINs are generated by our admin team when you request a withdrawal. Once your withdrawal request is submitted, our team will review it and generate a secure PIN that will be sent to your registered email address. This PIN is required to complete the withdrawal process.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <div class="faq-question">What cryptocurrencies do you accept for deposits?</div>
+                    <div class="faq-answer">
+                        <p>We accept deposits in Bitcoin (BTC), Ethereum (ETH), Tether (USDT), and BNB. Each cryptocurrency has its own dedicated wallet address for deposits. Make sure to send the correct cryptocurrency to its corresponding address.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 6 -->
+                <div class="faq-item">
+                    <div class="faq-question">How do I track my investment performance?</div>
+                    <div class="faq-answer">
+                        <p>You can track your investment performance through your client dashboard. The dashboard provides real-time updates on your investment balance, weekly returns, and total profits. You can also view your transaction history and download statements for your records.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1 -->
+                <div class="footer-column">
+                    <h3>BlueRock Asset Management</h3>
+                    <p>Helping clients build and preserve wealth through expert financial guidance and personalized investment strategies since 2005.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Column 2 -->
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#calculator">Calculator</a></li>
+                        <li><a href="savings.html">Savings</a></li>
+                        <li><a href="investments.html">Investments</a></li>
+                        <li><a href="investment-plans.html">Plans</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="savings.html">Savings Plans</a></li>
+                        <li><a href="investments.html">Investment Portfolios</a></li>
+                        <li><a href="retirement.html">Retirement Planning</a></li>
+                        <li><a href="estate.html">Estate Planning</a></li>
+                        <li><a href="tax.html">Tax Optimization</a></li>
+                        <li><a href="education.html">Financial Education</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4 -->
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="regulatory.html">Regulatory Information</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 BlueRock Asset Management. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/scripts.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/fixed-mobile-nav.js"></script>
+    <script src="js/secure-contact.js"></script>
+    <script src="js/live-chat.js"></script>
+    
+    <script>
+        // FAQ Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+    <script src="js/fixed-mobile-nav.js"></script>
+    <script src="js/improved-mobile-nav.js"></script>
+    <script src="js/lazy-loading.js"></script>
+    <script src="js/apply-lazy-loading.js"></script>
+    <script src="js/register-service-worker.js"></script>
+    <script src="js/ab-testing.js"></script>
+    <script src="js/cookie-consent.js"></script>
+    <script src="js/newsletter-signup.js"></script>
+    <script src="js/social-sharing.js"></script>
+    <script src="js/referral-program.js"></script>
+</body>
+</html>

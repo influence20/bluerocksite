@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
+    <meta name="theme-color" content="#1e3a8a">
+    <link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Login | BlueRock Asset Management</title>
+    <meta name="description" content="Securely access your BlueRock Asset Management client portal to manage your investments and track your portfolio performance.">
+    
+    <!-- Favicon -->
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#1e3a8a">
+    <meta name="msapplication-TileColor" content="#1e3a8a">
+    <meta name="theme-color" content="#1e3a8a">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/enhanced-mobile.css">
+    <link rel="stylesheet" href="css/mobile-fixes.css">
+    
+    <!-- Cloudflare API Configuration -->
+    <script src="js/config.js"></script>
+    <script src="js/auth-cloudflare.js"></script>
+    <link rel="stylesheet" href="css/improved-navigation.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/remove-warning.css">
+    <link rel="stylesheet" href="css/header-fix.css">
+    <link rel="stylesheet" href="css/premium-style.css">
+    <link rel="stylesheet" href="css/fixed-navigation.css">
+    
+    <!-- Live Chat Script -->
+    <script src="//code.jivosite.com/widget/foeFKzf8Lf" async></script>
+    
+    <style>
+        .login-container {
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #f5f9ff 0%, #ecf4ff 100%);
+        }
+        
+        .login-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+            overflow: hidden;
+            animation: fadeInUp 0.5s ease forwards;
+        }
+        
+        /* Admin login styles */
+        .login-card.admin-mode {
+            border-top: 4px solid var(--accent-color);
+        }
+        
+        .admin-badge {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 10px;
+            display: inline-block;
+        }
+        
+        .login-tabs {
+            display: flex;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .login-tab {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #6c757d;
+            transition: all 0.3s ease;
+        }
+        
+        .login-tab.active {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .login-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 30px;
+            text-align: center;
+            color: white;
+        }
+        
+        .login-header h2 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+        
+        .login-header p {
+            margin: 10px 0 0;
+            opacity: 0.9;
+        }
+        
+        .login-body {
+            padding: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        
+        .input-icon-wrapper {
+            position: relative;
+        }
+        
+        .input-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 15px;
+            color: #6c757d;
+        }
+        
+        .input-with-icon {
+            padding-left: 45px;
+        }
+        
+        .password-toggle {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 15px;
+            color: #6c757d;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .password-toggle:hover {
+            color: var(--primary-color);
+        }
+        
+        .form-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .remember-me {
+            display: flex;
+            align-items: center;
+        }
+        
+        .remember-me input {
+            margin-right: 8px;
+        }
+        
+        .forgot-password {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        
+        .forgot-password:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .login-divider {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .login-divider span {
+            flex: 1;
+            height: 1px;
+            background-color: #ddd;
+        }
+        
+        .login-divider p {
+            margin: 0 15px;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        .two-factor {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 20px;
+            border: 1px solid #eee;
+        }
+        
+        .two-factor h3 {
+            margin-top: 0;
+            font-size: 1rem;
+            color: var(--dark-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .two-factor p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        
+        .security-note {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6c757d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .create-account {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .create-account a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .create-account a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+        
+        .admin-login {
+            text-align: center;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .admin-login a {
+            color: var(--dark-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        
+        .admin-login a:hover {
+            color: var(--primary-color);
+        }
+        
+        .validation-error {
+            color: #dc3545;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .form-group.error input {
+            border-color: #dc3545;
+        }
+        
+        .form-group.error .validation-error {
+            display: block;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .login-body {
+                padding: 20px;
+            }
+            
+            .form-footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .forgot-password {
+                margin-top: 5px;
+            }
+        }
+    </style>
+    <script src="js/structured-data.js"></script>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/bluerock-logo.png" alt="BlueRock Asset Management Logo">
+                    <h1></h1>
+                </a>
+            </div>
+            
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#calculator">Calculator</a></li>
+                    <li><a href="savings.html">Savings</a></li>
+                    <li><a href="investments.html">Investments</a></li>
+                    <li><a href="investment-plans.html">Plans</a></li>
+                    <li><a href="deposit.html">Deposit</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li class="auth-links">
+                        <a href="login.html" class="nav-login active">Login</a>
+                        <a href="signup.html" class="nav-signup btn btn-accent btn-sm">Sign Up</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Login Section -->
+    <section class="login-container">
+        <div class="login-card" id="login-card">
+            <div class="login-tabs">
+                <div class="login-tab active" id="client-tab">Client Login</div>
+                <div class="login-tab" id="admin-tab">Admin Login</div>
+            </div>
+            
+            <div class="login-header">
+                <h2 id="login-title">Client Portal Login</h2>
+                <p id="login-subtitle">Access your investment dashboard</p>
+            </div>
+            
+            <div class="login-body">
+                <form id="login-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-icon-wrapper">
+                            <i class="fas fa-envelope input-icon"></i>
+                            <input type="email" id="email" class="input-with-icon" placeholder="Enter your email" required>
+                        </div>
+                        <div class="validation-error">Please enter a valid email address</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-icon-wrapper">
+                            <i class="fas fa-lock input-icon"></i>
+                            <input type="password" id="password" class="input-with-icon" placeholder="Enter your password" required>
+                            <i class="fas fa-eye password-toggle" id="password-toggle"></i>
+                        </div>
+                        <div class="validation-error">Please enter your password</div>
+                    </div>
+                    
+                    <div class="form-footer">
+                        <div class="remember-me">
+                            <input type="checkbox" id="remember">
+                            <label for="remember">Remember me</label>
+                        </div>
+                        
+                        <a href="#" class="forgot-password" id="forgot-password-link">Forgot Password?</a>
+                    </div>
+                    
+                    <button type="submit" class="login-btn ripple" id="login-button">Login to Dashboard</button>
+                    
+                    <!-- Two-factor authentication removed as requested -->
+                </form>
+                
+                <div class="create-account client-only">
+                    Don't have an account? <a href="signup.html">Sign Up</a>
+                </div>
+                
+                <div class="security-note">
+                    <i class="fas fa-lock"></i>
+                    <span>Your connection to this site is secure and encrypted</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1 -->
+                <div class="footer-column">
+                    <h3>BlueRock Asset Management</h3>
+                    <p>Helping clients build and preserve wealth through expert financial guidance and personalized investment strategies since 2005.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Column 2 -->
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#calculator">Calculator</a></li>
+                        <li><a href="savings.html">Savings</a></li>
+                        <li><a href="investments.html">Investments</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="savings.html">Savings Plans</a></li>
+                        <li><a href="investments.html">Investment Portfolios</a></li>
+                        <li><a href="retirement.html">Retirement Planning</a></li>
+                        <li><a href="estate.html">Estate Planning</a></li>
+                        <li><a href="tax.html">Tax Optimization</a></li>
+                        <li><a href="education.html">Financial Education</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4 -->
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="regulatory.html">Regulatory Information</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 BlueRock Asset Management. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Forgot Password Modal -->
+    <div id="forgot-password-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="background-color: white; padding: 30px; border-radius: 10px; max-width: 400px; width: 100%; position: relative;">
+            <button id="close-modal" style="position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
+            <h3 style="margin-top: 0;">Reset Password</h3>
+            <p>Enter your email address and we'll send you instructions to reset your password.</p>
+            <div class="form-group">
+                <div class="input-icon-wrapper">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" id="reset-email" class="input-with-icon" placeholder="Enter your email" required>
+                </div>
+            </div>
+            <button id="send-reset-link" class="login-btn ripple" style="margin-top: 20px;">Send Reset Link</button>
+        </div>
+    </div>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/scripts.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/fixed-mobile-nav.js"></script>
+    <script src="js/simplified-login-handler.js"></script>
+    <script src="js/lazy-loading.js"></script>
+    <script src="js/apply-lazy-loading.js"></script>
+    <script src="js/register-service-worker.js"></script>
+    <script src="js/cookie-consent.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const passwordInput = document.getElementById('password');
+            const passwordToggle = document.getElementById('password-toggle');
+            const forgotPasswordLink = document.getElementById('forgot-password-link');
+            const forgotPasswordModal = document.getElementById('forgot-password-modal');
+            const closeModalBtn = document.getElementById('close-modal');
+            const sendResetLinkBtn = document.getElementById('send-reset-link');
+            
+            // Toggle password visibility
+            passwordToggle.addEventListener('click', function() {
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    passwordToggle.classList.remove('fa-eye');
+                    passwordToggle.classList.add('fa-eye-slash');
+                } else {
+                    passwordInput.type = 'password';
+                    passwordToggle.classList.remove('fa-eye-slash');
+                    passwordToggle.classList.add('fa-eye');
+                }
+            });
+            
+            // Forgot password modal
+            forgotPasswordLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                forgotPasswordModal.style.display = 'flex';
+            });
+            
+            closeModalBtn.addEventListener('click', function() {
+                forgotPasswordModal.style.display = 'none';
+            });
+            
+            // Close modal when clicking outside
+            forgotPasswordModal.addEventListener('click', function(e) {
+                if (e.target === forgotPasswordModal) {
+                    forgotPasswordModal.style.display = 'none';
+                }
+            });
+            
+            // Send reset link
+            sendResetLinkBtn.addEventListener('click', function() {
+                const resetEmail = document.getElementById('reset-email').value.trim();
+                
+                if (resetEmail === '' || !isValidEmail(resetEmail)) {
+                    alert('Please enter a valid email address');
+                    return;
+                }
+                
+                // In a real application, this would send a reset link to the email
+                // For demo purposes, we'll just show a success message
+                alert('Password reset instructions have been sent to your email address.');
+                forgotPasswordModal.style.display = 'none';
+            });
+            
+            function isValidEmail(email) {
+                const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(email);
+            }
+        });
+    </script>
+</body>
+</html>

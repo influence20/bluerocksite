@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
+    <meta name="theme-color" content="#1e3a8a">
+    <link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueRock Asset Management | Secure Your Financial Future</title>
+    <meta name="description" content="BlueRock Asset Management offers premium savings and investment solutions with exceptional returns. Invest $300 and earn 60% weekly for three months.">
+    <meta name="keywords" content="investment, savings, asset management, financial planning, cryptocurrency investment, high returns, wealth management">
+    <meta name="author" content="BlueRock Asset Management">
+    <meta property="og:title" content="BlueRock Asset Management | Secure Your Financial Future">
+    <meta property="og:description" content="Invest $300 and earn 60% weekly for three months. Premium investment solutions with exceptional returns.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bluerockam.com/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BlueRock Asset Management | Premium Investment Solutions">
+    <meta name="twitter:description" content="Invest $300 and earn 60% weekly for three months. Premium investment solutions with exceptional returns.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js for investment calculators -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/improved-navigation.css">
+    <link rel="stylesheet" href="css/remove-warning.css">
+    
+    <!-- Live Chat Script -->
+    <script src="//code.jivosite.com/widget/foeFKzf8Lf" async></script>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+    <link rel="stylesheet" href="css/header-fix.css">
+    <link rel="stylesheet" href="css/fixed-navigation.css">
+    <link rel="stylesheet" href="css/premium-style.css">
+    <script src="js/structured-data.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/bluerock-logo.png" alt="BlueRock Asset Management Logo">
+                    <h1></h1>
+                </a>
+            </div>
+            
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#calculator">Calculator</a></li>
+                    <li><a href="savings.html">Savings</a></li>
+                    <li><a href="investments.html">Investments</a></li>
+                    <li><a href="investment-plans.html">Plans</a></li>
+                    <li><a href="deposit.html">Deposit</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="auth-links">
+                        <a href="login.html" class="nav-login">Login</a>
+                        <a href="signup.html" class="nav-signup btn btn-accent btn-sm">Sign Up</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero gradient-bg">
+        <div class="container">
+            <h1 class="fade-in">Secure Your Financial Future</h1>
+            <p class="slide-up stagger-1">BlueRock Asset Management provides premium savings and investment solutions tailored to your financial goals. Our expert advisors help you navigate the complex world of finance with confidence.</p>
+            <div class="hero-buttons slide-up stagger-2">
+                <a href="#calculator" class="btn hover-grow">Try Our Calculator</a>
+                <a href="#contact" class="btn btn-accent pulse">Speak to an Advisor</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="section services" data-aos="fade-up">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card card-shine hover-lift" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Savings Plans" class="img-premium">
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Savings Plans</h3>
+                        <p>Our flexible savings plans help you build a secure financial foundation with competitive interest rates and easy access to your funds when you need them.</p>
+                        <a href="savings.html" class="btn ripple">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card card-shine hover-lift" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Investment Portfolios" class="img-premium">
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Investment Portfolios</h3>
+                        <p>Our expertly managed investment portfolios are designed to maximize returns while managing risk according to your personal risk tolerance and financial goals.</p>
+                        <a href="investments.html" class="btn ripple">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card card-shine hover-lift" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Financial Advisory" class="img-premium">
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Financial Advisory</h3>
+                        <p>Our certified financial advisors provide personalized guidance to help you make informed decisions about your money, investments, and long-term financial planning.</p>
+                        <a href="#contact" class="btn ripple">Book a Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Calculator Section -->
+    <section id="calculator" class="section calculator">
+        <div class="container">
+            <div class="section-title">
+                <h2>Investment Calculator</h2>
+            </div>
+            
+            <div class="calculator-container">
+                <div class="calculator-tabs">
+                    <button class="calculator-tab active" data-tab="savings">Savings Calculator</button>
+                    <button class="calculator-tab" data-tab="investment">Investment Calculator</button>
+                </div>
+                
+                <!-- Savings Calculator -->
+                <div id="savings-calculator" class="calculator-content active">
+                    <form id="savings-calculator-form">
+                        <div class="calculator-form">
+                            <div class="form-group">
+                                <label for="initial-amount">Initial Deposit ($)</label>
+                                <input type="number" id="initial-amount" min="0" step="100" value="1000">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="monthly-deposit">Monthly Deposit ($)</label>
+                                <input type="number" id="monthly-deposit" min="0" step="50" value="100">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="interest-rate">Annual Interest Rate (%)</label>
+                                <input type="number" id="interest-rate" min="0" step="0.1" value="3.5">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="years">Time Period (Years)</label>
+                                <input type="number" id="years" min="1" max="50" step="1" value="10">
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn">Calculate</button>
+                    </form>
+                    
+                    <div id="savings-calculator-results" class="calculator-results" style="display: none;">
+                        <h3>Results</h3>
+                        
+                        <div class="result-item">
+                            <span class="result-label">Future Value:</span>
+                            <span id="future-value" class="result-value">$0.00</span>
+                        </div>
+                        
+                        <div class="result-item">
+                            <span class="result-label">Total Deposits:</span>
+                            <span id="total-deposits" class="result-value">$0.00</span>
+                        </div>
+                        
+                        <div class="result-item">
+                            <span class="result-label">Interest Earned:</span>
+                            <span id="interest-earned" class="result-value">$0.00</span>
+                        </div>
+                        
+                        <div class="calculator-chart">
+                            <canvas id="savings-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Investment Calculator -->
+                <div id="investment-calculator" class="calculator-content">
+                    <form id="investment-calculator-form">
+                        <div class="calculator-form">
+                            <div class="form-group">
+                                <label for="initial-investment">Initial Investment ($)</label>
+                                <input type="number" id="initial-investment" min="300" step="100" value="300">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="annual-contribution">Annual Contribution ($)</label>
+                                <input type="number" id="annual-contribution" min="0" step="500" value="2000">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="return-rate">Expected Annual Return (%)</label>
+                                <input type="number" id="return-rate" min="0" step="0.5" value="7">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="investment-years">Investment Period (Years)</label>
+                                <input type="number" id="investment-years" min="1" max="50" step="1" value="20">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="risk-level">Risk Level</label>
+                                <select id="risk-level">
+                                    <option value="low">Conservative</option>
+                                    <option value="medium" selected>Moderate</option>
+                                    <option value="high">Aggressive</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn">Calculate</button>
+                    </form>
+                    
+                    <div id="investment-calculator-results" class="calculator-results" style="display: none;">
+                        <h3>Results</h3>
+                        
+                        <div class="result-item">
+                            <span class="result-label">Future Value:</span>
+                            <span id="investment-future-value" class="result-value">$0.00</span>
+                        </div>
+                        
+                        <div class="result-item">
+                            <span class="result-label">Total Investment:</span>
+                            <span id="total-investment" class="result-value">$0.00</span>
+                        </div>
+                        
+                        <div class="result-item">
+                            <span class="result-label">Investment Growth:</span>
+                            <span id="investment-growth" class="result-value">$0.00</span>
+                        </div>
+                        
+                        <div class="result-item">
+                            <span class="result-label">Risk-Adjusted Return:</span>
+                            <span id="risk-adjusted-return" class="result-value">$0.00</span>
+                        </div>
+                        
+                        <div class="calculator-chart">
+                            <canvas id="investment-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Testimonials</h2>
+            </div>
+            
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>BlueRock's financial advisors helped me create a personalized investment strategy that has consistently outperformed my previous investments. Their expertise and attention to detail have been invaluable.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-img">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Johnson">
+                        </div>
+                        <div class="testimonial-author-info">
+                            <h4>Michael Johnson</h4>
+                            <p>Entrepreneur</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>I've been using BlueRock's savings plans for the past 5 years, and I'm amazed at how quickly my emergency fund has grown. The competitive interest rates and excellent customer service make all the difference.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-img">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Williams">
+                        </div>
+                        <div class="testimonial-author-info">
+                            <h4>Sarah Williams</h4>
+                            <p>Marketing Director</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>As someone approaching retirement, I needed a reliable investment strategy to ensure my savings would last. BlueRock's advisors created a balanced portfolio that provides both growth and income, giving me peace of mind.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-img">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Robert Chen">
+                        </div>
+                        <div class="testimonial-author-info">
+                            <h4>Robert Chen</h4>
+                            <p>Retired Engineer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Investment Returns Section -->
+    <section class="section gradient-bg" style="color: white; padding: 80px 0;" data-aos="fade-up">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Our Premium Investment Program</h2>
+            </div>
+            
+            <div style="max-width: 900px; margin: 0 auto; text-align: center; margin-bottom: 30px;" data-aos="fade-up">
+                <p style="font-size: 1.2rem; font-weight: 500;">Experience exceptional returns with our premium investment program. Start with just $300 and earn 60% of your investment every week for three months.</p>
+            </div>
+            
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-bottom: 40px;">
+                <!-- Investment Feature 1 -->
+                <div class="premium-card hover-lift" style="flex: 1; min-width: 200px; text-align: center;" data-aos="fade-up" data-aos-delay="100">
+                    <div class="premium-card-header">
+                        <i class="fas fa-dollar-sign float" style="font-size: 2.5rem; margin-bottom: 20px;"></i>
+                        <h3 class="count-number" data-target="300" style="color: white;">$300</h3>
+                    </div>
+                    <div class="premium-card-content">
+                        <p style="font-weight: 500; color: var(--dark-color);">Minimum Investment</p>
+                    </div>
+                </div>
+                
+                <!-- Investment Feature 2 -->
+                <div class="premium-card hover-lift" style="flex: 1; min-width: 200px; text-align: center;" data-aos="fade-up" data-aos-delay="200">
+                    <div class="premium-card-header">
+                        <i class="fas fa-calendar-check float" style="font-size: 2.5rem; margin-bottom: 20px;"></i>
+                        <h3 style="color: white;">60%</h3>
+                    </div>
+                    <div class="premium-card-content">
+                        <p style="font-weight: 500; color: var(--dark-color);">Weekly Returns (Every Friday)</p>
+                    </div>
+                </div>
+                
+                <!-- Investment Feature 3 -->
+                <div class="premium-card hover-lift" style="flex: 1; min-width: 200px; text-align: center;" data-aos="fade-up" data-aos-delay="300">
+                    <div class="premium-card-header">
+                        <i class="fas fa-chart-line float" style="font-size: 2.5rem; margin-bottom: 20px;"></i>
+                        <h3 class="count-number" data-target="720" style="color: white;">720%</h3>
+                    </div>
+                    <div class="premium-card-content">
+                        <p style="font-weight: 500; color: var(--dark-color);">Total ROI Over 3 Months</p>
+                    </div>
+                </div>
+                
+                <!-- Investment Feature 4 -->
+                <div class="premium-card hover-lift" style="flex: 1; min-width: 200px; text-align: center;" data-aos="fade-up" data-aos-delay="400">
+                    <div class="premium-card-header">
+                        <i class="fas fa-coins float" style="font-size: 2.5rem; margin-bottom: 20px;"></i>
+                        <h3 class="count-number" data-target="2160" style="color: white;">$2,160</h3>
+                    </div>
+                    <div class="premium-card-content">
+                        <p style="font-weight: 500; color: var(--dark-color);">Total Returns ($300 × 12 weeks)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center;" data-aos="fade-up" data-aos-delay="500">
+                <p style="font-size: 1.1rem; margin-bottom: 30px;">We accept deposits in Bitcoin (BTC), Ethereum (ETH), BNB, and Tether (USDT).</p>
+                <a href="deposit.html" class="btn btn-accent pulse btn-shimmer" style="margin-top: 20px; padding: 15px 40px; font-size: 1.1rem; border-radius: 30px;">Start Investing Now</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta gradient-bg" data-aos="fade-up">
+        <div class="container">
+            <h2 class="slide-up">Ready to Secure Your Financial Future?</h2>
+            <p class="slide-up stagger-1">Our financial advisors are ready to help you create a personalized plan that aligns with your goals and risk tolerance.</p>
+            <a href="#contact" class="btn btn-accent pulse btn-shimmer slide-up stagger-2" style="padding: 15px 40px; font-size: 1.1rem; border-radius: 30px;">Schedule a Free Consultation</a>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            
+            <div class="contact-form-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    
+                    <div class="contact-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>123 Financial District</p>
+                            <p>New York, NY 10005</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+1 (800) 555-0123</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@bluerockam.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                            <p>Saturday: By appointment only</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contact-form" onsubmit="return submitContactForm()">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service of Interest</label>
+                            <select id="service" name="service">
+                                <option value="savings">Savings Plans</option>
+                                <option value="investments">Investment Portfolios</option>
+                                <option value="advisory">Financial Advisory</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                    
+                    <div id="contact-success" style="display: none;">
+                        <h3>Thank You!</h3>
+                        <p>Your message has been sent successfully. One of our advisors will contact you shortly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="faq-container">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">What is the minimum amount to open a savings account?</div>
+                    <div class="faq-answer">
+                        <p>Our standard savings accounts can be opened with a minimum deposit of $100. However, certain premium savings products may require higher initial deposits. Please contact our customer service or visit one of our branches for specific details about our different savings products.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">How are my investments managed?</div>
+                    <div class="faq-answer">
+                        <p>At BlueRock Asset Management, your investments are managed by a team of experienced financial professionals using a combination of active and passive strategies. We create diversified portfolios based on your risk tolerance, financial goals, and time horizon. Our investment committee regularly reviews and adjusts portfolios to respond to market conditions while maintaining alignment with your long-term objectives.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">What fees do you charge for investment management?</div>
+                    <div class="faq-answer">
+                        <p>Our fee structure is transparent and based on the assets under management (AUM). Typically, our annual management fee ranges from 0.75% to 1.25% of AUM, depending on the size of your portfolio and the complexity of your investment strategy. We do not charge hidden fees or commissions. A detailed fee schedule will be provided during your initial consultation.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">How often will I receive updates on my investments?</div>
+                    <div class="faq-answer">
+                        <p>We provide quarterly comprehensive performance reports for all investment accounts. Additionally, you'll have 24/7 access to our secure online portal where you can view your account balances, transactions, and performance in real-time. Your dedicated financial advisor will also schedule regular review meetings (typically semi-annually or annually) to discuss your portfolio performance and make any necessary adjustments to your financial plan.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <div class="faq-question">Can I withdraw from my investment account if needed?</div>
+                    <div class="faq-answer">
+                        <p>Yes, most of our investment accounts offer liquidity, allowing you to withdraw funds when needed. However, certain investment products may have specific terms regarding withdrawals, including potential fees or waiting periods. We recommend maintaining separate emergency funds for short-term needs and using investment accounts primarily for long-term financial goals. Your financial advisor can help structure your portfolio to balance growth objectives with liquidity needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1 -->
+                <div class="footer-column">
+                    <h3>BlueRock Asset Management</h3>
+                    <p>Helping clients build and preserve wealth through expert financial guidance and personalized investment strategies since 2005.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Column 2 -->
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#calculator">Calculator</a></li>
+                        <li><a href="savings.html">Savings</a></li>
+                        <li><a href="investments.html">Investments</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="savings.html">Savings Plans</a></li>
+                        <li><a href="investments.html">Investment Portfolios</a></li>
+                        <li><a href="retirement.html">Retirement Planning</a></li>
+                        <li><a href="estate.html">Estate Planning</a></li>
+                        <li><a href="tax.html">Tax Optimization</a></li>
+                        <li><a href="education.html">Financial Education</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4 -->
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="regulatory.html">Regulatory Information</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 BlueRock Asset Management. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/scripts.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/fixed-mobile-nav.js"></script>
+    <script src="js/fixed-mobile-nav.js"></script>
+    <script src="js/lazy-loading.js"></script>
+    <script src="js/apply-lazy-loading.js"></script>
+    <script src="js/register-service-worker.js"></script>
+    <script src="js/ab-testing.js"></script>
+    <script src="js/cookie-consent.js"></script>
+    <script src="js/newsletter-signup.js"></script>
+    <script src="js/social-sharing.js"></script>
+    <script src="js/referral-program.js"></script>
+</body>
+</html>

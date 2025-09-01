@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
+    <meta name="theme-color" content="#1e3a8a">
+    <link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Plans | BlueRock Asset Management</title>
+    <meta name="description" content="Explore BlueRock Asset Management's premium investment plans with exceptional weekly returns. Invest $300 and earn weekly returns for three months.">
+    
+    <!-- Favicon -->
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#1e3a8a">
+    <meta name="msapplication-TileColor" content="#1e3a8a">
+    <meta name="theme-color" content="#1e3a8a">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/enhanced-mobile.css">
+    <link rel="stylesheet" href="css/mobile-fixes.css">
+    <link rel="stylesheet" href="css/improved-navigation.css">
+    <link rel="stylesheet" href="css/remove-warning.css">
+    
+    <!-- Live Chat Script -->
+    <script src="//code.jivosite.com/widget/foeFKzf8Lf" async></script>
+    
+    <style>
+        .plans-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .plans-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .plans-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .plans-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .plan-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .plan-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .plan-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .plan-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+            animation: shimmer 2s infinite;
+        }
+        
+        .plan-name {
+            font-size: 1.5rem;
+            margin: 0;
+            font-weight: 700;
+        }
+        
+        .plan-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 15px 0 5px;
+        }
+        
+        .plan-price-subtitle {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        .plan-content {
+            padding: 30px;
+        }
+        
+        .plan-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px;
+        }
+        
+        .plan-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .plan-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .plan-features i {
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .plan-features .feature-value {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .plan-button {
+            display: block;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .plan-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .plan-badge {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 8px 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transform: rotate(45deg);
+            z-index: 1;
+        }
+        
+        .plan-highlight {
+            transform: scale(1.05);
+            z-index: 2;
+        }
+        
+        .plan-highlight .plan-header {
+            background: linear-gradient(135deg, var(--accent-color), #ff9d00);
+        }
+        
+        .plan-highlight .plan-button {
+            background: linear-gradient(135deg, var(--accent-color) 0%, #ff9d00 100%);
+        }
+        
+        .plan-total-returns {
+            background-color: #f5f9ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .plan-total-returns h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .plan-total-returns .total-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .plan-roi {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #28a745;
+            margin-top: 5px;
+        }
+        
+        .plans-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+        
+        .plans-intro h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+        
+        .plans-intro p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .plans-comparison {
+            margin-top: 80px;
+        }
+        
+        .plans-comparison h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: var(--dark-color);
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f5f9ff;
+        }
+        
+        .comparison-table tr:hover {
+            background-color: #eef5ff;
+        }
+        
+        .comparison-table .highlight {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .comparison-table .check {
+            color: #28a745;
+            font-size: 1.2rem;
+        }
+        
+        .comparison-table .times {
+            color: #dc3545;
+            font-size: 1.2rem;
+        }
+        
+        .plans-cta {
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .plans-cta h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+        
+        .plans-cta p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .plans-cta .btn {
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+        }
+        
+        @media (max-width: 992px) {
+            .plans-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+            
+            .plan-highlight {
+                transform: scale(1);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .plans-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .plans-hero p {
+                font-size: 1rem;
+            }
+            
+            .plans-intro h2 {
+                font-size: 1.8rem;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 12px 15px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+    <link rel="stylesheet" href="css/header-fix.css">
+    <link rel="stylesheet" href="css/fixed-navigation.css">
+    <link rel="stylesheet" href="css/premium-style.css">
+    <script src="js/structured-data.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/bluerock-logo.png" alt="BlueRock Asset Management Logo">
+                    <h1></h1>
+                </a>
+            </div>
+            
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#calculator">Calculator</a></li>
+                    <li><a href="savings.html">Savings</a></li>
+                    <li><a href="investments.html">Investments</a></li>
+                    <li><a href="investment-plans.html" class="active">Plans</a></li>
+                    <li><a href="deposit.html">Deposit</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li class="auth-links">
+                        <a href="login.html" class="nav-login">Login</a>
+                        <a href="signup.html" class="nav-signup btn btn-accent btn-sm">Sign Up</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="plans-hero">
+        <div class="container">
+            <h1 class="fade-in">Premium Investment Plans</h1>
+            <p class="slide-up">Choose the perfect investment plan that matches your financial goals and start earning exceptional weekly returns.</p>
+        </div>
+    </section>
+    
+    <!-- Plans Section -->
+    <div class="plans-container">
+        <div class="plans-intro">
+            <h2>Maximize Your Investment Potential</h2>
+            <p>Our premium investment plans are designed to provide consistent weekly returns over a 3-month period. Each plan follows our proven investment strategy, with returns proportional to your investment amount. Start with just $300 and watch your investment grow week after week.</p>
+        </div>
+        
+        <div class="plans-grid">
+            <!-- Starter Plan -->
+            <div class="plan-card">
+                <div class="plan-header">
+                    <h3 class="plan-name">Starter Plan</h3>
+                    <div class="plan-price">$300</div>
+                    <div class="plan-price-subtitle">Minimum Investment</div>
+                </div>
+                
+                <div class="plan-content">
+                    <ul class="plan-features">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Weekly Return: <span class="feature-value">$180</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Duration: <span class="feature-value">3 Months (12 weeks)</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Total Returns: <span class="feature-value">$2,160</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            ROI: <span class="feature-value">720%</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Payment Day: <span class="feature-value">Every Friday</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="plan-total-returns">
+                        <h4>Total After 3 Months</h4>
+                        <div class="total-value">$2,460</div>
+                        <div class="plan-roi">Initial $300 + $2,160 Profit</div>
+                    </div>
+                    
+                    <a href="deposit.html" class="plan-button ripple">Start Investing</a>
+                </div>
+            </div>
+            
+            <!-- Basic Plan -->
+            <div class="plan-card">
+                <div class="plan-header">
+                    <h3 class="plan-name">Basic Plan</h3>
+                    <div class="plan-price">$500</div>
+                    <div class="plan-price-subtitle">Investment Amount</div>
+                </div>
+                
+                <div class="plan-content">
+                    <ul class="plan-features">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Weekly Return: <span class="feature-value">$300</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Duration: <span class="feature-value">3 Months (12 weeks)</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Total Returns: <span class="feature-value">$3,600</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            ROI: <span class="feature-value">720%</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Payment Day: <span class="feature-value">Every Friday</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="plan-total-returns">
+                        <h4>Total After 3 Months</h4>
+                        <div class="total-value">$4,100</div>
+                        <div class="plan-roi">Initial $500 + $3,600 Profit</div>
+                    </div>
+                    
+                    <a href="deposit.html" class="plan-button ripple">Start Investing</a>
+                </div>
+            </div>
+            
+            <!-- Standard Plan -->
+            <div class="plan-card plan-highlight">
+                <div class="plan-badge">Popular</div>
+                <div class="plan-header">
+                    <h3 class="plan-name">Standard Plan</h3>
+                    <div class="plan-price">$1,000</div>
+                    <div class="plan-price-subtitle">Investment Amount</div>
+                </div>
+                
+                <div class="plan-content">
+                    <ul class="plan-features">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Weekly Return: <span class="feature-value">$600</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Duration: <span class="feature-value">3 Months (12 weeks)</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Total Returns: <span class="feature-value">$7,200</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            ROI: <span class="feature-value">720%</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Payment Day: <span class="feature-value">Every Friday</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="plan-total-returns">
+                        <h4>Total After 3 Months</h4>
+                        <div class="total-value">$8,200</div>
+                        <div class="plan-roi">Initial $1,000 + $7,200 Profit</div>
+                    </div>
+                    
+                    <a href="deposit.html" class="plan-button ripple">Start Investing</a>
+                </div>
+            </div>
+            
+            <!-- Premium Plan -->
+            <div class="plan-card">
+                <div class="plan-header">
+                    <h3 class="plan-name">Premium Plan</h3>
+                    <div class="plan-price">$1,500</div>
+                    <div class="plan-price-subtitle">Investment Amount</div>
+                </div>
+                
+                <div class="plan-content">
+                    <ul class="plan-features">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Weekly Return: <span class="feature-value">$900</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Duration: <span class="feature-value">3 Months (12 weeks)</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Total Returns: <span class="feature-value">$10,800</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            ROI: <span class="feature-value">720%</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Payment Day: <span class="feature-value">Every Friday</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="plan-total-returns">
+                        <h4>Total After 3 Months</h4>
+                        <div class="total-value">$12,300</div>
+                        <div class="plan-roi">Initial $1,500 + $10,800 Profit</div>
+                    </div>
+                    
+                    <a href="deposit.html" class="plan-button ripple">Start Investing</a>
+                </div>
+            </div>
+            
+            <!-- Gold Plan -->
+            <div class="plan-card">
+                <div class="plan-header">
+                    <h3 class="plan-name">Gold Plan</h3>
+                    <div class="plan-price">$3,000</div>
+                    <div class="plan-price-subtitle">Investment Amount</div>
+                </div>
+                
+                <div class="plan-content">
+                    <ul class="plan-features">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Weekly Return: <span class="feature-value">$1,800</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Duration: <span class="feature-value">3 Months (12 weeks)</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Total Returns: <span class="feature-value">$21,600</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            ROI: <span class="feature-value">720%</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Payment Day: <span class="feature-value">Every Friday</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="plan-total-returns">
+                        <h4>Total After 3 Months</h4>
+                        <div class="total-value">$24,600</div>
+                        <div class="plan-roi">Initial $3,000 + $21,600 Profit</div>
+                    </div>
+                    
+                    <a href="deposit.html" class="plan-button ripple">Start Investing</a>
+                </div>
+            </div>
+            
+            <!-- Platinum Plan -->
+            <div class="plan-card">
+                <div class="plan-header">
+                    <h3 class="plan-name">Platinum Plan</h3>
+                    <div class="plan-price">$5,000</div>
+                    <div class="plan-price-subtitle">Investment Amount</div>
+                </div>
+                
+                <div class="plan-content">
+                    <ul class="plan-features">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Weekly Return: <span class="feature-value">$3,000</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Duration: <span class="feature-value">3 Months (12 weeks)</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Total Returns: <span class="feature-value">$36,000</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            ROI: <span class="feature-value">720%</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Payment Day: <span class="feature-value">Every Friday</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="plan-total-returns">
+                        <h4>Total After 3 Months</h4>
+                        <div class="total-value">$41,000</div>
+                        <div class="plan-roi">Initial $5,000 + $36,000 Profit</div>
+                    </div>
+                    
+                    <a href="deposit.html" class="plan-button ripple">Start Investing</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Plans Comparison Table -->
+        <div class="plans-comparison">
+            <h2>Investment Plans Comparison</h2>
+            
+            <div class="table-responsive">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Plan</th>
+                            <th>Investment</th>
+                            <th>Weekly Return</th>
+                            <th>Total Return (12 weeks)</th>
+                            <th>ROI</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Starter Plan</td>
+                            <td>$300</td>
+                            <td>$180</td>
+                            <td>$2,160</td>
+                            <td class="highlight">720%</td>
+                        </tr>
+                        <tr>
+                            <td>Basic Plan</td>
+                            <td>$500</td>
+                            <td>$300</td>
+                            <td>$3,600</td>
+                            <td class="highlight">720%</td>
+                        </tr>
+                        <tr>
+                            <td>Standard Plan</td>
+                            <td>$1,000</td>
+                            <td>$600</td>
+                            <td>$7,200</td>
+                            <td class="highlight">720%</td>
+                        </tr>
+                        <tr>
+                            <td>Premium Plan</td>
+                            <td>$1,500</td>
+                            <td>$900</td>
+                            <td>$10,800</td>
+                            <td class="highlight">720%</td>
+                        </tr>
+                        <tr>
+                            <td>Gold Plan</td>
+                            <td>$3,000</td>
+                            <td>$1,800</td>
+                            <td>$21,600</td>
+                            <td class="highlight">720%</td>
+                        </tr>
+                        <tr>
+                            <td>Platinum Plan</td>
+                            <td>$5,000</td>
+                            <td>$3,000</td>
+                            <td>$36,000</td>
+                            <td class="highlight">720%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- CTA Section -->
+        <div class="plans-cta">
+            <h3>Ready to Start Your Investment Journey?</h3>
+            <p>Choose the plan that best fits your financial goals and start earning consistent weekly returns. Our expert team will help you maximize your investment potential.</p>
+            <a href="signup.html" class="btn btn-accent pulse">Create Your Account Now</a>
+        </div>
+    </div>
+    
+    <!-- FAQ Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="faq-container">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">How do the investment plans work?</div>
+                    <div class="faq-answer">
+                        <p>Our investment plans are designed to provide consistent weekly returns over a 3-month period. You make a one-time investment, and we pay you a fixed amount every Friday for 12 weeks. The weekly return is proportional to your investment amount, with all plans offering a 720% ROI over the investment period.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">What is the minimum investment amount?</div>
+                    <div class="faq-answer">
+                        <p>The minimum investment amount is $300 with our Starter Plan. This plan provides $180 in weekly returns for 3 months, totaling $2,160 in profits.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">When do I receive my weekly returns?</div>
+                    <div class="faq-answer">
+                        <p>Weekly returns are paid every Friday directly to your account. You can track all payments in your client dashboard and request withdrawals at any time.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">Can I withdraw my initial investment before the 3-month period ends?</div>
+                    <div class="faq-answer">
+                        <p>Your initial investment is locked for the 3-month period to generate the promised returns. However, you can withdraw your weekly returns at any time without affecting your investment plan.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <div class="faq-question">How do I make a deposit?</div>
+                    <div class="faq-answer">
+                        <p>We accept deposits in various cryptocurrencies including Bitcoin (BTC), Ethereum (ETH), BNB, and Tether (USDT). After creating your account, navigate to the Deposit page where you'll find our wallet addresses for each cryptocurrency.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 6 -->
+                <div class="faq-item">
+                    <div class="faq-question">How do I withdraw my earnings?</div>
+                    <div class="faq-answer">
+                        <p>You can request withdrawals through your client dashboard. Our admin team will generate a secure withdrawal PIN that you'll need to confirm your withdrawal request. Once confirmed, withdrawals are processed within 24 hours.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1 -->
+                <div class="footer-column">
+                    <h3>BlueRock Asset Management</h3>
+                    <p>Helping clients build and preserve wealth through expert financial guidance and personalized investment strategies since 2005.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Column 2 -->
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#calculator">Calculator</a></li>
+                        <li><a href="savings.html">Savings</a></li>
+                        <li><a href="investments.html">Investments</a></li>
+                        <li><a href="investment-plans.html">Plans</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="savings.html">Savings Plans</a></li>
+                        <li><a href="investments.html">Investment Portfolios</a></li>
+                        <li><a href="retirement.html">Retirement Planning</a></li>
+                        <li><a href="estate.html">Estate Planning</a></li>
+                        <li><a href="tax.html">Tax Optimization</a></li>
+                        <li><a href="education.html">Financial Education</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4 -->
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="regulatory.html">Regulatory Information</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 BlueRock Asset Management. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/scripts.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/fixed-mobile-nav.js"></script>
+    <script src="js/fixed-mobile-nav.js"></script>
+    <script src="js/lazy-loading.js"></script>
+    <script src="js/apply-lazy-loading.js"></script>
+    <script src="js/register-service-worker.js"></script>
+    <script src="js/ab-testing.js"></script>
+    <script src="js/cookie-consent.js"></script>
+    <script src="js/newsletter-signup.js"></script>
+    <script src="js/social-sharing.js"></script>
+    <script src="js/referral-program.js"></script>
+</body>
+</html>

@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
+    <meta name="theme-color" content="#1e3a8a">
+    <link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports | BlueRock Asset Management</title>
+    <meta name="description" content="View and generate reports for BlueRock Asset Management.">
+    
+    <!-- Favicon -->
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#1e3a8a">
+    <meta name="msapplication-TileColor" content="#1e3a8a">
+    <meta name="theme-color" content="#1e3a8a">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/enhanced-mobile.css">
+    <link rel="stylesheet" href="css/mobile-fixes.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/improved-navigation.css">
+    <link rel="stylesheet" href="css/remove-warning.css">
+    
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --accent-color: #f59e0b;
+            --dark-color: #111827;
+            --light-color: #f3f4f6;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --info-color: #3b82f6;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f9ff;
+            color: #333;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .admin-container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        .admin-sidebar {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 30px 0;
+            width: 250px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            transition: all 0.3s ease;
+        }
+        
+        .admin-sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .admin-sidebar li {
+            padding: 15px 25px;
+            border-left: 4px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .admin-sidebar li.active {
+            border-left-color: var(--accent-color);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .admin-sidebar li:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        .admin-sidebar a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .admin-sidebar i {
+            width: 20px;
+            text-align: center;
+        }
+        
+        .admin-content {
+            flex: 1;
+            padding: 30px;
+            margin-left: 250px;
+            background-color: #f5f9ff;
+            transition: all 0.3s ease;
+        }
+        
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .admin-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .admin-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .admin-card h3 {
+            margin-top: 0;
+            color: var(--dark-color);
+            font-size: 1.1rem;
+        }
+        
+        .admin-card .value {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 10px 0;
+            color: var(--primary-color);
+        }
+        
+        .admin-card .change {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .admin-card .change.positive {
+            color: var(--success-color);
+        }
+        
+        .admin-card .change.negative {
+            color: var(--danger-color);
+        }
+        
+        .admin-tables {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .admin-table-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .admin-table-card h3 {
+            margin-top: 0;
+            color: var(--dark-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .admin-table-card h3 .view-all {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .admin-table th,
+        .admin-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .admin-table th {
+            font-weight: 600;
+            color: var(--dark-color);
+            background-color: #f9fafb;
+        }
+        
+        .admin-table tbody tr:hover {
+            background-color: #f9fafb;
+        }
+        
+        .notifications {
+            position: relative;
+            margin-right: 20px;
+        }
+        
+        .notifications i {
+            font-size: 1.2rem;
+            color: var(--dark-color);
+            cursor: pointer;
+        }
+        
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: var(--danger-color);
+            color: white;
+            font-size: 0.7rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+        
+        .user-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .user-name {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .user-role {
+            font-size: 0.8rem;
+            color: #6b7280;
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--dark-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Report-specific styles */
+        .report-filters {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .filter-group label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .filter-group select,
+        .filter-group input {
+            padding: 10px 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            background-color: white;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+        }
+        
+        .btn {
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #1a2f70;
+        }
+        
+        .btn-secondary {
+            background-color: white;
+            color: var(--dark-color);
+            border: 1px solid #e5e7eb;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #f9fafb;
+        }
+        
+        .chart-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+        
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .chart-header h3 {
+            margin: 0;
+            color: var(--dark-color);
+            font-size: 1.1rem;
+        }
+        
+        .chart-options {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .chart-option {
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+            background-color: white;
+        }
+        
+        .chart-option.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .chart-wrapper {
+            position: relative;
+            height: 300px;
+        }
+        
+        .report-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .report-list {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .report-list h3 {
+            margin-top: 0;
+            color: var(--dark-color);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        
+        .report-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .report-item:last-child {
+            border-bottom: none;
+        }
+        
+        .report-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .report-name {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .report-date {
+            font-size: 0.8rem;
+            color: #6b7280;
+        }
+        
+        .report-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .report-action {
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.8rem;
+        }
+        
+        .download-btn {
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--success-color);
+        }
+        
+        .download-btn:hover {
+            background-color: rgba(16, 185, 129, 0.2);
+        }
+        
+        .view-btn {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--secondary-color);
+        }
+        
+        .view-btn:hover {
+            background-color: rgba(59, 130, 246, 0.2);
+        }
+        
+        @media (max-width: 991px) {
+            .admin-sidebar {
+                transform: translateX(-100%);
+                z-index: 1000;
+            }
+            
+            .admin-sidebar.active {
+                transform: translateX(0);
+            }
+            
+            .admin-content {
+                margin-left: 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .report-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .admin-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .admin-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .admin-header h1 {
+                margin: 0;
+            }
+            
+            .report-filters {
+                flex-direction: column;
+            }
+            
+            .filter-buttons {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <div class="admin-sidebar">
+            <ul>
+                <li><a href="admin.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="clients.html"><i class="fas fa-users"></i> Clients</a></li>
+                <li><a href="investments.html"><i class="fas fa-wallet"></i> Investments</a></li>
+                <li><a href="transactions.html"><i class="fas fa-exchange-alt"></i> Transactions</a></li>
+                <li><a href="withdrawals.html"><i class="fas fa-hand-holding-usd"></i> Withdrawals</a></li>
+                <li><a href="reports.html"><i class="fas fa-chart-line"></i> Reports</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="admin-content">
+            <!-- Dashboard Header -->
+            <div class="admin-header">
+                <div style="display: flex; align-items: center;">
+                    <button class="menu-toggle" id="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1>Reports</h1>
+                </div>
+                
+                <div style="display: flex; align-items: center;">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">5</span>
+                    </div>
+                    
+                    <div class="user-profile">
+                        <div class="user-avatar">A</div>
+                        <div class="user-info">
+                            <span class="user-name">Admin User</span>
+                            <span class="user-role">Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Report Filters -->
+            <div class="report-filters">
+                <div class="filter-group">
+                    <label for="report-type">Report Type</label>
+                    <select id="report-type">
+                        <option value="financial">Financial Summary</option>
+                        <option value="client">Client Activity</option>
+                        <option value="investment">Investment Performance</option>
+                        <option value="transaction">Transaction History</option>
+                        <option value="withdrawal">Withdrawal Analysis</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="date-range">Date Range</label>
+                    <select id="date-range">
+                        <option value="7days">Last 7 Days</option>
+                        <option value="30days" selected>Last 30 Days</option>
+                        <option value="90days">Last 90 Days</option>
+                        <option value="year">This Year</option>
+                        <option value="custom">Custom Range</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group" id="custom-date-range" style="display: none;">
+                    <label for="start-date">Start Date</label>
+                    <input type="date" id="start-date">
+                </div>
+                
+                <div class="filter-group" id="custom-date-range-end" style="display: none;">
+                    <label for="end-date">End Date</label>
+                    <input type="date" id="end-date">
+                </div>
+                
+                <div class="filter-group">
+                    <label for="format">Format</label>
+                    <select id="format">
+                        <option value="pdf">PDF</option>
+                        <option value="excel">Excel</option>
+                        <option value="csv">CSV</option>
+                    </select>
+                </div>
+                
+                <div class="filter-buttons">
+                    <button class="btn btn-secondary">Reset</button>
+                    <button class="btn btn-primary">Generate Report</button>
+                </div>
+            </div>
+            
+            <!-- Financial Overview Chart -->
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h3>Financial Overview</h3>
+                    <div class="chart-options">
+                        <div class="chart-option active" data-period="week">Week</div>
+                        <div class="chart-option" data-period="month">Month</div>
+                        <div class="chart-option" data-period="quarter">Quarter</div>
+                        <div class="chart-option" data-period="year">Year</div>
+                    </div>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="financial-chart"></canvas>
+                </div>
+            </div>
+            
+            <!-- Report Grid -->
+            <div class="report-grid">
+                <!-- Investment Performance -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Investment Performance</h3>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="investment-chart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- Client Growth -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Client Growth</h3>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="client-chart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- Transaction Volume -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Transaction Volume</h3>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="transaction-chart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- Withdrawal Trends -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Withdrawal Trends</h3>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="withdrawal-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recent Reports -->
+            <div class="report-list">
+                <h3>Recent Reports</h3>
+                
+                <div class="report-item">
+                    <div class="report-info">
+                        <div class="report-name">Monthly Financial Summary - August 2023</div>
+                        <div class="report-date">Generated on Aug 31, 2023</div>
+                    </div>
+                    <div class="report-actions">
+                        <div class="report-action view-btn" title="View Report">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="report-action download-btn" title="Download Report">
+                            <i class="fas fa-download"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="report-item">
+                    <div class="report-info">
+                        <div class="report-name">Client Activity Report - Q3 2023</div>
+                        <div class="report-date">Generated on Aug 28, 2023</div>
+                    </div>
+                    <div class="report-actions">
+                        <div class="report-action view-btn" title="View Report">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="report-action download-btn" title="Download Report">
+                            <i class="fas fa-download"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="report-item">
+                    <div class="report-info">
+                        <div class="report-name">Investment Performance Analysis - July 2023</div>
+                        <div class="report-date">Generated on Aug 15, 2023</div>
+                    </div>
+                    <div class="report-actions">
+                        <div class="report-action view-btn" title="View Report">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="report-action download-btn" title="Download Report">
+                            <i class="fas fa-download"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="report-item">
+                    <div class="report-info">
+                        <div class="report-name">Transaction History - July 2023</div>
+                        <div class="report-date">Generated on Aug 10, 2023</div>
+                    </div>
+                    <div class="report-actions">
+                        <div class="report-action view-btn" title="View Report">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="report-action download-btn" title="Download Report">
+                            <i class="fas fa-download"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="report-item">
+                    <div class="report-info">
+                        <div class="report-name">Withdrawal Analysis - Q2 2023</div>
+                        <div class="report-date">Generated on Jul 15, 2023</div>
+                    </div>
+                    <div class="report-actions">
+                        <div class="report-action view-btn" title="View Report">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="report-action download-btn" title="Download Report">
+                            <i class="fas fa-download"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Toggle sidebar on mobile
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.querySelector('.admin-sidebar').classList.toggle('active');
+        });
+        
+        // Set active menu item
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const menuItems = document.querySelectorAll('.admin-sidebar li a');
+            
+            menuItems.forEach(item => {
+                const href = item.getAttribute('href');
+                if (href === currentPage) {
+                    item.parentElement.classList.add('active');
+                }
+            });
+            
+            // Toggle custom date range
+            const dateRangeSelect = document.getElementById('date-range');
+            const customDateRange = document.getElementById('custom-date-range');
+            const customDateRangeEnd = document.getElementById('custom-date-range-end');
+            
+            dateRangeSelect.addEventListener('change', function() {
+                if (this.value === 'custom') {
+                    customDateRange.style.display = 'block';
+                    customDateRangeEnd.style.display = 'block';
+                } else {
+                    customDateRange.style.display = 'none';
+                    customDateRangeEnd.style.display = 'none';
+                }
+            });
+            
+            // Toggle chart periods
+            const chartOptions = document.querySelectorAll('.chart-option');
+            
+            chartOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    chartOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const period = this.getAttribute('data-period');
+                    updateCharts(period);
+                });
+            });
+            
+            // Initialize charts
+            initializeCharts();
+        });
+        
+        function initializeCharts() {
+            // Financial Overview Chart
+            const financialCtx = document.getElementById('financial-chart').getContext('2d');
+            const financialChart = new Chart(financialCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+                    datasets: [
+                        {
+                            label: 'Revenue',
+                            data: [65000, 72000, 68000, 78000, 85000, 92000, 88000, 94000],
+                            borderColor: '#3b82f6',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        },
+                        {
+                            label: 'Expenses',
+                            data: [45000, 48000, 46000, 49000, 53000, 55000, 54000, 57000],
+                            borderColor: '#ef4444',
+                            backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        },
+                        {
+                            label: 'Profit',
+                            data: [20000, 24000, 22000, 29000, 32000, 37000, 34000, 37000],
+                            borderColor: '#10b981',
+                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + value.toLocaleString();
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Investment Performance Chart
+            const investmentCtx = document.getElementById('investment-chart').getContext('2d');
+            const investmentChart = new Chart(investmentCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Stocks', 'Bonds', 'Real Estate', 'Cryptocurrency', 'Commodities'],
+                    datasets: [
+                        {
+                            label: 'Return Rate (%)',
+                            data: [8.5, 4.2, 6.8, 12.3, 5.7],
+                            backgroundColor: [
+                                'rgba(59, 130, 246, 0.7)',
+                                'rgba(16, 185, 129, 0.7)',
+                                'rgba(245, 158, 11, 0.7)',
+                                'rgba(139, 92, 246, 0.7)',
+                                'rgba(239, 68, 68, 0.7)'
+                            ]
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Client Growth Chart
+            const clientCtx = document.getElementById('client-chart').getContext('2d');
+            const clientChart = new Chart(clientCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+                    datasets: [
+                        {
+                            label: 'New Clients',
+                            data: [15, 22, 18, 25, 28, 32, 30, 35],
+                            borderColor: '#3b82f6',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        },
+                        {
+                            label: 'Total Clients',
+                            data: [150, 172, 190, 215, 243, 275, 305, 340],
+                            borderColor: '#10b981',
+                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            
+            // Transaction Volume Chart
+            const transactionCtx = document.getElementById('transaction-chart').getContext('2d');
+            const transactionChart = new Chart(transactionCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+                    datasets: [
+                        {
+                            label: 'Deposits',
+                            data: [120000, 135000, 125000, 145000, 160000, 175000, 165000, 180000],
+                            backgroundColor: 'rgba(16, 185, 129, 0.7)'
+                        },
+                        {
+                            label: 'Withdrawals',
+                            data: [80000, 85000, 82000, 90000, 95000, 100000, 98000, 105000],
+                            backgroundColor: 'rgba(239, 68, 68, 0.7)'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + (value / 1000) + 'k';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Withdrawal Trends Chart
+            const withdrawalCtx = document.getElementById('withdrawal-chart').getContext('2d');
+            const withdrawalChart = new Chart(withdrawalCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['Cryptocurrency', 'Bank Transfer', 'Wire Transfer', 'Other'],
+                    datasets: [
+                        {
+                            data: [45, 35, 15, 5],
+                            backgroundColor: [
+                                'rgba(59, 130, 246, 0.7)',
+                                'rgba(16, 185, 129, 0.7)',
+                                'rgba(245, 158, 11, 0.7)',
+                                'rgba(139, 92, 246, 0.7)'
+                            ]
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                        }
+                    }
+                }
+            });
+        }
+        
+        function updateCharts(period) {
+            // In a real application, this would fetch new data based on the selected period
+            console.log('Updating charts for period:', period);
+        }
+    </script>
+</body>
+</html>

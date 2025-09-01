@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
+    <meta name="theme-color" content="#1e3a8a">
+    <link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Deposits | BlueRock Asset Management</title>
+    <meta name="description" content="Make cryptocurrency deposits to BlueRock Asset Management and start earning weekly returns.">
+    
+    <!-- Favicon -->
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#1e3a8a">
+    <meta name="msapplication-TileColor" content="#1e3a8a">
+    <meta name="theme-color" content="#1e3a8a">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- QR Code Generator -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/enhanced-mobile.css">
+    <link rel="stylesheet" href="css/mobile-fixes.css">
+    <link rel="stylesheet" href="css/remove-warning.css">
+    
+    <!-- Live Chat Script -->
+    <script src="//code.jivosite.com/widget/foeFKzf8Lf" async></script>
+    
+    <style>
+        .crypto-address {
+            background-color: #f5f9ff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-family: monospace;
+            word-break: break-all;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .copy-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .copy-btn:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .qr-code {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .crypto-option {
+            margin-bottom: 40px;
+            padding: 25px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .crypto-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        
+        .crypto-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .notification {
+            padding: 15px;
+            background-color: #e6f7ff;
+            border-left: 4px solid var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .investment-returns {
+            background-color: var(--light-color);
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .investment-returns h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .return-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .return-item:last-child {
+            border-bottom: none;
+        }
+        
+        .return-highlight {
+            font-weight: 700;
+            color: var(--success-color);
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+    <link rel="stylesheet" href="css/header-fix.css">
+    <link rel="stylesheet" href="css/fixed-navigation.css">
+    <link rel="stylesheet" href="css/premium-style.css">
+    <script src="js/structured-data.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/bluerock-logo.png" alt="BlueRock Asset Management Logo" style="height: 60px;">
+            </div>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#calculator">Calculator</a></li>
+                    <li><a href="savings.html">Savings</a></li>
+                    <li><a href="investments.html">Investments</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Page Banner -->
+    <section class="hero gradient-bg" style="padding: 150px 0 80px;">
+        <div class="container">
+            <h1 class="fade-in">Cryptocurrency Deposits</h1>
+            <p class="slide-up stagger-1">Start your investment journey with BlueRock Asset Management by making a secure cryptocurrency deposit.</p>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+    
+    <!-- Deposit Information -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Make a Deposit</h2>
+            </div>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="notification">
+                    <p><strong>Important:</strong> Please ensure you send the correct cryptocurrency to the corresponding address. Sending the wrong cryptocurrency may result in permanent loss of funds.</p>
+                </div>
+                
+                <div class="crypto-option card-shine hover-lift" data-aos="fade-up" data-aos-delay="100">
+                    <div class="crypto-title">
+                        <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="Bitcoin Logo" class="crypto-icon float">
+                        <h3>Bitcoin (BTC)</h3>
+                    </div>
+                    
+                    <p>Send your Bitcoin to the following address:</p>
+                    <div class="crypto-address glow" id="btc-address">bc1q9jatk24hcxvcqwxa9t66tkqef7mj2gkqdvqzjd</div>
+                    <button class="copy-btn ripple" onclick="copyToClipboard('btc-address')">Copy Address</button>
+                    
+                    <div class="qr-code scale-up" id="btc-qr"></div>
+                </div>
+                
+                <div class="crypto-option card-shine hover-lift" data-aos="fade-up" data-aos-delay="200">
+                    <div class="crypto-title">
+                        <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="Ethereum Logo" class="crypto-icon float">
+                        <h3>Ethereum (ETH)</h3>
+                    </div>
+                    
+                    <p>Send your Ethereum to the following address:</p>
+                    <div class="crypto-address glow" id="eth-address">0xB9Df7837E13B2BD16ddE11a03C0e48Df8fC78ba3</div>
+                    <button class="copy-btn ripple" onclick="copyToClipboard('eth-address')">Copy Address</button>
+                    
+                    <div class="qr-code scale-up" id="eth-qr"></div>
+                </div>
+                
+                <div class="crypto-option card-shine hover-lift" data-aos="fade-up" data-aos-delay="300">
+                    <div class="crypto-title">
+                        <img src="https://cryptologos.cc/logos/bnb-bnb-logo.png" alt="BNB Logo" class="crypto-icon float">
+                        <h3>BNB</h3>
+                    </div>
+                    
+                    <p>Send your BNB to the following address:</p>
+                    <div class="crypto-address glow" id="bnb-address">0xB9Df7837E13B2BD16ddE11a03C0e48Df8fC78ba3</div>
+                    <button class="copy-btn ripple" onclick="copyToClipboard('bnb-address')">Copy Address</button>
+                    
+                    <div class="qr-code scale-up" id="bnb-qr"></div>
+                </div>
+                
+                <div class="crypto-option card-shine hover-lift" data-aos="fade-up" data-aos-delay="400">
+                    <div class="crypto-title">
+                        <img src="https://cryptologos.cc/logos/tether-usdt-logo.png" alt="USDT Logo" class="crypto-icon float">
+                        <h3>Tether (USDT)</h3>
+                    </div>
+                    
+                    <p>Send your USDT to the following address:</p>
+                    <div class="crypto-address glow" id="usdt-address">0xB9Df7837E13B2BD16ddE11a03C0e48Df8fC78ba3</div>
+                    <button class="copy-btn ripple" onclick="copyToClipboard('usdt-address')">Copy Address</button>
+                    
+                    <div class="qr-code scale-up" id="usdt-qr"></div>
+                </div>
+                
+                <!-- USDT TRC20 -->
+                <div class="crypto-option card-shine hover-lift" data-aos="fade-up" data-aos-delay="450">
+                    <div class="crypto-title">
+                        <img src="https://cryptologos.cc/logos/tether-usdt-logo.png" alt="USDT Logo" class="crypto-icon float">
+                        <h3>Tether (USDT) - TRC20</h3>
+                    </div>
+                    
+                    <p>Send your USDT (TRC20) to the following address:</p>
+                    <div class="crypto-address glow" id="usdt-trc20-address">TYEMJvWSj5E2d8zRnaoW9FdcRWYWbpfosG</div>
+                    <button class="copy-btn ripple" onclick="copyToClipboard('usdt-trc20-address')">Copy Address</button>
+                    
+                    <div class="qr-code scale-up" id="usdt-trc20-qr"></div>
+                </div>
+                
+                <div class="investment-returns card-shine hover-lift" data-aos="fade-up" data-aos-delay="500">
+                    <h3 class="slide-up">Your Investment Returns</h3>
+                    <p>When you invest with BlueRock Asset Management, here's what you can expect:</p>
+                    
+                    <div class="return-item" data-aos="fade-right" data-aos-delay="100">
+                        <span>Minimum Investment:</span>
+                        <span class="count-number" data-target="300">$300</span>
+                    </div>
+                    
+                    <div class="return-item" data-aos="fade-right" data-aos-delay="200">
+                        <span>Weekly Return:</span>
+                        <span class="return-highlight count-number" data-target="180">$180</span>
+                    </div>
+                    
+                    <div class="return-item" data-aos="fade-right" data-aos-delay="300">
+                        <span>Payment Day:</span>
+                        <span>Every Friday</span>
+                    </div>
+                    
+                    <div class="return-item" data-aos="fade-right" data-aos-delay="400">
+                        <span>Investment Period:</span>
+                        <span>3 months (12 weeks)</span>
+                    </div>
+                    
+                    <div class="return-item" data-aos="fade-right" data-aos-delay="500">
+                        <span>Total Returns:</span>
+                        <span class="return-highlight count-number" data-target="2160">$2,160 ($180 × 12 weeks)</span>
+                    </div>
+                    
+                    <div class="return-item" data-aos="fade-right" data-aos-delay="600">
+                        <span>Net Profit:</span>
+                        <span class="return-highlight count-number" data-target="1860">$1,860</span>
+                    </div>
+                    
+                    <div class="return-item" data-aos="fade-right" data-aos-delay="700">
+                        <span>Return on Investment:</span>
+                        <span class="return-highlight count-number" data-target="720">720% over 3 months</span>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 40px; text-align: center;" data-aos="fade-up" data-aos-delay="800">
+                    <p style="font-size: 1.1rem; margin-bottom: 25px;">After making your deposit, please contact our customer support team to confirm your transaction and set up your account.</p>
+                    <a href="index.html#contact" class="btn btn-accent pulse btn-shimmer" style="padding: 15px 40px; font-size: 1.1rem; border-radius: 30px;">Contact Support</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1 -->
+                <div class="footer-column">
+                    <h3>BlueRock Asset Management</h3>
+                    <p>Helping clients build and preserve wealth through expert financial guidance and personalized investment strategies since 2005.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Column 2 -->
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#calculator">Calculator</a></li>
+                        <li><a href="savings.html">Savings</a></li>
+                        <li><a href="investments.html">Investments</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="savings.html">Savings Plans</a></li>
+                        <li><a href="investments.html">Investment Portfolios</a></li>
+                        <li><a href="retirement.html">Retirement Planning</a></li>
+                        <li><a href="estate.html">Estate Planning</a></li>
+                        <li><a href="tax.html">Tax Optimization</a></li>
+                        <li><a href="education.html">Financial Education</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4 -->
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="regulatory.html">Regulatory Information</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 BlueRock Asset Management. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/scripts.js"></script>
+    <script src="js/animations.js"></script>
+    <script>
+        // Function to copy text to clipboard
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.innerText;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const button = element.nextElementSibling;
+                const originalText = button.innerText;
+                button.innerText = "Copied!";
+                
+                setTimeout(() => {
+                    button.innerText = originalText;
+                }, 2000);
+            });
+        }
+        
+        // Generate QR codes
+        window.onload = function() {
+            // Bitcoin QR
+            const btcQR = qrcode(0, 'M');
+            btcQR.addData('bitcoin:bc1q9jatk24hcxvcqwxa9t66tkqef7mj2gkqdvqzjd');
+            btcQR.make();
+            document.getElementById('btc-qr').innerHTML = btcQR.createImgTag(5);
+            
+            // Ethereum QR
+            const ethQR = qrcode(0, 'M');
+            ethQR.addData('ethereum:0xB9Df7837E13B2BD16ddE11a03C0e48Df8fC78ba3');
+            ethQR.make();
+            document.getElementById('eth-qr').innerHTML = ethQR.createImgTag(5);
+            
+            // BNB QR
+            const bnbQR = qrcode(0, 'M');
+            bnbQR.addData('0xB9Df7837E13B2BD16ddE11a03C0e48Df8fC78ba3');
+            bnbQR.make();
+            document.getElementById('bnb-qr').innerHTML = bnbQR.createImgTag(5);
+            
+            // USDT ERC20 QR
+            const usdtQR = qrcode(0, 'M');
+            usdtQR.addData('0xB9Df7837E13B2BD16ddE11a03C0e48Df8fC78ba3');
+            usdtQR.make();
+            document.getElementById('usdt-qr').innerHTML = usdtQR.createImgTag(5);
+            
+            // USDT TRC20 QR
+            const usdtTrc20QR = qrcode(0, 'M');
+            usdtTrc20QR.addData('TYEMJvWSj5E2d8zRnaoW9FdcRWYWbpfosG');
+            usdtTrc20QR.make();
+            document.getElementById('usdt-trc20-qr').innerHTML = usdtTrc20QR.createImgTag(5);
+        };
+    </script>
+    <script src="js/fixed-mobile-nav.js"></script>
+    <script src="js/lazy-loading.js"></script>
+    <script src="js/apply-lazy-loading.js"></script>
+    <script src="js/register-service-worker.js"></script>
+    <script src="js/ab-testing.js"></script>
+    <script src="js/cookie-consent.js"></script>
+    <script src="js/newsletter-signup.js"></script>
+    <script src="js/social-sharing.js"></script>
+    <script src="js/referral-program.js"></script>
+</body>
+</html>

@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
+    <meta name="theme-color" content="#1e3a8a">
+    <link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | BlueRock Asset Management</title>
+    <meta name="description" content="Configure system settings for BlueRock Asset Management.">
+    
+    <!-- Favicon -->
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#1e3a8a">
+    <meta name="msapplication-TileColor" content="#1e3a8a">
+    <meta name="theme-color" content="#1e3a8a">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/enhanced-mobile.css">
+    <link rel="stylesheet" href="css/mobile-fixes.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/improved-navigation.css">
+    <link rel="stylesheet" href="css/remove-warning.css">
+    
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --accent-color: #f59e0b;
+            --dark-color: #111827;
+            --light-color: #f3f4f6;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --info-color: #3b82f6;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f9ff;
+            color: #333;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .admin-container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        .admin-sidebar {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 30px 0;
+            width: 250px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            transition: all 0.3s ease;
+        }
+        
+        .admin-sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .admin-sidebar li {
+            padding: 15px 25px;
+            border-left: 4px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .admin-sidebar li.active {
+            border-left-color: var(--accent-color);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .admin-sidebar li:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        .admin-sidebar a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .admin-sidebar i {
+            width: 20px;
+            text-align: center;
+        }
+        
+        .admin-content {
+            flex: 1;
+            padding: 30px;
+            margin-left: 250px;
+            background-color: #f5f9ff;
+            transition: all 0.3s ease;
+        }
+        
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .notifications {
+            position: relative;
+            margin-right: 20px;
+        }
+        
+        .notifications i {
+            font-size: 1.2rem;
+            color: var(--dark-color);
+            cursor: pointer;
+        }
+        
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: var(--danger-color);
+            color: white;
+            font-size: 0.7rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+        
+        .user-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .user-name {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .user-role {
+            font-size: 0.8rem;
+            color: #6b7280;
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--dark-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Settings-specific styles */
+        .settings-container {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .settings-nav {
+            width: 250px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            height: fit-content;
+        }
+        
+        .settings-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .settings-nav li {
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 5px;
+        }
+        
+        .settings-nav li.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .settings-nav li:hover:not(.active) {
+            background-color: #f3f4f6;
+        }
+        
+        .settings-nav li i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .settings-content {
+            flex: 1;
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .settings-section {
+            display: none;
+        }
+        
+        .settings-section.active {
+            display: block;
+        }
+        
+        .settings-section h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            font-size: 1.5rem;
+        }
+        
+        .settings-section p {
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+            margin-bottom: 0;
+        }
+        
+        .switch-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .slider {
+            background-color: var(--primary-color);
+        }
+        
+        input:focus + .slider {
+            box-shadow: 0 0 1px var(--primary-color);
+        }
+        
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        
+        .switch-label {
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .btn {
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #1a2f70;
+        }
+        
+        .btn-secondary {
+            background-color: white;
+            color: var(--dark-color);
+            border: 1px solid #e5e7eb;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #f9fafb;
+        }
+        
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        
+        .user-list {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        .user-list th,
+        .user-list td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .user-list th {
+            font-weight: 600;
+            color: var(--dark-color);
+            background-color: #f9fafb;
+        }
+        
+        .user-list tbody tr:hover {
+            background-color: #f9fafb;
+        }
+        
+        .user-role {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .role-admin {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--secondary-color);
+        }
+        
+        .role-manager {
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--success-color);
+        }
+        
+        .role-staff {
+            background-color: rgba(245, 158, 11, 0.1);
+            color: var(--warning-color);
+        }
+        
+        .user-status {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+        
+        .status-active {
+            background-color: var(--success-color);
+        }
+        
+        .status-inactive {
+            background-color: var(--danger-color);
+        }
+        
+        .action-cell {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .action-btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.8rem;
+        }
+        
+        .edit-btn {
+            background-color: rgba(245, 158, 11, 0.1);
+            color: var(--warning-color);
+        }
+        
+        .edit-btn:hover {
+            background-color: rgba(245, 158, 11, 0.2);
+        }
+        
+        .delete-btn {
+            background-color: rgba(239, 68, 68, 0.1);
+            color: var(--danger-color);
+        }
+        
+        .delete-btn:hover {
+            background-color: rgba(239, 68, 68, 0.2);
+        }
+        
+        @media (max-width: 991px) {
+            .admin-sidebar {
+                transform: translateX(-100%);
+                z-index: 1000;
+            }
+            
+            .admin-sidebar.active {
+                transform: translateX(0);
+            }
+            
+            .admin-content {
+                margin-left: 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .settings-container {
+                flex-direction: column;
+            }
+            
+            .settings-nav {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .admin-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .admin-header h1 {
+                margin: 0;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <div class="admin-sidebar">
+            <ul>
+                <li><a href="admin.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="clients.html"><i class="fas fa-users"></i> Clients</a></li>
+                <li><a href="investments.html"><i class="fas fa-wallet"></i> Investments</a></li>
+                <li><a href="transactions.html"><i class="fas fa-exchange-alt"></i> Transactions</a></li>
+                <li><a href="withdrawals.html"><i class="fas fa-hand-holding-usd"></i> Withdrawals</a></li>
+                <li><a href="reports.html"><i class="fas fa-chart-line"></i> Reports</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="admin-content">
+            <!-- Dashboard Header -->
+            <div class="admin-header">
+                <div style="display: flex; align-items: center;">
+                    <button class="menu-toggle" id="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1>Settings</h1>
+                </div>
+                
+                <div style="display: flex; align-items: center;">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">5</span>
+                    </div>
+                    
+                    <div class="user-profile">
+                        <div class="user-avatar">A</div>
+                        <div class="user-info">
+                            <span class="user-name">Admin User</span>
+                            <span class="user-role">Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Settings Content -->
+            <div class="settings-container">
+                <!-- Settings Navigation -->
+                <div class="settings-nav">
+                    <ul>
+                        <li class="active" data-section="general"><i class="fas fa-cog"></i> General</li>
+                        <li data-section="security"><i class="fas fa-shield-alt"></i> Security</li>
+                        <li data-section="users"><i class="fas fa-users-cog"></i> User Management</li>
+                        <li data-section="notifications"><i class="fas fa-bell"></i> Notifications</li>
+                        <li data-section="api"><i class="fas fa-code"></i> API Settings</li>
+                        <li data-section="withdrawal"><i class="fas fa-hand-holding-usd"></i> Withdrawal Settings</li>
+                        <li data-section="email"><i class="fas fa-envelope"></i> Email Templates</li>
+                        <li data-section="backup"><i class="fas fa-database"></i> Backup & Restore</li>
+                    </ul>
+                </div>
+                
+                <!-- Settings Content -->
+                <div class="settings-content">
+                    <!-- General Settings -->
+                    <div class="settings-section active" id="general-settings">
+                        <h2>General Settings</h2>
+                        <p>Configure basic system settings and preferences.</p>
+                        
+                        <form>
+                            <div class="form-group">
+                                <label for="company-name">Company Name</label>
+                                <input type="text" id="company-name" value="BlueRock Asset Management">
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contact-email">Contact Email</label>
+                                    <input type="email" id="contact-email" value="contact@bluerock-asset.com">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contact-phone">Contact Phone</label>
+                                    <input type="tel" id="contact-phone" value="+1 (555) 123-4567">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="company-address">Company Address</label>
+                                <textarea id="company-address">123 Financial Street, Suite 500
+New York, NY 10001
+United States</textarea>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="date-format">Date Format</label>
+                                    <select id="date-format">
+                                        <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                        <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                        <option value="YYYY-MM-DD">YYYY-MM-DD</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="timezone">Timezone</label>
+                                    <select id="timezone">
+                                        <option value="UTC-8">Pacific Time (UTC-8)</option>
+                                        <option value="UTC-7">Mountain Time (UTC-7)</option>
+                                        <option value="UTC-6">Central Time (UTC-6)</option>
+                                        <option value="UTC-5" selected>Eastern Time (UTC-5)</option>
+                                        <option value="UTC+0">UTC</option>
+                                        <option value="UTC+1">Central European Time (UTC+1)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="currency">Default Currency</label>
+                                <select id="currency">
+                                    <option value="USD" selected>US Dollar (USD)</option>
+                                    <option value="EUR">Euro (EUR)</option>
+                                    <option value="GBP">British Pound (GBP)</option>
+                                    <option value="JPY">Japanese Yen (JPY)</option>
+                                    <option value="CAD">Canadian Dollar (CAD)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="switch-container">
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span class="switch-label">Enable Maintenance Mode</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary">Cancel</button>
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Security Settings -->
+                    <div class="settings-section" id="security-settings">
+                        <h2>Security Settings</h2>
+                        <p>Configure security options and access controls.</p>
+                        
+                        <form>
+                            <div class="form-group">
+                                <div class="switch-container">
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span class="switch-label">Enable Two-Factor Authentication</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="switch-container">
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span class="switch-label">Require Strong Passwords</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="password-expiry">Password Expiry</label>
+                                <select id="password-expiry">
+                                    <option value="30">30 Days</option>
+                                    <option value="60">60 Days</option>
+                                    <option value="90" selected>90 Days</option>
+                                    <option value="180">180 Days</option>
+                                    <option value="never">Never</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="session-timeout">Session Timeout</label>
+                                <select id="session-timeout">
+                                    <option value="15">15 Minutes</option>
+                                    <option value="30" selected>30 Minutes</option>
+                                    <option value="60">1 Hour</option>
+                                    <option value="120">2 Hours</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="login-attempts">Max Login Attempts</label>
+                                <select id="login-attempts">
+                                    <option value="3">3 Attempts</option>
+                                    <option value="5" selected>5 Attempts</option>
+                                    <option value="10">10 Attempts</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="switch-container">
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span class="switch-label">Log All Admin Actions</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary">Cancel</button>
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- User Management -->
+                    <div class="settings-section" id="users-settings">
+                        <h2>User Management</h2>
+                        <p>Manage admin users and their permissions.</p>
+                        
+                        <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-plus"></i> Add New User
+                            </button>
+                        </div>
+                        
+                        <table class="user-list">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Status</th>
+                                    <th>Last Login</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Admin User</td>
+                                    <td>admin@bluerock-asset.com</td>
+                                    <td><span class="user-role role-admin">Administrator</span></td>
+                                    <td><span class="user-status status-active"></span> Active</td>
+                                    <td>Aug 31, 2023 14:25</td>
+                                    <td>
+                                        <div class="action-cell">
+                                            <div class="action-btn edit-btn" title="Edit User">
+                                                <i class="fas fa-edit"></i>
+                                            </div>
+                                            <div class="action-btn delete-btn" title="Delete User">
+                                                <i class="fas fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Jane Smith</td>
+                                    <td>jane.smith@bluerock-asset.com</td>
+                                    <td><span class="user-role role-manager">Manager</span></td>
+                                    <td><span class="user-status status-active"></span> Active</td>
+                                    <td>Aug 30, 2023 10:15</td>
+                                    <td>
+                                        <div class="action-cell">
+                                            <div class="action-btn edit-btn" title="Edit User">
+                                                <i class="fas fa-edit"></i>
+                                            </div>
+                                            <div class="action-btn delete-btn" title="Delete User">
+                                                <i class="fas fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Robert Johnson</td>
+                                    <td>robert.johnson@bluerock-asset.com</td>
+                                    <td><span class="user-role role-staff">Staff</span></td>
+                                    <td><span class="user-status status-active"></span> Active</td>
+                                    <td>Aug 29, 2023 16:40</td>
+                                    <td>
+                                        <div class="action-cell">
+                                            <div class="action-btn edit-btn" title="Edit User">
+                                                <i class="fas fa-edit"></i>
+                                            </div>
+                                            <div class="action-btn delete-btn" title="Delete User">
+                                                <i class="fas fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Emily Davis</td>
+                                    <td>emily.davis@bluerock-asset.com</td>
+                                    <td><span class="user-role role-staff">Staff</span></td>
+                                    <td><span class="user-status status-inactive"></span> Inactive</td>
+                                    <td>Aug 15, 2023 09:20</td>
+                                    <td>
+                                        <div class="action-cell">
+                                            <div class="action-btn edit-btn" title="Edit User">
+                                                <i class="fas fa-edit"></i>
+                                            </div>
+                                            <div class="action-btn delete-btn" title="Delete User">
+                                                <i class="fas fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Notification Settings -->
+                    <div class="settings-section" id="notifications-settings">
+                        <h2>Notification Settings</h2>
+                        <p>Configure system notifications and alerts.</p>
+                        
+                        <form>
+                            <h3>Email Notifications</h3>
+                            
+                            <div class="form-group">
+                                <div class="switch-container">
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span class="switch-label">New Client Registration</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="switch-container">
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span class="switch-label">New Investment</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="switch-container">
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span class="switch-label">Withdrawal Requests</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="switch-container">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span class="switch-label">System Updates</span>
+                                </div>
+                            </div>
+                            
+                            <h3>System Alerts</h3>
+                            
+                            <div class="form-group">
+                                <div class="switch-container">
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span class="switch-label">Failed Login Attempts</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="switch-container">
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span class="switch-label">Large Withdrawals (>$10,000)</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="switch-container">
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span class="switch-label">New Admin User Created</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary">Cancel</button>
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- API Settings -->
+                    <div class="settings-section" id="api-settings">
+                        <h2>API Settings</h2>
+                        <p>Manage API keys and integration settings.</p>
+                        
+                        <form>
+                            <div class="form-group">
+                                <div class="switch-container">
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span class="switch-label">Enable API Access</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="api-key">API Key</label>
+                                <div style="display: flex; gap: 10px;">
+                                    <input type="text" id="api-key" value="sk_live_51NxYz2CJh8z9KQzpXYZ123456789abcdefghijklmnopqrstuvwxyz" readonly style="flex: 1;">
+                                    <button type="button" class="btn btn-secondary">Regenerate</button>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="webhook-url">Webhook URL</label>
+                                <input type="url" id="webhook-url" value="https://bluerock-asset.com/api/webhook">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="api-rate-limit">Rate Limit (requests per minute)</label>
+                                <select id="api-rate-limit">
+                                    <option value="10">10</option>
+                                    <option value="50">50</option>
+                                    <option value="100" selected>100</option>
+                                    <option value="500">500</option>
+                                    <option value="1000">1000</option>
+                                </select>
+                            </div>
+                            
+                            <h3>API Integrations</h3>
+                            
+                            <div class="form-group">
+                                <div class="switch-container">
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span class="switch-label">Payment Gateway</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="switch-container">
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span class="switch-label">Cryptocurrency Exchange</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="switch-container">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span class="switch-label">CRM Integration</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary">Cancel</button>
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Withdrawal Settings -->
+                    <div class="settings-section" id="withdrawal-settings">
+                        <h2>Withdrawal Settings</h2>
+                        <p>Configure withdrawal options and security measures.</p>
+                        
+                        <form>
+                            <div class="form-group">
+                                <label for="min-withdrawal">Minimum Withdrawal Amount</label>
+                                <input type="number" id="min-withdrawal" value="100">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="max-withdrawal">Maximum Withdrawal Amount</label>
+                                <input type="number" id="max-withdrawal" value="50000">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="withdrawal-fee">Withdrawal Fee (%)</label>
+                                <input type="number" id="withdrawal-fee" value="1.5" step="0.1">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="processing-time">Processing Time (hours)</label>
+                                <select id="processing-time">
+                                    <option value="12">12 Hours</option>
+                                    <option value="24" selected>24 Hours</option>
+                                    <option value="48">48 Hours</option>
+                                    <option value="72">72 Hours</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="switch-container">
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span class="switch-label">Require PIN Verification</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="pin-length">PIN Length</label>
+                                <select id="pin-length">
+                                    <option value="4">4 Digits</option>
+                                    <option value="6" selected>6 Digits</option>
+                                    <option value="8">8 Digits</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="pin-expiry">PIN Expiry</label>
+                                <select id="pin-expiry">
+                                    <option value="24">24 Hours</option>
+                                    <option value="48" selected>48 Hours</option>
+                                    <option value="72">72 Hours</option>
+                                    <option value="168">1 Week</option>
+                                </select>
+                            </div>
+                            
+                            <h3>Withdrawal Methods</h3>
+                            
+                            <div class="form-group">
+                                <div class="switch-container">
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span class="switch-label">Bank Transfer</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="switch-container">
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span class="switch-label">Bitcoin (BTC)</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="switch-container">
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span class="switch-label">Ethereum (ETH)</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="switch-container">
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span class="switch-label">Tether (USDT)</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary">Cancel</button>
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Email Templates -->
+                    <div class="settings-section" id="email-settings">
+                        <h2>Email Templates</h2>
+                        <p>Customize email templates sent to clients.</p>
+                        
+                        <form>
+                            <div class="form-group">
+                                <label for="email-template">Select Template</label>
+                                <select id="email-template">
+                                    <option value="welcome">Welcome Email</option>
+                                    <option value="deposit">Deposit Confirmation</option>
+                                    <option value="withdrawal">Withdrawal Confirmation</option>
+                                    <option value="pin">Withdrawal PIN</option>
+                                    <option value="password-reset">Password Reset</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email-subject">Subject</label>
+                                <input type="text" id="email-subject" value="Your Withdrawal PIN for BlueRock Asset Management">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email-content">Email Content</label>
+                                <textarea id="email-content" style="height: 300px;">Dear {client_name},
+
+Your withdrawal request for {amount} has been received and is being processed.
+
+To complete your withdrawal, please use the following PIN:
+
+{pin}
+
+This PIN will expire in 48 hours. If you did not request this withdrawal, please contact our support team immediately.
+
+Thank you for choosing BlueRock Asset Management.
+
+Best regards,
+The BlueRock Team
+support@bluerock-asset.com
++1 (555) 123-4567</textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <h4>Available Variables</h4>
+                                <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                    <span style="background-color: #f3f4f6; padding: 5px 10px; border-radius: 5px;">{client_name}</span>
+                                    <span style="background-color: #f3f4f6; padding: 5px 10px; border-radius: 5px;">{amount}</span>
+                                    <span style="background-color: #f3f4f6; padding: 5px 10px; border-radius: 5px;">{pin}</span>
+                                    <span style="background-color: #f3f4f6; padding: 5px 10px; border-radius: 5px;">{withdrawal_id}</span>
+                                    <span style="background-color: #f3f4f6; padding: 5px 10px; border-radius: 5px;">{date}</span>
+                                    <span style="background-color: #f3f4f6; padding: 5px 10px; border-radius: 5px;">{expiry_date}</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary">Preview</button>
+                                <button type="submit" class="btn btn-primary">Save Template</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Backup & Restore -->
+                    <div class="settings-section" id="backup-settings">
+                        <h2>Backup & Restore</h2>
+                        <p>Manage system backups and restore points.</p>
+                        
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 30px;">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-download"></i> Create Backup
+                            </button>
+                            
+                            <div style="display: flex; gap: 10px;">
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-upload"></i> Restore Backup
+                                </button>
+                                
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-cog"></i> Backup Settings
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <h3>Backup History</h3>
+                        
+                        <table class="user-list">
+                            <thead>
+                                <tr>
+                                    <th>Backup Name</th>
+                                    <th>Date</th>
+                                    <th>Size</th>
+                                    <th>Type</th>
+                                    <th>Created By</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>backup_20230831_142500.zip</td>
+                                    <td>Aug 31, 2023 14:25</td>
+                                    <td>42.5 MB</td>
+                                    <td>Full Backup</td>
+                                    <td>Admin User</td>
+                                    <td>
+                                        <div class="action-cell">
+                                            <div class="action-btn edit-btn" title="Download Backup">
+                                                <i class="fas fa-download"></i>
+                                            </div>
+                                            <div class="action-btn delete-btn" title="Delete Backup">
+                                                <i class="fas fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>backup_20230830_093000.zip</td>
+                                    <td>Aug 30, 2023 09:30</td>
+                                    <td>41.8 MB</td>
+                                    <td>Full Backup</td>
+                                    <td>System</td>
+                                    <td>
+                                        <div class="action-cell">
+                                            <div class="action-btn edit-btn" title="Download Backup">
+                                                <i class="fas fa-download"></i>
+                                            </div>
+                                            <div class="action-btn delete-btn" title="Delete Backup">
+                                                <i class="fas fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>backup_20230829_093000.zip</td>
+                                    <td>Aug 29, 2023 09:30</td>
+                                    <td>40.2 MB</td>
+                                    <td>Full Backup</td>
+                                    <td>System</td>
+                                    <td>
+                                        <div class="action-cell">
+                                            <div class="action-btn edit-btn" title="Download Backup">
+                                                <i class="fas fa-download"></i>
+                                            </div>
+                                            <div class="action-btn delete-btn" title="Delete Backup">
+                                                <i class="fas fa-trash"></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div style="margin-top: 30px;">
+                            <h3>Automatic Backup Schedule</h3>
+                            
+                            <form>
+                                <div class="form-group">
+                                    <div class="switch-container">
+                                        <label class="switch">
+                                            <input type="checkbox" checked>
+                                            <span class="slider"></span>
+                                        </label>
+                                        <span class="switch-label">Enable Automatic Backups</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="backup-frequency">Backup Frequency</label>
+                                    <select id="backup-frequency">
+                                        <option value="daily" selected>Daily</option>
+                                        <option value="weekly">Weekly</option>
+                                        <option value="monthly">Monthly</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="backup-time">Backup Time</label>
+                                    <input type="time" id="backup-time" value="03:00">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="backup-retention">Retention Period</label>
+                                    <select id="backup-retention">
+                                        <option value="7">7 Days</option>
+                                        <option value="14">14 Days</option>
+                                        <option value="30" selected>30 Days</option>
+                                        <option value="90">90 Days</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-secondary">Cancel</button>
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Toggle sidebar on mobile
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.querySelector('.admin-sidebar').classList.toggle('active');
+        });
+        
+        // Set active menu item
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const menuItems = document.querySelectorAll('.admin-sidebar li a');
+            
+            menuItems.forEach(item => {
+                const href = item.getAttribute('href');
+                if (href === currentPage) {
+                    item.parentElement.classList.add('active');
+                }
+            });
+            
+            // Settings navigation
+            const settingsNavItems = document.querySelectorAll('.settings-nav li');
+            const settingsSections = document.querySelectorAll('.settings-section');
+            
+            settingsNavItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Remove active class from all items
+                    settingsNavItems.forEach(navItem => {
+                        navItem.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked item
+                    this.classList.add('active');
+                    
+                    // Show corresponding section
+                    const sectionId = this.getAttribute('data-section') + '-settings';
+                    
+                    settingsSections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    
+                    document.getElementById(sectionId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

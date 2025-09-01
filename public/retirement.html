@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
+    <meta name="theme-color" content="#1e3a8a">
+    <link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retirement Planning | BlueRock Asset Management</title>
+    <meta name="description" content="Comprehensive retirement planning services from BlueRock Asset Management to help you secure your financial future.">
+    
+    <!-- Favicon -->
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#1e3a8a">
+    <meta name="msapplication-TileColor" content="#1e3a8a">
+    <meta name="theme-color" content="#1e3a8a">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js for retirement calculators -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/enhanced-mobile.css">
+    <link rel="stylesheet" href="css/mobile-fixes.css">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+    <link rel="stylesheet" href="css/header-fix.css">
+    <link rel="stylesheet" href="css/fixed-navigation.css">
+    <link rel="stylesheet" href="css/premium-style.css">
+    <script src="js/structured-data.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/bluerock-logo.png" alt="BlueRock Asset Management Logo" style="height: 60px;">
+            </div>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#calculator">Calculator</a></li>
+                    <li><a href="savings.html">Savings</a></li>
+                    <li><a href="investments.html">Investments</a></li>
+                    <li><a href="deposit.html">Deposit</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Page Banner -->
+    <section class="hero gradient-bg" style="padding: 150px 0 80px;">
+        <div class="container">
+            <h1 class="fade-in">Retirement Planning</h1>
+            <p class="slide-up stagger-1">Secure your future with our comprehensive retirement planning services tailored to your unique goals and timeline.</p>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+    
+    <!-- Retirement Planning Overview -->
+    <section class="section" data-aos="fade-up">
+        <div class="container">
+            <div class="section-title">
+                <h2>Your Retirement Journey</h2>
+            </div>
+            
+            <div style="max-width: 900px; margin: 0 auto; text-align: center; margin-bottom: 40px;">
+                <p style="font-size: 1.1rem;">At BlueRock Asset Management, we understand that retirement planning is a personal journey. Our expert advisors work with you to create a customized retirement strategy that aligns with your goals, timeline, and risk tolerance.</p>
+            </div>
+            
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-bottom: 40px;">
+                <!-- Retirement Phase 1 -->
+                <div class="premium-card hover-lift" style="flex: 1; min-width: 250px; text-align: center;" data-aos="fade-up" data-aos-delay="100">
+                    <div class="premium-card-header">
+                        <i class="fas fa-seedling float" style="font-size: 2.5rem; margin-bottom: 20px;"></i>
+                        <h3 style="color: white;">Early Career</h3>
+                    </div>
+                    <div class="premium-card-content">
+                        <ul style="list-style-type: none; padding: 0; text-align: left;">
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--success-color); margin-right: 10px;"></i> Establish retirement goals</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--success-color); margin-right: 10px;"></i> Start regular contributions</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--success-color); margin-right: 10px;"></i> Maximize employer matches</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--success-color); margin-right: 10px;"></i> Build emergency savings</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--success-color); margin-right: 10px;"></i> Focus on growth investments</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Retirement Phase 2 -->
+                <div class="premium-card hover-lift" style="flex: 1; min-width: 250px; text-align: center;" data-aos="fade-up" data-aos-delay="200">
+                    <div class="premium-card-header">
+                        <i class="fas fa-tree float" style="font-size: 2.5rem; margin-bottom: 20px;"></i>
+                        <h3 style="color: white;">Mid-Career</h3>
+                    </div>
+                    <div class="premium-card-content">
+                        <ul style="list-style-type: none; padding: 0; text-align: left;">
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--success-color); margin-right: 10px;"></i> Increase contribution rates</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--success-color); margin-right: 10px;"></i> Diversify investment portfolio</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--success-color); margin-right: 10px;"></i> Catch-up on contributions</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--success-color); margin-right: 10px;"></i> Review retirement timeline</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--success-color); margin-right: 10px;"></i> Adjust risk tolerance</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Retirement Phase 3 -->
+                <div class="premium-card hover-lift" style="flex: 1; min-width: 250px; text-align: center;" data-aos="fade-up" data-aos-delay="300">
+                    <div class="premium-card-header">
+                        <i class="fas fa-umbrella-beach float" style="font-size: 2.5rem; margin-bottom: 20px;"></i>
+                        <h3 style="color: white;">Pre-Retirement</h3>
+                    </div>
+                    <div class="premium-card-content">
+                        <ul style="list-style-type: none; padding: 0; text-align: left;">
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--success-color); margin-right: 10px;"></i> Finalize retirement budget</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--success-color); margin-right: 10px;"></i> Shift to income-focused assets</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--success-color); margin-right: 10px;"></i> Plan withdrawal strategy</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--success-color); margin-right: 10px;"></i> Review healthcare options</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--success-color); margin-right: 10px;"></i> Estate planning integration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Retirement Services -->
+    <section class="section" style="background-color: var(--light-color);" data-aos="fade-up">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Retirement Planning Services</h2>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card card-shine hover-lift" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1434626881859-194d67b2b86f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Retirement Account Management" class="img-premium">
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Retirement Account Management</h3>
+                        <p>We help you optimize your retirement accounts including 401(k)s, IRAs, Roth IRAs, and other tax-advantaged vehicles to maximize growth potential while minimizing tax implications.</p>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card card-shine hover-lift" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Income Planning" class="img-premium">
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Retirement Income Planning</h3>
+                        <p>We develop sustainable withdrawal strategies to ensure your retirement savings last throughout your lifetime, balancing your income needs with long-term growth objectives.</p>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card card-shine hover-lift" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Social Security Optimization" class="img-premium">
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Social Security Optimization</h3>
+                        <p>Our experts analyze various claiming strategies to help you maximize your Social Security benefits, considering factors like life expectancy, spousal benefits, and tax implications.</p>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card card-shine hover-lift" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Healthcare Planning" class="img-premium">
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Healthcare Planning</h3>
+                        <p>We help you navigate Medicare options, long-term care insurance, and health savings accounts (HSAs) to protect your retirement savings from unexpected healthcare costs.</p>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card card-shine hover-lift" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1554224154-22dec7ec8818?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Tax-Efficient Strategies" class="img-premium">
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Tax-Efficient Strategies</h3>
+                        <p>Our advisors implement tax-efficient withdrawal strategies and account positioning to minimize your tax burden during retirement, potentially saving you thousands of dollars.</p>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card card-shine hover-lift" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-card-img">
+                        <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Legacy Planning" class="img-premium">
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Legacy Planning</h3>
+                        <p>We work with you to develop strategies for transferring wealth to future generations or charitable causes, ensuring your assets are distributed according to your wishes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Retirement Calculator -->
+    <section class="section calculator" data-aos="fade-up">
+        <div class="container">
+            <div class="section-title">
+                <h2>Retirement Calculator</h2>
+            </div>
+            
+            <div class="calculator-container">
+                <form id="retirement-calculator-form">
+                    <div class="calculator-form">
+                        <div class="form-group">
+                            <label for="current-age">Current Age</label>
+                            <input type="number" id="current-age" min="18" max="80" value="35">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="retirement-age">Retirement Age</label>
+                            <input type="number" id="retirement-age" min="45" max="85" value="65">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="life-expectancy">Life Expectancy</label>
+                            <input type="number" id="life-expectancy" min="50" max="110" value="90">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="current-savings">Current Retirement Savings ($)</label>
+                            <input type="number" id="current-savings" min="0" step="1000" value="50000">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="annual-contribution">Annual Contribution ($)</label>
+                            <input type="number" id="annual-contribution" min="0" step="500" value="6000">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="expected-return">Expected Annual Return (%)</label>
+                            <input type="number" id="expected-return" min="0" step="0.5" max="15" value="7">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="inflation-rate">Expected Inflation Rate (%)</label>
+                            <input type="number" id="inflation-rate" min="0" step="0.5" max="10" value="2.5">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="retirement-income">Desired Annual Retirement Income ($)</label>
+                            <input type="number" id="retirement-income" min="0" step="1000" value="80000">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn ripple">Calculate</button>
+                </form>
+                
+                <div id="retirement-calculator-results" class="calculator-results" style="display: none;">
+                    <h3>Retirement Projection</h3>
+                    
+                    <div class="result-item">
+                        <span class="result-label">Retirement Savings at Retirement:</span>
+                        <span id="retirement-savings" class="result-value">$0.00</span>
+                    </div>
+                    
+                    <div class="result-item">
+                        <span class="result-label">Years in Retirement:</span>
+                        <span id="retirement-years" class="result-value">0</span>
+                    </div>
+                    
+                    <div class="result-item">
+                        <span class="result-label">Monthly Retirement Income:</span>
+                        <span id="monthly-income" class="result-value">$0.00</span>
+                    </div>
+                    
+                    <div class="result-item">
+                        <span class="result-label">Retirement Savings Status:</span>
+                        <span id="retirement-status" class="result-value">Unknown</span>
+                    </div>
+                    
+                    <div class="calculator-chart">
+                        <canvas id="retirement-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Retirement Planning Process -->
+    <section class="section" style="background-color: var(--primary-color); color: var(--white);" data-aos="fade-up">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: var(--white);">Our Retirement Planning Process</h2>
+            </div>
+            
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 50px;">
+                <!-- Step 1 -->
+                <div style="flex: 1; min-width: 250px; text-align: center; padding: 20px;" data-aos="fade-up" data-aos-delay="100">
+                    <div style="width: 80px; height: 80px; border-radius: 50%; background-color: var(--accent-color); color: var(--dark-color); display: flex; justify-content: center; align-items: center; margin: 0 auto 20px; font-size: 2rem; font-weight: 700;">1</div>
+                    <h3 style="color: var(--white); margin-bottom: 15px;">Discovery</h3>
+                    <p>We begin with a comprehensive assessment of your current financial situation, retirement goals, risk tolerance, and timeline to understand your unique needs.</p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div style="flex: 1; min-width: 250px; text-align: center; padding: 20px;" data-aos="fade-up" data-aos-delay="200">
+                    <div style="width: 80px; height: 80px; border-radius: 50%; background-color: var(--accent-color); color: var(--dark-color); display: flex; justify-content: center; align-items: center; margin: 0 auto 20px; font-size: 2rem; font-weight: 700;">2</div>
+                    <h3 style="color: var(--white); margin-bottom: 15px;">Analysis</h3>
+                    <p>Our experts analyze your current retirement savings, projected income sources, expenses, and potential gaps to create a comprehensive retirement projection.</p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div style="flex: 1; min-width: 250px; text-align: center; padding: 20px;" data-aos="fade-up" data-aos-delay="300">
+                    <div style="width: 80px; height: 80px; border-radius: 50%; background-color: var(--accent-color); color: var(--dark-color); display: flex; justify-content: center; align-items: center; margin: 0 auto 20px; font-size: 2rem; font-weight: 700;">3</div>
+                    <h3 style="color: var(--white); margin-bottom: 15px;">Strategy Development</h3>
+                    <p>We create a personalized retirement strategy that addresses savings goals, investment allocations, tax efficiency, and income planning to maximize your retirement security.</p>
+                </div>
+                
+                <!-- Step 4 -->
+                <div style="flex: 1; min-width: 250px; text-align: center; padding: 20px;" data-aos="fade-up" data-aos-delay="400">
+                    <div style="width: 80px; height: 80px; border-radius: 50%; background-color: var(--accent-color); color: var(--dark-color); display: flex; justify-content: center; align-items: center; margin: 0 auto 20px; font-size: 2rem; font-weight: 700;">4</div>
+                    <h3 style="color: var(--white); margin-bottom: 15px;">Implementation</h3>
+                    <p>Our team helps you implement your retirement plan, including account setup, asset allocation, contribution strategies, and coordination with other financial aspects.</p>
+                </div>
+                
+                <!-- Step 5 -->
+                <div style="flex: 1; min-width: 250px; text-align: center; padding: 20px;" data-aos="fade-up" data-aos-delay="500">
+                    <div style="width: 80px; height: 80px; border-radius: 50%; background-color: var(--accent-color); color: var(--dark-color); display: flex; justify-content: center; align-items: center; margin: 0 auto 20px; font-size: 2rem; font-weight: 700;">5</div>
+                    <h3 style="color: var(--white); margin-bottom: 15px;">Ongoing Management</h3>
+                    <p>We continuously monitor and adjust your retirement plan to account for life changes, market conditions, and evolving goals to keep you on track for a secure retirement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="section" data-aos="fade-up">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="faq-container">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="faq-question">How much do I need to save for retirement?</div>
+                    <div class="faq-answer">
+                        <p>The amount you need to save for retirement depends on several factors, including your desired lifestyle, expected retirement age, life expectancy, and anticipated expenses. A common rule of thumb is to aim for 70-80% of your pre-retirement income to maintain your standard of living. However, this can vary based on your specific circumstances.</p>
+                        <p>Our retirement planning services include a detailed analysis of your unique situation to determine a personalized savings target that accounts for inflation, healthcare costs, and other retirement expenses.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="faq-question">When should I start saving for retirement?</div>
+                    <div class="faq-answer">
+                        <p>The best time to start saving for retirement is as early as possible. The power of compound interest means that even small contributions made early in your career can grow significantly over time. Ideally, you should begin contributing to retirement accounts as soon as you start earning income.</p>
+                        <p>However, it's never too late to start. If you're starting later in life, our advisors can help you develop catch-up strategies to maximize your retirement savings in the time you have available.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="faq-question">What retirement accounts should I consider?</div>
+                    <div class="faq-answer">
+                        <p>There are several types of retirement accounts to consider, each with its own advantages:</p>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li><strong>401(k)/403(b):</strong> Employer-sponsored plans with potential matching contributions</li>
+                            <li><strong>Traditional IRA:</strong> Tax-deductible contributions with tax-deferred growth</li>
+                            <li><strong>Roth IRA:</strong> After-tax contributions with tax-free growth and withdrawals</li>
+                            <li><strong>SEP IRA/Solo 401(k):</strong> Options for self-employed individuals</li>
+                            <li><strong>Health Savings Account (HSA):</strong> Triple tax advantage for healthcare expenses</li>
+                        </ul>
+                        <p>The optimal mix of accounts depends on your income, tax situation, employment status, and retirement timeline. Our advisors can help you determine the most advantageous combination for your circumstances.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="faq-question">How should my investments change as I approach retirement?</div>
+                    <div class="faq-answer">
+                        <p>As you approach retirement, your investment strategy should generally become more conservative to protect your accumulated wealth. This typically involves gradually shifting from a growth-focused portfolio with higher equity exposure to a more balanced or income-oriented portfolio with increased allocation to fixed income and other lower-risk investments.</p>
+                        <p>However, the specific adjustments should be tailored to your risk tolerance, retirement timeline, and income needs. Our advisors implement a dynamic asset allocation strategy that evolves with your changing circumstances while still maintaining appropriate growth potential to fund your retirement years.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="faq-question">How do I create a sustainable withdrawal strategy?</div>
+                    <div class="faq-answer">
+                        <p>A sustainable withdrawal strategy balances your income needs with the longevity of your portfolio. Key considerations include:</p>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li><strong>Withdrawal Rate:</strong> The traditional 4% rule is a starting point, but your optimal rate depends on your specific circumstances</li>
+                            <li><strong>Tax Efficiency:</strong> Withdrawing from accounts in a tax-efficient sequence can extend portfolio longevity</li>
+                            <li><strong>Income Sources:</strong> Coordinating withdrawals with Social Security, pensions, and other income sources</li>
+                            <li><strong>Market Conditions:</strong> Adjusting withdrawals based on market performance to avoid depleting assets in down markets</li>
+                            <li><strong>Required Minimum Distributions (RMDs):</strong> Meeting IRS requirements while maintaining tax efficiency</li>
+                        </ul>
+                        <p>Our retirement income planning service develops a personalized withdrawal strategy that maximizes income while minimizing the risk of outliving your assets.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta gradient-bg" data-aos="fade-up">
+        <div class="container">
+            <h2 class="slide-up">Ready to Plan Your Retirement?</h2>
+            <p class="slide-up stagger-1">Our retirement planning experts can help you create a personalized strategy to achieve your retirement goals.</p>
+            <a href="index.html#contact" class="btn btn-accent pulse btn-shimmer slide-up stagger-2" style="padding: 15px 40px; font-size: 1.1rem; border-radius: 30px;">Schedule a Free Consultation</a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1 -->
+                <div class="footer-column">
+                    <h3>BlueRock Asset Management</h3>
+                    <p>Helping clients build and preserve wealth through expert financial guidance and personalized investment strategies since 2005.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Column 2 -->
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#calculator">Calculator</a></li>
+                        <li><a href="savings.html">Savings</a></li>
+                        <li><a href="investments.html">Investments</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="savings.html">Savings Plans</a></li>
+                        <li><a href="investments.html">Investment Portfolios</a></li>
+                        <li><a href="retirement.html">Retirement Planning</a></li>
+                        <li><a href="estate.html">Estate Planning</a></li>
+                        <li><a href="tax.html">Tax Optimization</a></li>
+                        <li><a href="education.html">Financial Education</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4 -->
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="regulatory.html">Regulatory Information</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 BlueRock Asset Management. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/scripts.js"></script>
+    <script src="js/animations.js"></script>
+    
+    <!-- Retirement Calculator Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const retirementForm = document.getElementById('retirement-calculator-form');
+            
+            if (retirementForm) {
+                retirementForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form values
+                    const currentAge = parseInt(document.getElementById('current-age').value) || 35;
+                    const retirementAge = parseInt(document.getElementById('retirement-age').value) || 65;
+                    const lifeExpectancy = parseInt(document.getElementById('life-expectancy').value) || 90;
+                    const currentSavings = parseFloat(document.getElementById('current-savings').value) || 50000;
+                    const annualContribution = parseFloat(document.getElementById('annual-contribution').value) || 6000;
+                    const expectedReturn = parseFloat(document.getElementById('expected-return').value) / 100 || 0.07;
+                    const inflationRate = parseFloat(document.getElementById('inflation-rate').value) / 100 || 0.025;
+                    const desiredIncome = parseFloat(document.getElementById('retirement-income').value) || 80000;
+                    
+                    // Calculate retirement projections
+                    const yearsToRetirement = retirementAge - currentAge;
+                    const yearsInRetirement = lifeExpectancy - retirementAge;
+                    
+                    // Calculate future value of current savings
+                    let retirementSavings = currentSavings * Math.pow(1 + expectedReturn, yearsToRetirement);
+                    
+                    // Add future value of annual contributions
+                    for (let i = 0; i < yearsToRetirement; i++) {
+                        retirementSavings += annualContribution * Math.pow(1 + expectedReturn, yearsToRetirement - i);
+                    }
+                    
+                    // Calculate inflation-adjusted annual income needed
+                    const inflationAdjustedIncome = desiredIncome * Math.pow(1 + inflationRate, yearsToRetirement);
+                    
+                    // Calculate sustainable monthly withdrawal
+                    const realReturnRate = (1 + expectedReturn) / (1 + inflationRate) - 1;
+                    const monthlyWithdrawal = calculateMonthlyWithdrawal(retirementSavings, realReturnRate, yearsInRetirement * 12);
+                    
+                    // Determine if savings are sufficient
+                    const monthlyIncomeNeeded = inflationAdjustedIncome / 12;
+                    const isRetirementReady = monthlyWithdrawal >= monthlyIncomeNeeded;
+                    
+                    // Display results
+                    document.getElementById('retirement-savings').textContent = '$' + retirementSavings.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    document.getElementById('retirement-years').textContent = yearsInRetirement;
+                    document.getElementById('monthly-income').textContent = '$' + monthlyWithdrawal.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    document.getElementById('retirement-status').textContent = isRetirementReady ? 
+                        'On Track' : 'Additional Savings Needed';
+                    document.getElementById('retirement-status').style.color = isRetirementReady ? 
+                        'var(--success-color)' : 'var(--danger-color)';
+                    
+                    // Show results
+                    document.getElementById('retirement-calculator-results').style.display = 'block';
+                    
+                    // Create chart
+                    createRetirementChart(currentAge, retirementAge, lifeExpectancy, currentSavings, annualContribution, expectedReturn, inflationRate, desiredIncome);
+                });
+            }
+            
+            // Function to calculate monthly withdrawal
+            function calculateMonthlyWithdrawal(principal, rate, months) {
+                const monthlyRate = Math.pow(1 + rate, 1/12) - 1;
+                return principal * monthlyRate * Math.pow(1 + monthlyRate, months) / (Math.pow(1 + monthlyRate, months) - 1);
+            }
+            
+            // Function to create retirement chart
+            function createRetirementChart(currentAge, retirementAge, lifeExpectancy, currentSavings, annualContribution, expectedReturn, inflationRate, desiredIncome) {
+                const ctx = document.getElementById('retirement-chart');
+                
+                if (!ctx) return;
+                
+                // Clear existing chart
+                if (window.retirementChart) {
+                    window.retirementChart.destroy();
+                }
+                
+                const labels = [];
+                const savingsData = [];
+                const withdrawalData = [];
+                
+                let savings = currentSavings;
+                
+                // Pre-retirement phase
+                for (let age = currentAge; age <= retirementAge; age++) {
+                    labels.push('Age ' + age);
+                    savingsData.push(savings);
+                    withdrawalData.push(0);
+                    
+                    // Update savings for next year
+                    savings = savings * (1 + expectedReturn) + annualContribution;
+                }
+                
+                // Retirement phase
+                const inflationAdjustedIncome = desiredIncome * Math.pow(1 + inflationRate, retirementAge - currentAge);
+                const annualWithdrawal = inflationAdjustedIncome;
+                
+                for (let age = retirementAge + 1; age <= lifeExpectancy; age++) {
+                    labels.push('Age ' + age);
+                    
+                    // Update savings for retirement years
+                    savings = Math.max(0, savings * (1 + expectedReturn) - annualWithdrawal);
+                    savingsData.push(savings);
+                    withdrawalData.push(annualWithdrawal);
+                }
+                
+                // Create chart
+                window.retirementChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [
+                            {
+                                label: 'Retirement Savings',
+                                backgroundColor: 'rgba(0, 102, 204, 0.1)',
+                                borderColor: 'rgba(0, 102, 204, 1)',
+                                data: savingsData,
+                                fill: true
+                            },
+                            {
+                                label: 'Annual Withdrawals',
+                                backgroundColor: 'rgba(255, 153, 0, 0.1)',
+                                borderColor: 'rgba(255, 153, 0, 1)',
+                                data: withdrawalData,
+                                fill: true
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(value) {
+                                        return '$' + value.toLocaleString();
+                                    }
+                                }
+                            }
+                        },
+                        plugins: {
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return context.dataset.label + ': $' + context.raw.toLocaleString();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+    <script src="js/fixed-mobile-nav.js"></script>
+    <script src="js/lazy-loading.js"></script>
+    <script src="js/apply-lazy-loading.js"></script>
+    <script src="js/register-service-worker.js"></script>
+    <script src="js/ab-testing.js"></script>
+    <script src="js/cookie-consent.js"></script>
+    <script src="js/newsletter-signup.js"></script>
+    <script src="js/social-sharing.js"></script>
+    <script src="js/referral-program.js"></script>
+</body>
+</html>

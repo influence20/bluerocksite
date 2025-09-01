@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
+    <meta name="theme-color" content="#1e3a8a">
+    <link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | BlueRock Asset Management</title>
+    <meta name="description" content="Create your BlueRock Asset Management account to access premium investment opportunities and manage your portfolio.">
+    
+    <!-- Favicon -->
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#1e3a8a">
+    <meta name="msapplication-TileColor" content="#1e3a8a">
+    <meta name="theme-color" content="#1e3a8a">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/enhanced-mobile.css">
+    <link rel="stylesheet" href="css/mobile-fixes.css">
+    <link rel="stylesheet" href="css/improved-navigation.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/remove-warning.css">
+    
+    <!-- Live Chat Script -->
+    <script src="//code.jivosite.com/widget/foeFKzf8Lf" async></script>
+    
+    <style>
+        .auth-container {
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #f5f9ff 0%, #ecf4ff 100%);
+        }
+        
+        .auth-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            overflow: hidden;
+            animation: fadeInUp 0.5s ease forwards;
+        }
+        
+        .auth-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 30px;
+            text-align: center;
+            color: white;
+        }
+        
+        .auth-header h2 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+        
+        .auth-header p {
+            margin: 10px 0 0;
+            opacity: 0.9;
+        }
+        
+        .auth-body {
+            padding: 30px;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        
+        .input-icon-wrapper {
+            position: relative;
+        }
+        
+        .input-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 15px;
+            color: #6c757d;
+        }
+        
+        .input-with-icon {
+            padding-left: 45px;
+        }
+        
+        .password-toggle {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 15px;
+            color: #6c757d;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .password-toggle:hover {
+            color: var(--primary-color);
+        }
+        
+        .form-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .terms-check {
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .terms-check input {
+            margin-top: 5px;
+            margin-right: 8px;
+        }
+        
+        .terms-check label {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        .terms-check a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .terms-check a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+        
+        .signup-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .signup-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .auth-divider {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .auth-divider span {
+            flex: 1;
+            height: 1px;
+            background-color: #ddd;
+        }
+        
+        .auth-divider p {
+            margin: 0 15px;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        .auth-footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .auth-footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .auth-footer a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+        
+        .security-note {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6c757d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .validation-error {
+            color: #dc3545;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .form-group.error input,
+        .form-group.error select {
+            border-color: #dc3545;
+        }
+        
+        .form-group.error .validation-error {
+            display: block;
+        }
+        
+        .form-group.success input,
+        .form-group.success select {
+            border-color: #28a745;
+        }
+        
+        .password-strength {
+            margin-top: 5px;
+            height: 5px;
+            border-radius: 5px;
+            background-color: #eee;
+            overflow: hidden;
+        }
+        
+        .password-strength-meter {
+            height: 100%;
+            width: 0;
+            transition: width 0.3s ease, background-color 0.3s ease;
+        }
+        
+        .password-strength-text {
+            font-size: 0.85rem;
+            margin-top: 5px;
+        }
+        
+        .strength-weak {
+            background-color: #dc3545;
+            width: 25%;
+        }
+        
+        .strength-medium {
+            background-color: #ffc107;
+            width: 50%;
+        }
+        
+        .strength-good {
+            background-color: #17a2b8;
+            width: 75%;
+        }
+        
+        .strength-strong {
+            background-color: #28a745;
+            width: 100%;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+            
+            .auth-body {
+                padding: 20px;
+            }
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+    <link rel="stylesheet" href="css/header-fix.css">
+    <link rel="stylesheet" href="css/fixed-navigation.css">
+    <link rel="stylesheet" href="css/premium-style.css">
+    <script src="js/structured-data.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/bluerock-logo.png" alt="BlueRock Asset Management Logo">
+                    <h1></h1>
+                </a>
+            </div>
+            
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#calculator">Calculator</a></li>
+                    <li><a href="savings.html">Savings</a></li>
+                    <li><a href="investments.html">Investments</a></li>
+                    <li><a href="investment-plans.html">Plans</a></li>
+                    <li><a href="deposit.html">Deposit</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li class="auth-links">
+                        <a href="login.html" class="nav-login">Login</a>
+                        <a href="signup.html" class="nav-signup btn btn-accent btn-sm active">Sign Up</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Signup Section -->
+    <section class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h2>Create Your Account</h2>
+                <p>Join BlueRock Asset Management and start investing</p>
+            </div>
+            
+            <div class="auth-body">
+                <form id="signup-form" class="auth-form">
+                    <div class="form-grid">
+                        <!-- First Name -->
+                        <div class="form-group">
+                            <label for="first-name">First Name*</label>
+                            <div class="input-icon-wrapper">
+                                <i class="fas fa-user input-icon"></i>
+                                <input type="text" id="first-name" class="input-with-icon" placeholder="Enter your first name" required>
+                            </div>
+                            <div class="validation-error">Please enter your first name</div>
+                        </div>
+                        
+                        <!-- Last Name -->
+                        <div class="form-group">
+                            <label for="last-name">Last Name*</label>
+                            <div class="input-icon-wrapper">
+                                <i class="fas fa-user input-icon"></i>
+                                <input type="text" id="last-name" class="input-with-icon" placeholder="Enter your last name" required>
+                            </div>
+                            <div class="validation-error">Please enter your last name</div>
+                        </div>
+                        
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label for="email">Email Address*</label>
+                            <div class="input-icon-wrapper">
+                                <i class="fas fa-envelope input-icon"></i>
+                                <input type="email" id="email" class="input-with-icon" placeholder="Enter your email" required>
+                            </div>
+                            <div class="validation-error">Please enter a valid email address</div>
+                        </div>
+                        
+                        <!-- Phone -->
+                        <div class="form-group">
+                            <label for="phone">Phone Number*</label>
+                            <div class="input-icon-wrapper">
+                                <i class="fas fa-phone input-icon"></i>
+                                <input type="tel" id="phone" class="input-with-icon" placeholder="Enter your phone number" required>
+                            </div>
+                            <div class="validation-error">Please enter a valid phone number</div>
+                        </div>
+                        
+                        <!-- Country -->
+                        <div class="form-group">
+                            <label for="country">Country*</label>
+                            <div class="input-icon-wrapper">
+                                <i class="fas fa-globe input-icon"></i>
+                                <select id="country" class="input-with-icon" required>
+                                    <option value="">Select your country</option>
+                                    <option value="US">United States</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="AU">Australia</option>
+                                    <option value="DE">Germany</option>
+                                    <option value="FR">France</option>
+                                    <option value="ES">Spain</option>
+                                    <option value="IT">Italy</option>
+                                    <option value="JP">Japan</option>
+                                    <option value="CN">China</option>
+                                    <option value="IN">India</option>
+                                    <option value="BR">Brazil</option>
+                                    <option value="ZA">South Africa</option>
+                                    <option value="NG">Nigeria</option>
+                                    <option value="AE">United Arab Emirates</option>
+                                    <option value="SG">Singapore</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="validation-error">Please select your country</div>
+                        </div>
+                        
+                        <!-- Investment Interest -->
+                        <div class="form-group">
+                            <label for="investment-interest">Investment Interest*</label>
+                            <div class="input-icon-wrapper">
+                                <i class="fas fa-chart-line input-icon"></i>
+                                <select id="investment-interest" class="input-with-icon" required>
+                                    <option value="">Select your interest</option>
+                                    <option value="savings">Savings Plans</option>
+                                    <option value="investments">Investment Portfolios</option>
+                                    <option value="retirement">Retirement Planning</option>
+                                    <option value="estate">Estate Planning</option>
+                                    <option value="tax">Tax Optimization</option>
+                                    <option value="crypto">Cryptocurrency</option>
+                                    <option value="premium">Premium Investment Program</option>
+                                </select>
+                            </div>
+                            <div class="validation-error">Please select your investment interest</div>
+                        </div>
+                        
+                        <!-- Password -->
+                        <div class="form-group">
+                            <label for="password">Password*</label>
+                            <div class="input-icon-wrapper">
+                                <i class="fas fa-lock input-icon"></i>
+                                <input type="password" id="password" class="input-with-icon" placeholder="Create a password" required>
+                                <i class="fas fa-eye password-toggle" id="password-toggle"></i>
+                            </div>
+                            <div class="password-strength">
+                                <div class="password-strength-meter"></div>
+                            </div>
+                            <div class="password-strength-text">Password strength: Too weak</div>
+                            <div class="validation-error">Password must be at least 8 characters with letters, numbers, and special characters</div>
+                        </div>
+                        
+                        <!-- Confirm Password -->
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm Password*</label>
+                            <div class="input-icon-wrapper">
+                                <i class="fas fa-lock input-icon"></i>
+                                <input type="password" id="confirm-password" class="input-with-icon" placeholder="Confirm your password" required>
+                                <i class="fas fa-eye password-toggle" id="confirm-password-toggle"></i>
+                            </div>
+                            <div class="validation-error">Passwords do not match</div>
+                        </div>
+                        
+                        <!-- Referral Code -->
+                        <div class="form-group full-width">
+                            <label for="referral">Referral Code (Optional)</label>
+                            <div class="input-icon-wrapper">
+                                <i class="fas fa-user-plus input-icon"></i>
+                                <input type="text" id="referral" class="input-with-icon" placeholder="Enter referral code if you have one">
+                            </div>
+                        </div>
+                        
+                        <!-- Terms and Conditions -->
+                        <div class="form-group full-width">
+                            <div class="terms-check">
+                                <input type="checkbox" id="terms" required>
+                                <label for="terms">I agree to the <a href="terms.html" target="_blank">Terms of Service</a>, <a href="privacy-policy.html" target="_blank">Privacy Policy</a>, and <a href="disclaimer.html" target="_blank">Risk Disclosure</a>. I am at least 18 years old.</label>
+                            </div>
+                            <div class="validation-error">You must agree to the terms to continue</div>
+                        </div>
+                        
+                        <!-- Newsletter Subscription -->
+                        <div class="form-group full-width">
+                            <div class="terms-check">
+                                <input type="checkbox" id="newsletter" checked>
+                                <label for="newsletter">I would like to receive investment insights, market updates, and promotional offers from BlueRock Asset Management.</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="signup-btn ripple">Create Account</button>
+                </form>
+                
+                <div class="auth-footer">
+                    Already have an account? <a href="login.html">Log In</a>
+                </div>
+                
+                <div class="security-note">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Your information is encrypted and secure</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1 -->
+                <div class="footer-column">
+                    <h3>BlueRock Asset Management</h3>
+                    <p>Helping clients build and preserve wealth through expert financial guidance and personalized investment strategies since 2005.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Column 2 -->
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#calculator">Calculator</a></li>
+                        <li><a href="savings.html">Savings</a></li>
+                        <li><a href="investments.html">Investments</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="savings.html">Savings Plans</a></li>
+                        <li><a href="investments.html">Investment Portfolios</a></li>
+                        <li><a href="retirement.html">Retirement Planning</a></li>
+                        <li><a href="estate.html">Estate Planning</a></li>
+                        <li><a href="tax.html">Tax Optimization</a></li>
+                        <li><a href="education.html">Financial Education</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4 -->
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="regulatory.html">Regulatory Information</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 BlueRock Asset Management. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/scripts.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/fixed-mobile-nav.js"></script>
+    <script src="js/auth.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const signupForm = document.getElementById('signup-form');
+            const passwordInput = document.getElementById('password');
+            const confirmPasswordInput = document.getElementById('confirm-password');
+            const passwordToggle = document.getElementById('password-toggle');
+            const confirmPasswordToggle = document.getElementById('confirm-password-toggle');
+            const passwordStrengthMeter = document.querySelector('.password-strength-meter');
+            const passwordStrengthText = document.querySelector('.password-strength-text');
+            
+            // Toggle password visibility
+            passwordToggle.addEventListener('click', function() {
+                togglePasswordVisibility(passwordInput, passwordToggle);
+            });
+            
+            confirmPasswordToggle.addEventListener('click', function() {
+                togglePasswordVisibility(confirmPasswordInput, confirmPasswordToggle);
+            });
+            
+            function togglePasswordVisibility(input, icon) {
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.classList.remove('fa-eye');
+                    icon.classList.add('fa-eye-slash');
+                } else {
+                    input.type = 'password';
+                    icon.classList.remove('fa-eye-slash');
+                    icon.classList.add('fa-eye');
+                }
+            }
+            
+            // Password strength checker
+            passwordInput.addEventListener('input', function() {
+                const password = this.value;
+                const strength = checkPasswordStrength(password);
+                
+                // Update strength meter
+                passwordStrengthMeter.className = 'password-strength-meter';
+                
+                if (password.length === 0) {
+                    passwordStrengthMeter.style.width = '0';
+                    passwordStrengthText.textContent = 'Password strength: Too weak';
+                } else {
+                    if (strength === 1) {
+                        passwordStrengthMeter.classList.add('strength-weak');
+                        passwordStrengthText.textContent = 'Password strength: Weak';
+                    } else if (strength === 2) {
+                        passwordStrengthMeter.classList.add('strength-medium');
+                        passwordStrengthText.textContent = 'Password strength: Medium';
+                    } else if (strength === 3) {
+                        passwordStrengthMeter.classList.add('strength-good');
+                        passwordStrengthText.textContent = 'Password strength: Good';
+                    } else if (strength === 4) {
+                        passwordStrengthMeter.classList.add('strength-strong');
+                        passwordStrengthText.textContent = 'Password strength: Strong';
+                    }
+                }
+            });
+            
+            function checkPasswordStrength(password) {
+                let strength = 0;
+                
+                // Length check
+                if (password.length >= 8) {
+                    strength += 1;
+                }
+                
+                // Contains lowercase and uppercase letters
+                if (password.match(/[a-z]/) && password.match(/[A-Z]/)) {
+                    strength += 1;
+                }
+                
+                // Contains numbers
+                if (password.match(/\d/)) {
+                    strength += 1;
+                }
+                
+                // Contains special characters
+                if (password.match(/[^a-zA-Z\d]/)) {
+                    strength += 1;
+                }
+                
+                return strength;
+            }
+            
+            // Form validation
+            signupForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                let isValid = true;
+                
+                // Validate first name
+                const firstName = document.getElementById('first-name');
+                if (firstName.value.trim() === '') {
+                    setError(firstName, 'Please enter your first name');
+                    isValid = false;
+                } else {
+                    setSuccess(firstName);
+                }
+                
+                // Validate last name
+                const lastName = document.getElementById('last-name');
+                if (lastName.value.trim() === '') {
+                    setError(lastName, 'Please enter your last name');
+                    isValid = false;
+                } else {
+                    setSuccess(lastName);
+                }
+                
+                // Validate email
+                const email = document.getElementById('email');
+                if (email.value.trim() === '') {
+                    setError(email, 'Please enter your email address');
+                    isValid = false;
+                } else if (!isValidEmail(email.value.trim())) {
+                    setError(email, 'Please enter a valid email address');
+                    isValid = false;
+                } else {
+                    setSuccess(email);
+                }
+                
+                // Validate phone
+                const phone = document.getElementById('phone');
+                if (phone.value.trim() === '') {
+                    setError(phone, 'Please enter your phone number');
+                    isValid = false;
+                } else if (!isValidPhone(phone.value.trim())) {
+                    setError(phone, 'Please enter a valid phone number');
+                    isValid = false;
+                } else {
+                    setSuccess(phone);
+                }
+                
+                // Validate country
+                const country = document.getElementById('country');
+                if (country.value === '') {
+                    setError(country, 'Please select your country');
+                    isValid = false;
+                } else {
+                    setSuccess(country);
+                }
+                
+                // Validate investment interest
+                const investmentInterest = document.getElementById('investment-interest');
+                if (investmentInterest.value === '') {
+                    setError(investmentInterest, 'Please select your investment interest');
+                    isValid = false;
+                } else {
+                    setSuccess(investmentInterest);
+                }
+                
+                // Validate password
+                const password = document.getElementById('password');
+                if (password.value === '') {
+                    setError(password, 'Please enter a password');
+                    isValid = false;
+                } else if (password.value.length < 8) {
+                    setError(password, 'Password must be at least 8 characters');
+                    isValid = false;
+                } else if (checkPasswordStrength(password.value) < 3) {
+                    setError(password, 'Password is too weak. Include uppercase, lowercase, numbers, and special characters');
+                    isValid = false;
+                } else {
+                    setSuccess(password);
+                }
+                
+                // Validate confirm password
+                const confirmPassword = document.getElementById('confirm-password');
+                if (confirmPassword.value === '') {
+                    setError(confirmPassword, 'Please confirm your password');
+                    isValid = false;
+                } else if (confirmPassword.value !== password.value) {
+                    setError(confirmPassword, 'Passwords do not match');
+                    isValid = false;
+                } else {
+                    setSuccess(confirmPassword);
+                }
+                
+                // Validate terms
+                const terms = document.getElementById('terms');
+                if (!terms.checked) {
+                    setError(terms, 'You must agree to the terms to continue');
+                    isValid = false;
+                } else {
+                    setSuccess(terms);
+                }
+                
+                // If form is valid, submit
+                if (isValid) {
+                    // In a real application, this would send data to the server
+                    // For demo purposes, we'll just redirect to the dashboard
+                    window.location.href = 'dashboard.html';
+                }
+            });
+            
+            function setError(input, message) {
+                const formGroup = input.closest('.form-group');
+                const errorDisplay = formGroup.querySelector('.validation-error');
+                
+                formGroup.classList.add('error');
+                formGroup.classList.remove('success');
+                errorDisplay.textContent = message;
+            }
+            
+            function setSuccess(input) {
+                const formGroup = input.closest('.form-group');
+                formGroup.classList.add('success');
+                formGroup.classList.remove('error');
+            }
+            
+            function isValidEmail(email) {
+                const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(email);
+            }
+            
+            function isValidPhone(phone) {
+                const re = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/;
+                return re.test(phone);
+            }
+        });
+    </script>
+    <script src="js/fixed-mobile-nav.js"></script>
+    <script src="js/lazy-loading.js"></script>
+    <script src="js/apply-lazy-loading.js"></script>
+    <script src="js/register-service-worker.js"></script>
+    <script src="js/ab-testing.js"></script>
+    <script src="js/cookie-consent.js"></script>
+    <script src="js/newsletter-signup.js"></script>
+    <script src="js/social-sharing.js"></script>
+    <script src="js/referral-program.js"></script>
+</body>
+</html>
